@@ -1,5 +1,5 @@
 entity.bilby.name=Greater Bilby
-entity.pawprints.pinkfairy.name=Pink Fairy Armadillo
+entity.pinkfairy.name=Pink Fairy Armadillo
 entity.quokka.name=Quokka
 entity.nudibranchannae.name=Nudibranch - Chromodoris annae
 entity.nudibranchsinuata.name=Nudibranch - Ceratosoma sinuatum
@@ -13,11 +13,13 @@ entity.nudibranchparva.name=Nudibranch - Jorunna parva
 entity.nudibranchruthae.name=Nudibranch - Hypselodoris ruthae
 entity.termite.name=Termite
 entity.goawaybird.name=White-bellied Go-away-bird
+entity.frilledlizard.name=Frilled-neck Lizard
 entity.ferretbadger.name=Ferret-badger
 entity.lowlandpaca.name=Lowland Paca
 entity.americanpika.name=American Pika
 entity.ilipika.name=Ili Pika
 entity.tenrec.name=Tenrec
+entity.mongoose.name=Mongoose
 entity.lunamoth.name=Moth - Actias luna
 
 

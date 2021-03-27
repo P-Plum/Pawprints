@@ -30,7 +30,8 @@ public class Reference
 	public static final int ENTITY_ILIPIKA = 138;
 	public static final int ENTITY_FRILLEDLIZARD = 139;
 	public static final int ENTITY_TENREC = 139;
-	public static final int ENTITY_LUNAMOTH = 140;
+	public static final int ENTITY_MONGOOSE = 140;
+	public static final int ENTITY_LUNAMOTH = 141;
 	
 	public static final int PAPYRUS = 180;
 }

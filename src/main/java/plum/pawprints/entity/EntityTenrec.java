@@ -16,6 +16,7 @@ import net.minecraft.entity.ai.EntityAIMate;
 import net.minecraft.entity.ai.EntityAIPanic;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAITempt;
+import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -47,7 +48,7 @@ public class EntityTenrec extends EntityAnimal implements IAnimatable
 {	
 	public AnimationFactory factory = new AnimationFactory(this);
 	private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(ItemInit.CATERPILLAR);
-	private static final DataParameter<Integer> FERRETBADGER_VARIANT = EntityDataManager.<Integer>createKey(EntityTenrec.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> TENREC_VARIANT = EntityDataManager.<Integer>createKey(EntityTenrec.class, DataSerializers.VARINT);
 	
 	public EntityTenrec(World worldIn)
 	{
@@ -61,11 +62,10 @@ public class EntityTenrec extends EntityAnimal implements IAnimatable
 	{
 		this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(1, new EntityAIPanic(this, 2.0D));
-        this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.0D));
+        this.tasks.addTask(2, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6F));
         this.tasks.addTask(4, new EntityAILookIdle(this));
         this.tasks.addTask(3, new EntityAIMate(this, 1.0D));
-        this.tasks.addTask(4, new EntityAIFollowParent(this, 1.25D));
         this.tasks.addTask(5, new EntityAITempt(this, 1.25D, false, TEMPTATION_ITEMS));
 	}
 	
@@ -74,31 +74,31 @@ public class EntityTenrec extends EntityAnimal implements IAnimatable
 	public void writeEntityToNBT(NBTTagCompound compound)
     {
         super.writeEntityToNBT(compound);
-        compound.setInteger("BadgerType", this.getSkin());
+        compound.setInteger("TenrecType", this.getSkin());
     }
 	
 	public void readEntityFromNBT(NBTTagCompound compound)
     {
         super.readEntityFromNBT(compound);
-        this.setSkin(compound.getInteger("BadgerType"));
+        this.setSkin(compound.getInteger("TenrecType"));
     }
 	
 	public int getSkin()
     {
-        return ((Integer)this.dataManager.get(FERRETBADGER_VARIANT)).intValue();
+        return ((Integer)this.dataManager.get(TENREC_VARIANT)).intValue();
     }
 
     public void setSkin(int skinId)
     {
-        this.dataManager.set(FERRETBADGER_VARIANT, Integer.valueOf(skinId));
+        this.dataManager.set(TENREC_VARIANT, Integer.valueOf(skinId));
     }
 	//Beyond this point -- Unrelated to variant code
     
-	@Override
+    @Override
 	protected void applyEntityAttributes()
 	{
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
 	}
 	
@@ -158,7 +158,7 @@ public class EntityTenrec extends EntityAnimal implements IAnimatable
 	@Override
     protected SoundEvent getAmbientSound() 
 	{
-		return SoundHandler.ENTITY_FERRETBADGER_AMBIENT;
+		return SoundHandler.ENTITY_TENREC_AMBIENT;
     }
 	
 	@Override
@@ -176,18 +176,18 @@ public class EntityTenrec extends EntityAnimal implements IAnimatable
 	
 	public int getVariant()
     {
-        return MathHelper.clamp(((Integer)this.dataManager.get(FERRETBADGER_VARIANT)).intValue(), 0, 2);
+        return MathHelper.clamp(((Integer)this.dataManager.get(TENREC_VARIANT)).intValue(), 0, 2);
     }
 	
 	public void setVariant(int p_191997_1_)
     {
-        this.dataManager.set(FERRETBADGER_VARIANT, Integer.valueOf(p_191997_1_));
+        this.dataManager.set(TENREC_VARIANT, Integer.valueOf(p_191997_1_));
     }
 
 	protected void entityInit()
     {
         super.entityInit();
-        this.dataManager.register(FERRETBADGER_VARIANT, Integer.valueOf(0));
+        this.dataManager.register(TENREC_VARIANT, Integer.valueOf(0));
     }
 	
 	@Nullable

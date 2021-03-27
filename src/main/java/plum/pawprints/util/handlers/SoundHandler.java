@@ -7,6 +7,7 @@ import plum.pawprints.util.Reference;
 
 public class SoundHandler {
 	
+	public static SoundEvent ENTITY_MONGOOSE_AMBIENT;
 	public static SoundEvent ENTITY_GOAWAYBIRD_AMBIENT;
 	public static SoundEvent ENTITY_BILBY_AMBIENT;
 	public static SoundEvent ENTITY_FERRETBADGER_AMBIENT;
@@ -17,6 +18,7 @@ public class SoundHandler {
 	
 	public static void registerSounds()
 	{
+		ENTITY_MONGOOSE_AMBIENT = registerSound("entity.mongoose.ambient");
 		ENTITY_GOAWAYBIRD_AMBIENT = registerSound("entity.goawaybird.ambient");
 		ENTITY_BILBY_AMBIENT = registerSound("entity.bilby.ambient");
 		ENTITY_FERRETBADGER_AMBIENT = registerSound("entity.ferretbadger.ambient");
