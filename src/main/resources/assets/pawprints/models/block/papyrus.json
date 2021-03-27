@@ -1,0 +1,147 @@
+{
+	"texture_size": [128, 128],
+	"textures": {
+		"0": "pawprints:block/papyrus",
+		"particle": "pawprints:block/papyrus"
+	},
+	"elements": [
+		{
+			"name": "basebottom",
+			"from": [0, 0.6, 0],
+			"to": [16, 0.6, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8.6, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 0], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 0], "texture": "#0"},
+				"south": {"uv": [0, 0, 2, 0], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 0], "texture": "#0"},
+				"up": {"uv": [4, 2, 2, 0], "texture": "#0"},
+				"down": {"uv": [8, 4, 6, 6], "texture": "#0"}
+			}
+		},
+		{
+			"name": "basetop",
+			"from": [0, 2.8, 0],
+			"to": [16, 2.8, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 10.8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 0], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 0], "texture": "#0"},
+				"south": {"uv": [0, 0, 2, 0], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 0], "texture": "#0"},
+				"up": {"uv": [2, 10, 0, 8], "texture": "#0"},
+				"down": {"uv": [6, 8, 4, 10], "texture": "#0"}
+			}
+		},
+		{
+			"name": "plantleft",
+			"from": [0, 0, 8],
+			"to": [16, 32, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.5, 8.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 4], "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 4], "texture": "#0"},
+				"south": {"uv": [2, 2, 4, 6], "texture": "#0"},
+				"west": {"uv": [0, 0, 0, 4], "texture": "#0"},
+				"up": {"uv": [2, 0, 0, 0], "texture": "#0"},
+				"down": {"uv": [2, 0, 0, 0], "texture": "#0"}
+			}
+		},
+		{
+			"name": "plantright",
+			"from": [8, 0, 0],
+			"to": [8, 32, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0.5, 8.5]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 4], "texture": "#0"},
+				"east": {"uv": [0, 4, 2, 8], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 4], "texture": "#0"},
+				"west": {"uv": [4, 4, 6, 8], "texture": "#0"},
+				"up": {"uv": [0, 2, 0, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "plantdiagonalleft",
+			"from": [8, 0, 0],
+			"to": [8, 32, 16],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 16, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 4], "texture": "#0"},
+				"east": {"uv": [4, 0, 6, 4], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 4], "texture": "#0"},
+				"west": {"uv": [2, 6, 4, 10], "texture": "#0"},
+				"up": {"uv": [0, 2, 0, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "plantdiagonalright",
+			"from": [8, 0, 0],
+			"to": [8, 32, 16],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 16, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 4], "texture": "#0"},
+				"east": {"uv": [6, 6, 8, 10], "texture": "#0"},
+				"south": {"uv": [0, 0, 0, 4], "texture": "#0"},
+				"west": {"uv": [6, 0, 8, 4], "texture": "#0"},
+				"up": {"uv": [0, 2, 0, 0], "texture": "#0"},
+				"down": {"uv": [0, 0, 0, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "midleaves",
+			"from": [0, 20, 0],
+			"to": [16, 20, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 28, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 2, 0], "texture": "#0"},
+				"east": {"uv": [0, 0, 2, 0], "texture": "#0"},
+				"south": {"uv": [0, 0, 2, 0], "texture": "#0"},
+				"west": {"uv": [0, 0, 2, 0], "texture": "#0"},
+				"up": {"uv": [10, 10, 8, 8], "texture": "#0"},
+				"down": {"uv": [10, 0, 8, 2], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "basebottom",
+			"origin": [8, 8.2, 8],
+			"children": [0,
+				{
+					"name": "basetop",
+					"origin": [8, 8.2, 8],
+					"children": [1,
+						{
+							"name": "plantleft",
+							"origin": [8, 8.2, 8],
+							"children": [2,
+								{
+									"name": "plantright",
+									"origin": [8, 8.2, 8],
+									"children": [3]
+								},
+								{
+									"name": "plantdiagonalleft",
+									"origin": [8, 8.2, 8],
+									"children": [4]
+								},
+								{
+									"name": "plantdiagonalright",
+									"origin": [8, 8.2, 8],
+									"children": [5]
+								},
+								{
+									"name": "midleaves",
+									"origin": [8, 8.2, 8],
+									"children": [6]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

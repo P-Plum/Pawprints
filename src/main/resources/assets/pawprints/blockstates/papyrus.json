@@ -1,0 +1,12 @@
+{
+	"forge_marker": 1,
+	"variants": {
+		"normal": {
+			"model": "pawprints:papyrus"
+		},
+		"inventory": {
+			"model": "pawprints:papyrus",
+			"transform": "forge:default-block"
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+    "pools": [
+        {
+        	"name": "Largemeat_cooked",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 100,
+                    "name": "pawprints:large_wild_meat_cooked",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+

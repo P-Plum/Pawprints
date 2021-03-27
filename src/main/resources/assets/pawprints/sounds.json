@@ -1,0 +1,57 @@
+{
+	"entity.goawaybird.ambient":
+	{
+		"category": "entity",
+		"subtitle": "Go-away-bird calls",
+		"sounds": [{ "name": "pawprints:entity/goawaybird/ambient", "stream": true}]
+	},
+	
+	"entity.ferretbadger.ambient":
+	{
+		"category": "entity",
+		"subtitle": "Ferret-badger chitters",
+		"sounds": [{ "name": "pawprints:entity/ferretbadger/ambient", "stream": true}]
+	},
+	
+	"entity.mongoose.ambient":
+	{
+		"category": "entity",
+		"subtitle": "Mongoose chatters",
+		"sounds": [{ "name": "pawprints:entity/mongoose/ambient", "stream": true}]
+	},
+	
+	"entity.pika.ambient":
+	{
+		"category": "entity",
+		"subtitle": "Pika screams",
+		"sounds": [{ "name": "pawprints:entity/pika/ambient", "stream": true}]
+	},
+	
+	"entity.tenrec.ambient":
+	{
+		"category": "entity",
+		"subtitle": "Tenrec squeaks",
+		"sounds": [{ "name": "pawprints:entity/tenrec/ambient", "stream": true}]
+	},
+	
+	"entity.lowlandpaca.ambient":
+	{
+		"category": "entity",
+		"subtitle": "Lowland Paca grunts",
+		"sounds": [{ "name": "pawprints:entity/lowlandpaca/ambient", "stream": true}]
+	},
+	
+	"entity.lowlandpaca.hurt":
+	{
+		"category": "entity",
+		"subtitle": "Lowland Paca barks",
+		"sounds": [{ "name": "pawprints:entity/lowlandpaca/attacked", "stream": true}]
+	},
+	
+	"entity.bilby.ambient":
+	{
+		"category": "entity",
+		"subtitle": "Bilby chuffs",
+		"sounds": [{ "name": "pawprints:entity/bilby/ambient", "stream": true}]
+	}
+}
