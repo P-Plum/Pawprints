@@ -5,6 +5,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import plum.pawprints.event.PawprintsEventHandler;
+import software.bernie.example.GeckoLibMod;
 
   @Mod.EventBusSubscriber
   public class CommonProxy {

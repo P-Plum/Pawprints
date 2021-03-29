@@ -1,0 +1,92 @@
+[23:26:14] [main/INFO] [GradleStart]: Extra: []
+[23:26:14] [main/INFO] [GradleStart]: Running with arguments: [--tweakClass, net.minecraftforge.fml.common.launcher.FMLServerTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[23:26:14] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[23:26:14] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[23:26:14] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[23:26:14] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLServerTweaker
+[23:26:15] [main/INFO] [FML]: Forge Mod Loader version 14.23.5.2846 for Minecraft 1.12.2 loading
+[23:26:15] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_251, running on Windows 7:amd64:6.1, installed at C:\Program Files\Java\jre1.8.0_251
+[23:26:15] [main/ERROR] [FML]: Apache Maven library folder was not in the format expected. Using default libraries directory.
+[23:26:15] [main/ERROR] [FML]: Full: C:\Users\admin\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.5.3\7dc72b6d6d8a6dced3d294ed54c2cc3515ade9f4\maven-artifact-3.5.3.jar
+[23:26:15] [main/ERROR] [FML]: Trimmed: c:/users/admin/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/
+[23:26:15] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[23:26:15] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin), we are in deobf and it's a forge core plugin
+[23:26:15] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin), we are in deobf and it's a forge core plugin
+[23:26:15] [main/INFO] [FML]: Searching C:\Users\admin\eclipse-workspace\Pawprints\.\mods for mods
+[23:26:15] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[23:26:15] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
+[23:26:15] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[23:26:15] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[23:26:15] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[23:26:15] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[23:26:15] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[23:26:15] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[23:26:15] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[23:26:16] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
+[23:26:16] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[23:26:16] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[23:26:16] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[23:26:16] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[23:26:16] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[23:26:17] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.server.MinecraftServer}
+[23:26:21] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Starting minecraft server version 1.12.2
+[23:26:21] [Server thread/INFO] [FML]: MinecraftForge v14.23.5.2846 Initialized
+[23:26:21] [Server thread/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.
+[23:26:21] [Server thread/INFO] [FML]: Invalid recipe found with multiple oredict ingredients in the same ingredient...
+[23:26:21] [Server thread/INFO] [FML]: Replaced 1227 ore ingredients
+[23:26:21] [Server thread/INFO] [FML]: Searching C:\Users\admin\eclipse-workspace\Pawprints\.\mods for mods
+[23:26:22] [Server thread/WARN] [FML]: Mod geckolib3 is missing the required element 'version' and a version.properties file could not be found. Falling back to metadata version 3.0.0
+[23:26:23] [Server thread/INFO] [FML]: Forge Mod Loader has identified 6 mods to load
+[23:26:23] [Server thread/WARN] [FML]: Missing English translation for FML: assets/fml/lang/en_us.lang
+[23:26:24] [Server thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, pawprints, geckolib3] at CLIENT
+[23:26:24] [Server thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, pawprints, geckolib3] at SERVER
+[23:26:24] [Server thread/INFO] [FML]: Processing ObjectHolder annotations
+[23:26:24] [Server thread/INFO] [FML]: Found 1168 ObjectHolder annotations
+[23:26:24] [Server thread/INFO] [FML]: Identifying ItemStackHolder annotations
+[23:26:24] [Server thread/INFO] [FML]: Found 0 ItemStackHolder annotations
+[23:26:24] [Server thread/INFO] [FML]: Configured a dormant chunk cache size of 0
+[23:26:24] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[23:26:24] [Server thread/INFO] [FML]: Applying holder lookups
+[23:26:24] [Server thread/INFO] [FML]: Holder lookups applied
+[23:26:24] [Server thread/INFO] [FML]: Applying holder lookups
+[23:26:24] [Server thread/INFO] [FML]: Holder lookups applied
+[23:26:24] [Server thread/INFO] [FML]: Applying holder lookups
+[23:26:24] [Server thread/INFO] [FML]: Holder lookups applied
+[23:26:24] [Server thread/INFO] [FML]: Applying holder lookups
+[23:26:24] [Server thread/INFO] [FML]: Holder lookups applied
+[23:26:24] [Server thread/INFO] [FML]: Injecting itemstacks
+[23:26:24] [Server thread/INFO] [FML]: Itemstack injection complete
+[23:26:24] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Loading properties
+[23:26:25] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Default game type: SURVIVAL
+[23:26:25] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Generating keypair
+[23:26:25] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Starting Minecraft server on *:25565
+[23:26:25] [Server thread/INFO] [net.minecraft.network.NetworkSystem]: Using default channel type
+[23:26:25] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: OUTDATED Target: 14.23.5.2854
+[23:26:25] [Server thread/INFO] [FML]: Applying holder lookups
+[23:26:25] [Server thread/INFO] [FML]: Holder lookups applied
+[23:26:25] [Server thread/INFO] [FML]: Injecting itemstacks
+[23:26:25] [Server thread/INFO] [FML]: Itemstack injection complete
+[23:26:26] [Server thread/INFO] [FML]: Forge Mod Loader has successfully loaded 6 mods
+[23:26:26] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Preparing level "world"
+[23:26:26] [Server thread/INFO] [FML]: Injecting existing registry data into this server instance
+[23:26:26] [Server thread/INFO] [FML]: Applying holder lookups
+[23:26:26] [Server thread/INFO] [FML]: Holder lookups applied
+[23:26:27] [Server thread/INFO] [FML]: Loading dimension 0 (world) (net.minecraft.server.dedicated.DedicatedServer@7d4ac005)
+[23:26:27] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 488 advancements
+[23:26:27] [Server thread/INFO] [FML]: Loading dimension -1 (world) (net.minecraft.server.dedicated.DedicatedServer@7d4ac005)
+[23:26:27] [Server thread/INFO] [FML]: Loading dimension 1 (world) (net.minecraft.server.dedicated.DedicatedServer@7d4ac005)
+[23:26:27] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0
+[23:26:28] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 1%
+[23:26:29] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing spawn area: 42%
+[23:26:30] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Done (4.346s)! For help, type "help" or "?"
+[23:26:30] [Server thread/INFO] [FML]: Unloading dimension -1
+[23:26:30] [Server thread/INFO] [FML]: Unloading dimension 1
+[23:29:39] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: --- Showing help page 1 of 10 (/help <page>) ---
+[23:29:39] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /advancement <grant|revoke|test> <player>
+[23:29:39] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /ban <name> [reason ...]
+[23:29:39] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /ban-ip <address|name> [reason ...]
+[23:29:39] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /banlist [ips|players]
+[23:29:39] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /blockdata <x> <y> <z> <dataTag>
+[23:29:39] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /clear [player] [item] [data] [maxCount] [dataTag]
+[23:29:39] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: /clone <x1> <y1> <z1> <x2> <y2> <z2> <x> <y> <z> [maskMode] [cloneMode]
+[23:29:39] [Server thread/INFO] [net.minecraft.server.dedicated.DedicatedServer]: Tip: Use the <tab> key while typing a command to auto-complete the command or its arguments

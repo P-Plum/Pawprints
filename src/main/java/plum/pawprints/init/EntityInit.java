@@ -1,10 +1,19 @@
 package plum.pawprints.init;
 
+import java.util.List;
+import java.util.Set;
+
+import com.google.common.collect.Lists;
+
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.translation.I18n;
+import net.minecraft.world.biome.Biome;
+import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import plum.pawprints.main;
+import plum.pawprints.configuration.PawprintsConfig;
 import plum.pawprints.entity.EntityAmericanPika;
 import plum.pawprints.entity.EntityBilby;
 import plum.pawprints.entity.EntityFerretBadger;
@@ -18,8 +27,10 @@ import plum.pawprints.entity.EntityQuokka;
 import plum.pawprints.entity.EntityTenrec;
 import plum.pawprints.entity.EntityTermite;
 import plum.pawprints.entity.butterfly.EntityLunaMoth;
+import plum.pawprints.init.helper.RegistryHelper;
 import plum.pawprints.util.Reference;
 
+@SuppressWarnings("deprecation")
 public class EntityInit {
 	private static int id = 0;
 	
@@ -46,7 +57,16 @@ public class EntityInit {
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "lunamoth"),EntityLunaMoth.class, "lunamoth", id++, main.instance, 1024, 1, true, 10280346, 15790320);
 				
 				
-				//EntityRegistry.addSpawn(entityName, weightedProb, min, max, typeOfCreature, biomes);
+				//Spawns
+				if (PawprintsConfig.Spawns.bilbySpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsConfig.Spawns.bilbyBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityBilby.class, PawprintsConfig.Spawns.bilbyRate, 1, 2, EnumCreatureType.CREATURE, getBiomes(t));
+					}
+				}
+				
+				/*
 				EntityRegistry.addSpawn(EntityBilby.class, 2, 2, 3, EnumCreatureType.CREATURE, Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU, Biomes.DESERT);
 				EntityRegistry.addSpawn(EntityPinkfairy.class, 2, 1, 1, EnumCreatureType.CREATURE, Biomes.DESERT);
 				EntityRegistry.addSpawn(EntityQuokka.class, 5, 3, 4, EnumCreatureType.CREATURE, Biomes.SAVANNA, Biomes.SWAMPLAND, Biomes.PLAINS);
@@ -57,5 +77,27 @@ public class EntityInit {
 				EntityRegistry.addSpawn(EntityIliPika.class, 2, 1, 2, EnumCreatureType.CREATURE, Biomes.EXTREME_HILLS, Biomes.EXTREME_HILLS_EDGE, Biomes.EXTREME_HILLS_WITH_TREES, Biomes.MUTATED_EXTREME_HILLS, Biomes.MUTATED_EXTREME_HILLS_WITH_TREES);
 				EntityRegistry.addSpawn(EntityFrilledLizard.class, 6, 1, 2, EnumCreatureType.CREATURE, Biomes.SAVANNA, Biomes.DESERT);
 				EntityRegistry.addSpawn(EntityTenrec.class, 8, 2, 3, EnumCreatureType.CREATURE, Biomes.SAVANNA, Biomes.JUNGLE, Biomes.JUNGLE_EDGE);
+				*/
+	}
+
+	private static Biome[] getBiomes(BiomeDictionary.Type type)
+	{
+		List<Biome> criteriaMet = Lists.newArrayList();
+		for (Biome b : Biome.REGISTRY)
+		{
+			Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(b);
+			if (types.contains(type))
+			{
+				criteriaMet.add(b);
+			}
+
+		}
+
+		if (BiomeDictionary.getBiomes(type).isEmpty())
+		{
+			System.out.println(type.getName() + I18n.translateToLocal("text.error.invalidbiometype"));
+		}
+
+		return criteriaMet.toArray(new Biome[criteriaMet.size()]);
 	}
 }

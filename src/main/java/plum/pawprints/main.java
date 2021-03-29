@@ -16,6 +16,7 @@ import plum.pawprints.tabs.EggsTab;
 import plum.pawprints.tabs.PlantsTab;
 import plum.pawprints.util.Reference;
 import plum.pawprints.util.handlers.RegistryHandler;
+import software.bernie.example.GeckoLibMod;
 import software.bernie.geckolib3.GeckoLib;
 
 @Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
