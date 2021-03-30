@@ -26,6 +26,6 @@ public class RenderPinkfairy extends GeoEntityRenderer<EntityPinkfairy>
 	@Override
 	public void renderEarly(EntityPinkfairy animatable, float ticks, float red, float green, float blue, float partialTicks)
 	{
-		GlStateManager.scale(0.25F, 0.25F, 0.25F);
+		GlStateManager.scale(0.35F, 0.35F, 0.35F);
 	}
 }

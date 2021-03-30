@@ -80,6 +80,27 @@
 							"vector": [4.5, 3.2, -4.5]
 						}
 					}
+				},
+				"wingbaseright": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.88": {
+							"vector": [-1, 0, -5]
+						},
+						"1.68": {
+							"vector": [-0.01, 0, 0.03]
+						}
+					}
+				},
+				"planeright": {
+					"rotation": {
+						"vector": [0, 21, 35]
+					},
+					"position": {
+						"vector": [0.7, -4.3, -6.5]
+					}
 				}
 			}
 		},
@@ -933,6 +954,63 @@
 						"0.04": {
 							"vector": [0, 0, 0]
 						}
+					}
+				}
+			}
+		},
+		"sleep": {
+			"loop": true,
+			"bones": {
+				"taillongone": {
+					"rotation": {
+						"vector": [-17, 0, 0]
+					}
+				},
+				"taillongtwo": {
+					"rotation": {
+						"vector": [21, 0, 0]
+					}
+				},
+				"neck": {
+					"rotation": {
+						"vector": [-14, -19, 1]
+					},
+					"position": {
+						"vector": [-0.5, 0, -0.4]
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": [29, -127, 11]
+					},
+					"position": {
+						"vector": [0.2, 0.7, 0.5]
+					}
+				},
+				"wingbaseleft": {
+					"rotation": {
+						"vector": [14, 13, 0]
+					}
+				},
+				"planeleft": {
+					"rotation": {
+						"vector": [0, -19, -33]
+					},
+					"position": {
+						"vector": [-1.3, -4.7, -6.1]
+					}
+				},
+				"wingbaseright": {
+					"rotation": {
+						"vector": [14, -13, 0]
+					}
+				},
+				"planeright": {
+					"rotation": {
+						"vector": [0, 21, 35]
+					},
+					"position": {
+						"vector": [0.7, -4.3, -6.5]
 					}
 				}
 			}

@@ -5,6 +5,7 @@ import java.util.List;
 
 import net.minecraft.item.Item;
 import plum.pawprints.objects.items.ItemBase;
+import plum.pawprints.objects.items.food.ItemCrispyCaterpillar;
 import plum.pawprints.objects.items.food.ItemCustomFood;
 
 public class ItemInit {
@@ -20,11 +21,13 @@ public class ItemInit {
 	//FOOD
 	public static final Item SMALL_WILD_MEAT = new ItemCustomFood("small_wild_meat", 1, true);
 	public static final Item LARGE_WILD_MEAT = new ItemCustomFood("large_wild_meat", 3, true);
-	public static final Item SMALL_WILD_MEAT_COOKED = new ItemCustomFood("small_wild_meat_cooked", 6, true);
+	public static final Item SMALL_WILD_MEAT_COOKED = new ItemCustomFood("small_wild_meat_cooked", 4, true);
 	public static final Item LARGE_WILD_MEAT_COOKED = new ItemCustomFood("large_wild_meat_cooked", 8, true);
+	public static final Item PACA_THIGH = new ItemCustomFood("paca_thigh", 5, true);
+	public static final Item PACA_THIGH_COOKED = new ItemCustomFood("paca_thigh_cooked", 9, true);
+	public static final Item CRISPY_CATERPILLAR = new ItemCrispyCaterpillar("caterpillar_cooked", 3, false);
 	
 	//SPECIAL
-	public static final Item GOAWAYBIRD_FEATHER = new ItemBase("goawaybird_feather");
 	public static final Item ARMADILLO_PLATE = new ItemBase("armadilloplate");
 	public static final Item BILBYSCARF = new ItemBase("bilbyscarf");
 }

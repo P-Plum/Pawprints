@@ -46,25 +46,25 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable
 	@Override
 	protected void initEntityAI()
 	{
-		this.tasks.addTask(1, new EntityAISwimming(this));
-		this.tasks.addTask(1, new EntityAIMate(this, 1.0D));
-        this.tasks.addTask(2, new EntityAIFollowParent(this, 1.25D));
-        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.tasks.addTask(9, new EntityAIWander(this, 1.0D));
-        
-        this.Wander = new EntityAIWanderAvoidWater(this, 1.0D);
-	    this.WanderFlying = new EntityAIWanderAvoidWaterFlying(this, 1.0D);
+			this.tasks.addTask(1, new EntityAISwimming(this));
+			this.tasks.addTask(1, new EntityAIMate(this, 1.0D));
+	        this.tasks.addTask(2, new EntityAIFollowParent(this, 1.25D));
+	        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+	        this.tasks.addTask(9, new EntityAIWander(this, 1.0D));
+	        
+	        this.Wander = new EntityAIWanderAvoidWater(this, 1.0D);
+		    this.WanderFlying = new EntityAIWanderAvoidWaterFlying(this, 1.0D);
 
-        super.initEntityAI();
-        if(this.isChild()){
-            this.moveHelper = new EntityMoveHelper(this);
-            this.tasks.addTask(3, Wander);
-        }
-        else{
-            this.moveHelper = new EntityFlyHelper(this);
-            this.tasks.removeTask(Wander);
-            this.tasks.addTask(3, WanderFlying);
-        }
+	        super.initEntityAI();
+	        if(this.isChild()){
+	            this.moveHelper = new EntityMoveHelper(this);
+	            this.tasks.addTask(3, Wander);
+	        }
+	        else{
+	            this.moveHelper = new EntityFlyHelper(this);
+	            this.tasks.removeTask(Wander);
+	            this.tasks.addTask(3, WanderFlying);
+	        }
 	}
 	
 	@Override
@@ -92,9 +92,9 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable
 	{		
 		if(this.isBurning())
 		{
-			return LootTableHandler.GOAWAYBIRD_COOKED;
+			return LootTableHandler.BIRD_COOKED;
 		} else {
-			return LootTableHandler.GOAWAYBIRD_GENERIC;
+			return LootTableHandler.BIRD_GENERIC;
 		}
 	}
 	
@@ -149,16 +149,16 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable
     {
     	if(this.onGround)
 		{
-    		event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
-            return PlayState.CONTINUE;
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
+			return PlayState.CONTINUE;
 		}
 		if(this.isInWater())
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
-            return PlayState.CONTINUE;
+			return PlayState.CONTINUE;
 		} else {
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("fly", true));
-            return PlayState.CONTINUE;
+			return PlayState.CONTINUE;
 		}
     }
 

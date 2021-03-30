@@ -13,7 +13,7 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import plum.pawprints.main;
-import plum.pawprints.configuration.PawprintsConfig;
+import plum.pawprints.configuration.PawprintsSpawnConfig;
 import plum.pawprints.entity.EntityAmericanPika;
 import plum.pawprints.entity.EntityBilby;
 import plum.pawprints.entity.EntityFerretBadger;
@@ -58,26 +58,93 @@ public class EntityInit {
 				
 				
 				//Spawns
-				if (PawprintsConfig.Spawns.bilbySpawns)
+				if (PawprintsSpawnConfig.bilbySpawns)
 				{
-					for (Type t : RegistryHelper.getBiomeTypes(PawprintsConfig.Spawns.bilbyBiomes))
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.bilbyBiomes))
 					{
-						RegistryHelper.Entities.addSpawn(EntityBilby.class, PawprintsConfig.Spawns.bilbyRate, 1, 2, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityBilby.class, PawprintsSpawnConfig.bilbyRate, 1, 2, EnumCreatureType.CREATURE, getBiomes(t));
 					}
 				}
 				
-				/*
-				EntityRegistry.addSpawn(EntityBilby.class, 2, 2, 3, EnumCreatureType.CREATURE, Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU, Biomes.DESERT);
-				EntityRegistry.addSpawn(EntityPinkfairy.class, 2, 1, 1, EnumCreatureType.CREATURE, Biomes.DESERT);
-				EntityRegistry.addSpawn(EntityQuokka.class, 5, 3, 4, EnumCreatureType.CREATURE, Biomes.SAVANNA, Biomes.SWAMPLAND, Biomes.PLAINS);
-				EntityRegistry.addSpawn(EntityTermite.class, 3, 3, 5, EnumCreatureType.CREATURE, Biomes.SAVANNA, Biomes.MUTATED_SAVANNA, Biomes.SAVANNA_PLATEAU);
-				EntityRegistry.addSpawn(EntityGoAwayBird.class, 8, 2, 3, EnumCreatureType.CREATURE, Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU);
-				EntityRegistry.addSpawn(EntityFerretBadger.class, 7, 2, 2, EnumCreatureType.CREATURE, Biomes.FOREST, Biomes.JUNGLE, Biomes.JUNGLE_EDGE);
-				EntityRegistry.addSpawn(EntityAmericanPika.class, 10, 1, 2, EnumCreatureType.CREATURE, Biomes.EXTREME_HILLS, Biomes.EXTREME_HILLS_EDGE, Biomes.EXTREME_HILLS_WITH_TREES, Biomes.MUTATED_EXTREME_HILLS, Biomes.MUTATED_EXTREME_HILLS_WITH_TREES);
-				EntityRegistry.addSpawn(EntityIliPika.class, 2, 1, 2, EnumCreatureType.CREATURE, Biomes.EXTREME_HILLS, Biomes.EXTREME_HILLS_EDGE, Biomes.EXTREME_HILLS_WITH_TREES, Biomes.MUTATED_EXTREME_HILLS, Biomes.MUTATED_EXTREME_HILLS_WITH_TREES);
-				EntityRegistry.addSpawn(EntityFrilledLizard.class, 6, 1, 2, EnumCreatureType.CREATURE, Biomes.SAVANNA, Biomes.DESERT);
-				EntityRegistry.addSpawn(EntityTenrec.class, 8, 2, 3, EnumCreatureType.CREATURE, Biomes.SAVANNA, Biomes.JUNGLE, Biomes.JUNGLE_EDGE);
-				*/
+				if (PawprintsSpawnConfig.fairySpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.fairyBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityPinkfairy.class, PawprintsSpawnConfig.fairyRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
+					}
+				}
+				
+				if (PawprintsSpawnConfig.quokkaSpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.quokkaBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityQuokka.class, PawprintsSpawnConfig.quokkaRate, 2, 3, EnumCreatureType.CREATURE, getBiomes(t));
+					}
+				}
+				
+				if (PawprintsSpawnConfig.goawaybirdSpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.goawaybirdBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityGoAwayBird.class, PawprintsSpawnConfig.goawaybirdRate, 2, 3, EnumCreatureType.CREATURE, getBiomes(t));
+					}
+				}
+				
+				if (PawprintsSpawnConfig.ferretbadgerSpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.ferretbadgerBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityFerretBadger.class, PawprintsSpawnConfig.ferretbadgerRate, 2, 2, EnumCreatureType.CREATURE, getBiomes(t));
+					}
+				}
+				
+				if (PawprintsSpawnConfig.amerpikaSpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.amerpikaBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityAmericanPika.class, PawprintsSpawnConfig.amerpikaRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
+					}
+				}
+				
+				if (PawprintsSpawnConfig.ilipikaSpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.ilipikaBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityIliPika.class, PawprintsSpawnConfig.ilipikaRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
+					}
+				}
+				
+				if (PawprintsSpawnConfig.frilledSpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.frilledBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityFrilledLizard.class, PawprintsSpawnConfig.frilledRate, 1, 2, EnumCreatureType.CREATURE, getBiomes(t));
+					}
+				}
+				
+				if (PawprintsSpawnConfig.tenrecSpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.tenrecBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityTenrec.class, PawprintsSpawnConfig.tenrecRate, 2, 3, EnumCreatureType.CREATURE, getBiomes(t));
+					}
+				}
+				
+				if (PawprintsSpawnConfig.mongooseSpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.mongooseBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityMongoose.class, PawprintsSpawnConfig.mongooseRate, 1, 2, EnumCreatureType.CREATURE, getBiomes(t));
+					}
+				}
+				
+				if (PawprintsSpawnConfig.pacaSpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.pacaBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityLowlandPaca.class, PawprintsSpawnConfig.pacaRate, 1, 2, EnumCreatureType.CREATURE, getBiomes(t));
+					}
+				}
 	}
 
 	private static Biome[] getBiomes(BiomeDictionary.Type type)

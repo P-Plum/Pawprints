@@ -11,18 +11,20 @@ public class LootTableHandler {
 	
 	//ANIMALS
 	public static final ResourceLocation BILBY_GENERIC = LootTableList.register(new ResourceLocation(Reference.MODID, "bilby_generic"));
-	public static final ResourceLocation GOAWAYBIRD_GENERIC = LootTableList.register(new ResourceLocation(Reference.MODID, "goawaybird_generic"));
+	public static final ResourceLocation PACA_GENERIC = LootTableList.register(new ResourceLocation(Reference.MODID, "paca_generic"));
 	
 	//COOKED ANIMALS
 	public static final ResourceLocation BILBY_COOKED = LootTableList.register(new ResourceLocation(Reference.MODID, "bilby_cooked"));
-	public static final ResourceLocation GOAWAYBIRD_COOKED = LootTableList.register(new ResourceLocation(Reference.MODID, "goawaybird_cooked"));
+	public static final ResourceLocation PACA_COOKED = LootTableList.register(new ResourceLocation(Reference.MODID, "paca_cooked"));
 	
 	//MEAT TYPES
 	public static final ResourceLocation SMALLMEAT = LootTableList.register(new ResourceLocation(Reference.MODID, "smallmeat_generic"));
 	public static final ResourceLocation SMALLMEAT_COOKED = LootTableList.register(new ResourceLocation(Reference.MODID, "smallmeat_cooked"));
 	public static final ResourceLocation LARGEMEAT = LootTableList.register(new ResourceLocation(Reference.MODID, "largemeat_generic"));
 	public static final ResourceLocation LARGEMEAT_COOKED = LootTableList.register(new ResourceLocation(Reference.MODID, "largemeat_cooked"));
-
+	public static final ResourceLocation BIRD_GENERIC = LootTableList.register(new ResourceLocation(Reference.MODID, "bird_generic"));
+	public static final ResourceLocation BIRD_COOKED = LootTableList.register(new ResourceLocation(Reference.MODID, "bird_cooked"));
+	
 	//BUTTERFLIES
 	
 }

@@ -27,14 +27,19 @@ item.dead_termite.name=Dead Termite
 item.acacia_buds.name=Acacia Buds
 item.nectar.name=Nectar
 
+item.caterpillar.name=Caterpillar
+item.caterpillar_cooked.name=Crispy Caterpillar
 
 item.small_wild_meat.name=Raw Small Wild Meat
 item.large_wild_meat.name=Raw Large Wild Meat
 item.small_wild_meat_cooked.name=Cooked Small Wild Meat
 item.large_wild_meat_cooked.name=Cooked Large Wild Meat
+item.paca_thigh.name=Raw Paca Thigh
+item.paca_thigh_cooked.name=Cooked Paca Thigh
 
 
 item.bilbyscarf.name=Bilby Tail
+item.armadilloplate.name=Armadillo Plate
 
 
 tile.papyrus.name=Papyrus Reeds

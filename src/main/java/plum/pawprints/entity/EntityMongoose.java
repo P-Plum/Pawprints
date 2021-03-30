@@ -6,12 +6,15 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Sets;
 
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackMelee;
 import net.minecraft.entity.ai.EntityAIFollowParent;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILeapAtTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMate;
@@ -63,8 +66,11 @@ public class EntityMongoose extends EntityAnimal implements IAnimatable
 	@Override
 	protected void initEntityAI()
 	{
+		//Neutrality
+        this.tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, true));
+        this.targetTasks.addTask(0, new EntityAIHurtByTarget(this, true, new Class[0]));
+		
 		this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIPanic(this, 2.0D));
         this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.0D));
         this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6F));
         this.tasks.addTask(4, new EntityAILookIdle(this));
@@ -135,10 +141,52 @@ public class EntityMongoose extends EntityAnimal implements IAnimatable
 		return false;
 	}
 	
-	public boolean attackEntityAsMob(Entity entityIn)
-    {
-        return entityIn.attackEntityFrom(DamageSource.causeMobDamage(this), 1.0F);
-    }
+	//For attacking the player
+	@Override
+	public boolean attackEntityAsMob(Entity entityIn) {
+		float f = (float) this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).getAttributeValue();
+		int i = 0;
+
+		if (entityIn instanceof EntityLivingBase) {
+			f += EnchantmentHelper.getModifierForCreature(this.getHeldItemMainhand(), ((EntityLivingBase) entityIn).getCreatureAttribute());
+			i += EnchantmentHelper.getKnockbackModifier(this);
+		}
+
+		boolean flag = entityIn.attackEntityFrom(DamageSource.causeMobDamage(this), f);
+
+		if (flag) {
+			if (i > 0 && entityIn instanceof EntityLivingBase) {
+				((EntityLivingBase) entityIn).knockBack(this, i * 0.5F, MathHelper.sin(this.rotationYaw * 0.017453292F), (-MathHelper.cos(this.rotationYaw * 0.017453292F)));
+				this.motionX *= 0.6D;
+				this.motionZ *= 0.6D;
+			}
+
+			int j = EnchantmentHelper.getFireAspectModifier(this);
+
+			if (j > 0) {
+				entityIn.setFire(j * 4);
+			}
+
+			if (entityIn instanceof EntityPlayer) {
+				EntityPlayer entityplayer = (EntityPlayer) entityIn;
+				ItemStack itemstack = this.getHeldItemMainhand();
+				ItemStack itemstack1 = entityplayer.isHandActive() ? entityplayer.getActiveItemStack() : ItemStack.EMPTY;
+
+				if (!itemstack.isEmpty() && !itemstack1.isEmpty() && itemstack.getItem().canDisableShield(itemstack, itemstack1, entityplayer, this) && itemstack1.getItem().isShield(itemstack1, entityplayer)) {
+					float f1 = 0.25F + EnchantmentHelper.getEfficiencyModifier(this) * 0.05F;
+
+					if (this.rand.nextFloat() < f1) {
+						entityplayer.getCooldownTracker().setCooldown(itemstack1.getItem(), 100);
+						this.world.setEntityState(entityplayer, (byte) 30);
+					}
+				}
+			}
+
+			this.applyEnchantments(this, entityIn);
+		}
+
+		return flag;
+	}
 
 	public boolean canMateWith(EntityAnimal otherAnimal)
     {

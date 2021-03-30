@@ -61,7 +61,7 @@ public class EntityBilby extends EntityAnimal implements IAnimatable
 	@Override
 	protected void initEntityAI()
 	{
-		if(this.isDaytime() == false)
+		if(!this.isDaytime())
 		{
 			
 			this.tasks.addTask(0, new EntityAISwimming(this));
@@ -164,12 +164,12 @@ public class EntityBilby extends EntityAnimal implements IAnimatable
 	
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
-    	if(this.isDaytime() == true)
+    	if(this.isDaytime())
 		{	
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("sleep", true));
             return PlayState.CONTINUE;
 			
-		} if(this.isDaytime() == false) {
+		} if(!this.isDaytime()) {
 				
 			if(event.isMoving())
 				{

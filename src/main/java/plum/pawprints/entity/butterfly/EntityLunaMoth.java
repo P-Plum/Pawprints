@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
@@ -86,6 +87,11 @@ public class EntityLunaMoth extends EntityAnimal
 	public EntityAgeable createChild(EntityAgeable ageable) {
 		EntityLunaMoth child = new EntityLunaMoth(this.world);
 		return child;
+	}
+	
+	@Override
+	public boolean canBeLeashedTo(EntityPlayer player) {
+		return false;
 	}
 	
 	@Override

@@ -69,6 +69,11 @@ public class EntityTenrec extends EntityAnimal implements IAnimatable
         this.tasks.addTask(5, new EntityAITempt(this, 1.25D, false, TEMPTATION_ITEMS));
 	}
 	
+	public void onCollideWithPlayer(final EntityPlayer entityIn)
+    {
+        entityIn.attackEntityFrom(new DamageSource("tenrec"), 0.5f);
+    }
+	
 	//Beyond this point -- Related to variant code
 	
 	public void writeEntityToNBT(NBTTagCompound compound)

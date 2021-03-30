@@ -1,0 +1,26 @@
+{
+  "minecraft:recipes/misc/coal": {
+    "criteria": {
+      "has_the_recipe": "2021-03-30 13:21:51 +1100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2021-03-30 13:22:30 +1100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/coal_block": {
+    "criteria": {
+      "has_at_least_9_coal": "2021-03-30 13:21:51 +1100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "plains": "2021-03-30 13:21:20 +1100"
+    },
+    "done": false
+  }
+}

@@ -135,9 +135,9 @@ public class EntityLowlandPaca extends EntityAnimal implements IAnimatable
 	{		
 		if(this.isBurning())
 		{
-			return LootTableHandler.LARGEMEAT_COOKED;
+			return LootTableHandler.PACA_COOKED;
 		} else {
-			return LootTableHandler.LARGEMEAT;
+			return LootTableHandler.PACA_GENERIC;
 		}
 	}
 	
