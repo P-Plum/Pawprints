@@ -71,4 +71,12 @@ public class PawprintsGenConfig {
 	@Config.Name("Stinkhorn Fungus world generation")
     @Comment("Enables natural generation of Stinkhorn Fungus.")
     public static boolean enableStinkhorn = true;
+	
+	@Config.Name("Termite Mound structure spawns")
+    @Config.Comment("Enables natural spawning of Termite Mound structure.")
+	public static boolean moundSpawns = true;
+	
+	@Config.Name("Termite Mound structure generation probability")
+    @Config.Comment("Probability for spawning Termite Mound structure. Lower number means a higher chance to spawn.")
+	public static int moundRate = 90;
 }

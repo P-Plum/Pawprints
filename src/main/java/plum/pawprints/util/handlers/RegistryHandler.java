@@ -6,10 +6,12 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import plum.pawprints.init.BlockInit;
 import plum.pawprints.init.EntityInit;
 import plum.pawprints.init.ItemInit;
 import plum.pawprints.util.interfaces.IHasModel;
+import plum.pawprints.world.gen.WorldGenCustomStructure;
 
 @EventBusSubscriber
 public class RegistryHandler
@@ -57,5 +59,6 @@ public class RegistryHandler
 	public static void preInitRegistries()
 	{
 		EntityInit.registerEntities();
+		GameRegistry.registerWorldGenerator(new WorldGenCustomStructure(), 0);
 	}
 }

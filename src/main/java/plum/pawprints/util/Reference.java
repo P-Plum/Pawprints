@@ -34,4 +34,5 @@ public class Reference
 	public static final int ENTITY_LUNAMOTH = 141;
 	
 	public static final int PAPYRUS = 180;
+	public static final int BILBYPLUSH = 181;
 }

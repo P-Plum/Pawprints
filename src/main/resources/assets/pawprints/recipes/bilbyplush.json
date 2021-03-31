@@ -1,0 +1,26 @@
+{
+	"type": "minecraft:crafting_shaped",
+    "pattern": [
+        "## ",
+        "#WN",
+        " R "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:light_gray_wool"
+        },
+        "W": {
+            "item": "minecraft:white_wool"
+        },
+        "N": {
+            "item": "pawprints:bilbyscarf"
+        },
+        "R": {
+            "item": "pawprints:sewingneedle"
+        }
+    },
+    "result": {
+        "item": "pawprints:bilbyplush",
+        "count": 1
+    }
+}

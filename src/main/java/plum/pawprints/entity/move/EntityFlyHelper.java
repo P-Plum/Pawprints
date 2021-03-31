@@ -4,7 +4,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.util.math.MathHelper;
-import plum.pawprints.entity.EntityBird;
+import plum.pawprints.entity.base.EntityBird;
 
 public class EntityFlyHelper extends EntityMoveHelper
 {

@@ -5,7 +5,6 @@ import javax.annotation.Nullable;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
@@ -13,17 +12,15 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.common.EnumPlantType;
-import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import plum.pawprints.main;
 import plum.pawprints.init.BlockInit;
+import plum.pawprints.util.interfaces.IHasModel;
 
-public class BlockPapyrus extends BlockBase implements IPlantable {
+public class BlockPapyrus extends BlockBase implements IHasModel {
 	
 	public static final AxisAlignedBB PAPYRUS_AABB = new AxisAlignedBB(0, 0, 0, 1D, 2D, 1D);
-	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 15);
 	public static final Block block = null;
 
 	public BlockPapyrus(String name) {
@@ -70,16 +67,4 @@ public class BlockPapyrus extends BlockBase implements IPlantable {
     {
         return NULL_AABB;
     }
-
-	@Override
-	public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public IBlockState getPlant(IBlockAccess world, BlockPos pos) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

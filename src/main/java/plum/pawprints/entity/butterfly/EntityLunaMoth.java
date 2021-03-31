@@ -13,10 +13,11 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import plum.pawprints.entity.base.EntityButterfly;
 import plum.pawprints.init.ItemInit;
 import plum.pawprints.util.handlers.LootTableHandler;
 
-public class EntityLunaMoth extends EntityAnimal
+public class EntityLunaMoth extends EntityButterfly
 {	
 	
 	private BlockPos spawnPosition;
