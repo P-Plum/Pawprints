@@ -8,25 +8,23 @@ import net.minecraft.item.ItemBlock;
 import plum.pawprints.main;
 import plum.pawprints.init.BlockInit;
 import plum.pawprints.init.ItemInit;
-import plum.pawprints.util.interfaces.IHasModel;
 
-public class BlockBase extends Block implements IHasModel
+public class BlockBase extends Block
 {
 	public BlockBase(String name, Material material, CreativeTabs tab) 
 	{
 		super(material);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setCreativeTab(tab);
+		setCreativeTab(main.itemsblockstab);
 		
 		BlockInit.BLOCKS.add(this);
 		ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(name));
 	}
 	
-	@Override
 	public void registerModels() 
 	{
-		main.proxy.registerModel(Item.getItemFromBlock(this), 0);
+		main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory");
 	}
 
 }

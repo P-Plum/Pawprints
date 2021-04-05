@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-public class ItemCrispyCaterpillar extends ItemCustomFood {
+public class ItemCrispyCaterpillar extends ItemFoodBase {
 
 	public ItemCrispyCaterpillar(String name, int amount, boolean isWolfFood) {
 		super(name, amount, isWolfFood);

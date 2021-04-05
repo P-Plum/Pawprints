@@ -14,6 +14,16 @@ import plum.pawprints.entity.EntityQuokka;
 import plum.pawprints.entity.EntityTenrec;
 import plum.pawprints.entity.EntityTermite;
 import plum.pawprints.entity.butterfly.EntityLunaMoth;
+import plum.pawprints.entity.nudibranch.EntityNudibranchAnnae;
+import plum.pawprints.entity.nudibranch.EntityNudibranchAnnulata;
+import plum.pawprints.entity.nudibranch.EntityNudibranchBullocki;
+import plum.pawprints.entity.nudibranch.EntityNudibranchCristata;
+import plum.pawprints.entity.nudibranch.EntityNudibranchKuniei;
+import plum.pawprints.entity.nudibranch.EntityNudibranchKuroshimae;
+import plum.pawprints.entity.nudibranch.EntityNudibranchPacifica;
+import plum.pawprints.entity.nudibranch.EntityNudibranchParva;
+import plum.pawprints.entity.nudibranch.EntityNudibranchRuthae;
+import plum.pawprints.entity.nudibranch.EntityNudibranchSinuata;
 import plum.pawprints.entity.render.RenderAmericanPika;
 import plum.pawprints.entity.render.RenderBilby;
 import plum.pawprints.entity.render.RenderFerretBadger;
@@ -27,6 +37,16 @@ import plum.pawprints.entity.render.RenderQuokka;
 import plum.pawprints.entity.render.RenderTenrec;
 import plum.pawprints.entity.render.RenderTermite;
 import plum.pawprints.entity.render.butterfly.RenderLunaMoth;
+import plum.pawprints.entity.render.nudibranch.RenderNudibranchAnnae;
+import plum.pawprints.entity.render.nudibranch.RenderNudibranchAnnulata;
+import plum.pawprints.entity.render.nudibranch.RenderNudibranchBullocki;
+import plum.pawprints.entity.render.nudibranch.RenderNudibranchCristata;
+import plum.pawprints.entity.render.nudibranch.RenderNudibranchKuniei;
+import plum.pawprints.entity.render.nudibranch.RenderNudibranchKuroshimae;
+import plum.pawprints.entity.render.nudibranch.RenderNudibranchPacifica;
+import plum.pawprints.entity.render.nudibranch.RenderNudibranchParva;
+import plum.pawprints.entity.render.nudibranch.RenderNudibranchRuthae;
+import plum.pawprints.entity.render.nudibranch.RenderNudibranchSinuata;
 
 public class RenderHandler
 {
@@ -50,6 +70,16 @@ public class RenderHandler
 		RenderingRegistry.registerEntityRenderingHandler(EntityLunaMoth.class, RenderLunaMoth::new);
 		
 		//Nudibranch
+		RenderingRegistry.registerEntityRenderingHandler(EntityNudibranchAnnae.class, RenderNudibranchAnnae::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityNudibranchSinuata.class, RenderNudibranchSinuata::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityNudibranchAnnulata.class, RenderNudibranchAnnulata::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityNudibranchBullocki.class, RenderNudibranchBullocki::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityNudibranchKuniei.class, RenderNudibranchKuniei::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityNudibranchKuroshimae.class, RenderNudibranchKuroshimae::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityNudibranchCristata.class, RenderNudibranchCristata::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityNudibranchPacifica.class, RenderNudibranchPacifica::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityNudibranchParva.class, RenderNudibranchParva::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityNudibranchRuthae.class, RenderNudibranchRuthae::new);
 	}
 }
 

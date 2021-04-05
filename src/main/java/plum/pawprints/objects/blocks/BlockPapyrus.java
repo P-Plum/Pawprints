@@ -16,9 +16,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import plum.pawprints.main;
 import plum.pawprints.init.BlockInit;
-import plum.pawprints.util.interfaces.IHasModel;
 
-public class BlockPapyrus extends BlockBase implements IHasModel {
+public class BlockPapyrus extends BlockBase {
 	
 	public static final AxisAlignedBB PAPYRUS_AABB = new AxisAlignedBB(0, 0, 0, 1D, 2D, 1D);
 	public static final Block block = null;
@@ -26,6 +25,8 @@ public class BlockPapyrus extends BlockBase implements IHasModel {
 	public BlockPapyrus(String name) {
 		super(name, Material.PLANTS, main.plantstab);
 		this.setSoundType(SoundType.PLANT);
+		
+		setCreativeTab(main.plantstab);
 	}
 	
 	@Override

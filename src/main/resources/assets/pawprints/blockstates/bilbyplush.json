@@ -1,9 +1,22 @@
 {
-    "variants":
-    {
-        "normal":
-        {
-            "model": "pawprints:bilbyplush"
-        }
+  "variants": {
+    "normal": {
+      "model": "pawprints:bilbyplush"
+    },
+    "facing=north": {
+      "model": "pawprints:bilbyplush"
+    },
+    "facing=east": {
+      "model": "pawprints:bilbyplush",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "pawprints:bilbyplush",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pawprints:bilbyplush",
+      "y": 270
     }
+  }
 }

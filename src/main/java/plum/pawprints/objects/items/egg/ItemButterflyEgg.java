@@ -22,7 +22,16 @@ public class ItemButterflyEgg extends ItemBase {
 	@Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer player, EnumHand hand)
     {
+		ItemStack itemstack = player.getHeldItem(hand);
+		
+		if (worldIn.isRemote)
+        {
+            return new ActionResult<ItemStack>(EnumActionResult.PASS, itemstack);
+        } else {
+		
     	ItemStack item = player.getHeldItem(hand);
+    	
+    	//Entity spawn list ... clean up later for sure
     	EntityLunaMoth entity = new EntityLunaMoth(worldIn);
     	EntityBilby entitytwo = new EntityBilby(worldIn);
     	EntityGoAwayBird entitythree = new EntityGoAwayBird(worldIn);
@@ -48,5 +57,6 @@ public class ItemButterflyEgg extends ItemBase {
         	worldIn.spawnEntity(entitythree);
         	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
     	}
-    }
+     }
+  }
 }

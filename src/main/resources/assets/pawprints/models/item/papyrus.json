@@ -1,6 +1,7 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "pawprints:items/nectar"
-  }
+    "parent": "item/generated",
+    "textures":
+    {
+        "layer0": "pawprints:items/papyrus"
+    }
 }

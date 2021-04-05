@@ -41,26 +41,6 @@ public class ModelBilby extends AnimatedGeoModel<EntityBilby>
             root.setScaleX(0.5f);
             root.setScaleY(0.5f);
             root.setScaleZ(0.5f);
-            
-            IBone thigh1 = this.getAnimationProcessor().getBone("thigh1");
-            thigh1.setScaleX(0.5f);
-            thigh1.setScaleY(0.5f);
-            thigh1.setScaleZ(0.5f);
-            
-            IBone thigh2 = this.getAnimationProcessor().getBone("thigh2");
-            thigh2.setScaleX(0.5f);
-            thigh2.setScaleY(0.5f);
-            thigh2.setScaleZ(0.5f);
-            
-            IBone thigh3 = this.getAnimationProcessor().getBone("thigh3");
-            thigh3.setScaleX(0.5f);
-            thigh3.setScaleY(0.5f);
-            thigh3.setScaleZ(0.5f);
-            
-            IBone thigh4 = this.getAnimationProcessor().getBone("thigh4");
-            thigh4.setScaleX(0.5f);
-            thigh4.setScaleY(0.5f);
-            thigh4.setScaleZ(0.5f);
         }
     }
 }

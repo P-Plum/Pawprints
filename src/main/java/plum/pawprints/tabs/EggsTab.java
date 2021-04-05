@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import plum.pawprints.init.ItemInit;
 import plum.pawprints.util.Reference;
 
 public class EggsTab extends CreativeTabs {
@@ -19,7 +20,7 @@ public class EggsTab extends CreativeTabs {
 	@Override
     @SideOnly(Side.CLIENT)
     public ItemStack getTabIconItem() {
-    	return new ItemStack(Items.SPAWN_EGG);
+    	return new ItemStack(ItemInit.NUDIBRANCH_SPAWN);
     }
 	
 	

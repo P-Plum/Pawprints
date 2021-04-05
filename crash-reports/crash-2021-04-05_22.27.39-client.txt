@@ -1,0 +1,146 @@
+---- Minecraft Crash Report ----
+// On the bright side, I bought you a teddy bear!
+
+Time: 4/5/21 10:27 PM
+Description: Rendering entity in world
+
+java.lang.NullPointerException: Rendering entity in world
+	at plum.pawprints.entity.model.ModelBilby.setLivingAnimations(ModelBilby.java:46)
+	at plum.pawprints.entity.model.ModelBilby.setLivingAnimations(ModelBilby.java:1)
+	at software.bernie.geckolib3.model.AnimatedGeoModel.setLivingAnimations(AnimatedGeoModel.java:33)
+	at software.bernie.geckolib3.renderers.geo.GeoEntityRenderer.doRender(GeoEntityRenderer.java:135)
+	at software.bernie.geckolib3.renderers.geo.GeoEntityRenderer.doRender(GeoEntityRenderer.java:36)
+	at net.minecraft.client.renderer.entity.RenderManager.renderEntity(RenderManager.java:390)
+	at net.minecraft.client.renderer.entity.RenderManager.renderEntityStatic(RenderManager.java:374)
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:655)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorldPass(EntityRenderer.java:1400)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1312)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1115)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1209)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:442)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:25)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at plum.pawprints.entity.model.ModelBilby.setLivingAnimations(ModelBilby.java:46)
+	at plum.pawprints.entity.model.ModelBilby.setLivingAnimations(ModelBilby.java:1)
+	at software.bernie.geckolib3.model.AnimatedGeoModel.setLivingAnimations(AnimatedGeoModel.java:33)
+	at software.bernie.geckolib3.renderers.geo.GeoEntityRenderer.doRender(GeoEntityRenderer.java:135)
+	at software.bernie.geckolib3.renderers.geo.GeoEntityRenderer.doRender(GeoEntityRenderer.java:36)
+
+-- Entity being rendered --
+Details:
+	Entity Type: pawprints:bilby (plum.pawprints.entity.EntityBilby)
+	Entity ID: 104
+	Entity Name: entity.bilby.name
+	Entity's Exact location: 780.64, 4.00, 1035.27
+	Entity's Block location: World: (780,4,1035), Chunk: (at 12,0,11 in 48,64; contains blocks 768,0,1024 to 783,255,1039), Region: (1,2; contains chunks 32,64 to 63,95, blocks 512,0,1024 to 1023,255,1535)
+	Entity's Momentum: 0.00, 0.00, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+
+-- Renderer details --
+Details:
+	Assigned renderer: plum.pawprints.entity.render.RenderBilby@68efc230
+	Location: -0.06,1.00,0.79 - World: (-1,1,0), Chunk: (at 15,0,0 in -1,0; contains blocks -16,0,0 to -1,255,15), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Rotation: 0.0
+	Delta: 0.70000726
+Stacktrace:
+	at net.minecraft.client.renderer.entity.RenderManager.renderEntity(RenderManager.java:390)
+	at net.minecraft.client.renderer.entity.RenderManager.renderEntityStatic(RenderManager.java:374)
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:655)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorldPass(EntityRenderer.java:1400)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1312)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player74'/54, l='MpServer', x=780.70, y=3.00, z=1034.48]]
+	Chunk stats: MultiplayerChunkCache: 81, 81
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (808,4,987), Chunk: (at 8,0,11 in 50,61; contains blocks 800,0,976 to 815,255,991), Region: (1,1; contains chunks 32,32 to 63,63, blocks 512,0,512 to 1023,255,1023)
+	Level time: 240556 game time, 13000 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 40 total; [EntityNudibranchAnnae['entity.nudibranchannae.name'/6, l='MpServer', x=777.35, y=1.00, z=1035.69], EntityNudibranchAnnulata['entity.nudibranchannulata.name'/7, l='MpServer', x=775.93, y=1.00, z=1035.60], EntityNudibranchKuroshimae['entity.nudibranchkuroshimae.name'/8, l='MpServer', x=776.80, y=1.00, z=1036.40], EntityNudibranchCristata['entity.nudibranchcristata.name'/9, l='MpServer', x=775.19, y=1.00, z=1036.52], EntityNudibranchAnnulata['entity.nudibranchannulata.name'/10, l='MpServer', x=775.47, y=1.00, z=1036.50], EntityNudibranchKuniei['entity.nudibranchkuniei.name'/11, l='MpServer', x=775.70, y=1.00, z=1036.75], EntityNudibranchAnnae['entity.nudibranchannae.name'/12, l='MpServer', x=776.17, y=1.00, z=1036.32], EntityNudibranchAnnulata['entity.nudibranchannulata.name'/13, l='MpServer', x=776.17, y=1.00, z=1035.70], EntityNudibranchParva['entity.nudibranchparva.name'/14, l='MpServer', x=776.30, y=1.00, z=1036.02], EntityNudibranchAnnae['entity.nudibranchannae.name'/15, l='MpServer', x=777.31, y=1.00, z=1036.19], EntityNudibranchKuroshimae['entity.nudibranchkuroshimae.name'/16, l='MpServer', x=776.47, y=1.00, z=1036.28], EntityNudibranchCristata['entity.nudibranchcristata.name'/17, l='MpServer', x=777.04, y=1.00, z=1035.91], EntityNudibranchKuroshimae['entity.nudibranchkuroshimae.name'/18, l='MpServer', x=776.23, y=1.00, z=1037.17], EntityNudibranchKuniei['entity.nudibranchkuniei.name'/19, l='MpServer', x=776.82, y=1.00, z=1035.98], EntityNudibranchBullocki['entity.nudibranchbullocki.name'/20, l='MpServer', x=776.18, y=1.00, z=1035.39], EntityBilby['entity.bilby.name'/84, l='MpServer', x=780.64, y=4.00, z=1035.27], EntityNudibranchBullocki['entity.nudibranchbullocki.name'/21, l='MpServer', x=777.33, y=1.00, z=1036.90], EntityNudibranchBullocki['entity.nudibranchbullocki.name'/22, l='MpServer', x=776.60, y=1.00, z=1037.31], EntityBilby['entity.bilby.name'/86, l='MpServer', x=783.60, y=4.00, z=1035.95], EntityNudibranchBullocki['entity.nudibranchbullocki.name'/23, l='MpServer', x=775.95, y=1.00, z=1036.61], EntityNudibranchCristata['entity.nudibranchcristata.name'/24, l='MpServer', x=775.94, y=1.00, z=1035.90], EntityBilby['entity.bilby.name'/88, l='MpServer', x=783.45, y=4.00, z=1035.24], EntityNudibranchBullocki['entity.nudibranchbullocki.name'/25, l='MpServer', x=776.57, y=1.00, z=1036.58], EntityNudibranchCristata['entity.nudibranchcristata.name'/26, l='MpServer', x=776.20, y=1.00, z=1036.87], EntityBilby['entity.bilby.name'/90, l='MpServer', x=783.50, y=4.00, z=1034.50], EntityNudibranchBullocki['entity.nudibranchbullocki.name'/27, l='MpServer', x=775.39, y=1.00, z=1037.00], EntityNudibranchPacifica['entity.nudibranchpacifica.name'/28, l='MpServer', x=776.21, y=1.00, z=1035.10], EntityBilby['entity.bilby.name'/92, l='MpServer', x=780.83, y=4.00, z=1032.36], EntityNudibranchKuniei['entity.nudibranchkuniei.name'/29, l='MpServer', x=776.99, y=1.00, z=1036.94], EntityNudibranchKuroshimae['entity.nudibranchkuroshimae.name'/30, l='MpServer', x=776.84, y=1.00, z=1035.66], EntityBilby['entity.bilby.name'/94, l='MpServer', x=782.50, y=4.00, z=1032.50], EntityNudibranchCristata['entity.nudibranchcristata.name'/31, l='MpServer', x=775.91, y=1.00, z=1036.38], EntityNudibranchSinuata['entity.nudibranchsinuata.name'/32, l='MpServer', x=775.12, y=1.00, z=1036.12], EntityBilby['entity.bilby.name'/96, l='MpServer', x=782.50, y=4.00, z=1032.50], EntityNudibranchBullocki['entity.nudibranchbullocki.name'/33, l='MpServer', x=776.68, y=1.00, z=1036.98], EntityBilby['entity.bilby.name'/98, l='MpServer', x=782.01, y=4.00, z=1034.04], EntityBilby['entity.bilby.name'/100, l='MpServer', x=781.49, y=4.00, z=1033.35], EntityBilby['entity.bilby.name'/102, l='MpServer', x=781.50, y=4.00, z=1034.50], EntityBilby['entity.bilby.name'/104, l='MpServer', x=780.64, y=4.00, z=1035.27], EntityPlayerSP['Player74'/54, l='MpServer', x=780.70, y=3.00, z=1034.48]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:461)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2889)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:463)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:25)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.8.0_251, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 258431608 bytes (246 MB) / 526385152 bytes (502 MB) up to 935854080 bytes (892 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.5.2846 6 mods loaded, 6 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID        | Version      | Source                                              | Signature |
+	|:------ |:--------- |:------------ |:--------------------------------------------------- |:--------- |
+	| LCHIJA | minecraft | 1.12.2       | minecraft.jar                                       | None      |
+	| LCHIJA | mcp       | 9.42         | minecraft.jar                                       | None      |
+	| LCHIJA | FML       | 8.0.99.99    | forgeSrc-1.12.2-14.23.5.2846-PROJECT(Pawprints).jar | None      |
+	| LCHIJA | forge     | 14.23.5.2846 | forgeSrc-1.12.2-14.23.5.2846-PROJECT(Pawprints).jar | None      |
+	| LCHIJA | pawprints | 1.0.0        | bin                                                 | None      |
+	| LCHIJA | geckolib3 | 3.0.0        | forge-1.12.2-geckolib-3.0.0-beta.7.jar              | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ' Vendor: 'Intel' Version: '3.1.0 - Build 9.17.10.3347' Renderer: 'Intel(R) HD Graphics 2000'
+	Launched Version: 1.12.2
+	LWJGL: 2.9.4
+	OpenGL: Intel(R) HD Graphics 2000 GL version 3.1.0 - Build 9.17.10.3347, Intel
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 4x Intel(R) Core(TM) i5-2400 CPU @ 3.10GHz

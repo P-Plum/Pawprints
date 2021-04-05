@@ -63,7 +63,6 @@ public class EntityBilby extends EntityAnimal implements IAnimatable
 	{
 		if(!this.isDaytime())
 		{
-			
 			this.tasks.addTask(0, new EntityAISwimming(this));
 	        this.tasks.addTask(2, new EntityAIPanic(this, 2.0D));
 	        this.tasks.addTask(3, new EntityAIMate(this, 1.0D));
@@ -75,11 +74,7 @@ public class EntityBilby extends EntityAnimal implements IAnimatable
 	        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6F));
 	        this.tasks.addTask(8, new EntityAILookIdle(this));
 	        this.targetTasks.addTask(1, new EntityAINearestAttackableTarget<EntityTermite>(this, EntityTermite.class, true));
-			
-		} if(this.isDaytime() == true) {
-	        
-	        this.tasks.addTask(0, new EntityAISwimming(this));
-		
+		} else if(this.isDaytime()) {
 		}
 	}
 	

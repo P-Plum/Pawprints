@@ -1,8 +1,10 @@
 package plum.pawprints.util.handlers;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -10,7 +12,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import plum.pawprints.init.BlockInit;
 import plum.pawprints.init.EntityInit;
 import plum.pawprints.init.ItemInit;
-import plum.pawprints.util.interfaces.IHasModel;
 import plum.pawprints.world.gen.WorldGenCustomStructure;
 
 @EventBusSubscriber
@@ -27,27 +28,23 @@ public class RegistryHandler
 	{
 		event.getRegistry().registerAll(BlockInit.BLOCKS.toArray(new Block[0]));
 		TileEntityHandler.registerTileEntities();
-		
-		
-		//Individual tile entity renderers
-		//ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPapyrus.class, new PapyrusRenderer());
 	}
 	
 	@SubscribeEvent
 	public static void onModelRegister(ModelRegistryEvent event)
 	{
 		
-		//Individual item getters for blocks
-		//main.proxy.registerModel(Item.getItemFromBlock(BlockInit.PAPYRUS), 0);
-		
 		
 		for(Item item : ItemInit.ITEMS)
 		{
-			if(item instanceof IHasModel)
-			{
-				((IHasModel)item).registerModels();
-			}
+			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 		}
+		
+		for(Block block : BlockInit.BLOCKS)
+		{
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+		}
+		
 		RenderHandler.registerEntityRenders();
 	}
 	
