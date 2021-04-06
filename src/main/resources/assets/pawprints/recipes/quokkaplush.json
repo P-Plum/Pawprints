@@ -1,0 +1,25 @@
+{
+	"type": "minecraft:crafting_shaped",
+    "pattern": [
+        "AA ",
+        "ADD",
+        " C "
+    ],
+    "key": {
+        "A": {
+            "item": "minecraft:wool",
+            "data": 12
+        },
+        "D": {
+            "item": "minecraft:wool",
+            "data": 7
+        },
+        "C": {
+            "item": "pawprints:sewingneedle"
+        }
+    },
+    "result": {
+        "item": "pawprints:quokkaplush",
+        "count": 1
+    }
+}

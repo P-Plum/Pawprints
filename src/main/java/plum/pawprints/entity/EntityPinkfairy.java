@@ -128,9 +128,9 @@ public class EntityPinkfairy extends EntityAnimal implements IAnimatable
 	{		
 		if(this.isBurning())
 		{
-			return LootTableHandler.SMALLMEAT_COOKED;
+			return LootTableHandler.PINKFAIRY_COOKED;
 		} else {
-			return LootTableHandler.SMALLMEAT;
+			return LootTableHandler.PINKFAIRY_GENERIC;
 		}
 	}
 	

@@ -20,15 +20,15 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import plum.pawprints.main;
 
-public class BlockBilbyPlush extends BlockBase {
+public class BlockPlush extends BlockBase {
 	
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 
 	
-	public static final AxisAlignedBB BILBY_AABB = new AxisAlignedBB(0, 0, 0, 1D, 0.5D, 1D);
+	public static final AxisAlignedBB PLUSH_AABB = new AxisAlignedBB(0, 0, 0, 1D, 0.7D, 1D);
 	public static final Block block = null;
 
-	public BlockBilbyPlush(String name) {
+	public BlockPlush(String name) {
 		super(name, Material.CLOTH, main.plantstab);
 		this.setSoundType(SoundType.CLOTH);
 		this.setHardness(0.75F);
@@ -39,7 +39,7 @@ public class BlockBilbyPlush extends BlockBase {
 		@Override
 		public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
 		{
-			return BILBY_AABB;
+			return PLUSH_AABB;
 		}
 
 		@SideOnly(Side.CLIENT)

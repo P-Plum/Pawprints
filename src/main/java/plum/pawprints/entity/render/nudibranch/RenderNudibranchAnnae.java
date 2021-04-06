@@ -26,5 +26,6 @@ public class RenderNudibranchAnnae extends GeoEntityRenderer<EntityNudibranchAnn
 	@Override
 	public void renderEarly(EntityNudibranchAnnae animatable, float ticks, float red, float green, float blue, float partialTicks)
 	{
+		GlStateManager.scale(0.25F, 0.25F, 0.25F);
 	}
 }

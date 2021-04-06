@@ -1,0 +1,33 @@
+{
+	"type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BD ",
+        "AEA",
+        " C "
+    ],
+    "key": {
+        "A": {
+            "item": "minecraft:wool",
+            "data": 12
+        },
+        "D": {
+            "item": "minecraft:wool",
+            "data": 7
+        },
+        "B": {
+            "item": "minecraft:wool",
+            "data": 4
+        },
+        "E": {
+            "item": "minecraft:wool",
+            "data": 1
+        },
+        "C": {
+            "item": "pawprints:sewingneedle"
+        }
+    },
+    "result": {
+        "item": "pawprints:lizardplush",
+        "count": 1
+    }
+}

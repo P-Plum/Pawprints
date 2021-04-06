@@ -209,9 +209,9 @@ public class EntityMongoose extends EntityAnimal implements IAnimatable
 	{		
 		if(this.isBurning())
 		{
-			return LootTableHandler.SMALLMEAT_COOKED;
+			return LootTableHandler.FUR_SMALLMEAT_COOKED;
 		} else {
-			return LootTableHandler.SMALLMEAT;
+			return LootTableHandler.FUR_SMALLMEAT;
 		}
 	}
 	

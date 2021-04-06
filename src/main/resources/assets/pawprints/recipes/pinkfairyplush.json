@@ -1,0 +1,28 @@
+{
+	"type": "minecraft:crafting_shaped",
+    "pattern": [
+        " A ",
+        "BBD",
+        " C "
+    ],
+    "key": {
+        "B": {
+            "item": "minecraft:wool",
+            "data": 0
+        },
+        "D": {
+            "item": "minecraft:wool",
+            "data": 6
+        },
+        "A": {
+            "item": "pawprints:armadilloplate"
+        },
+        "C": {
+            "item": "pawprints:sewingneedle"
+        }
+    },
+    "result": {
+        "item": "pawprints:pinkfairyplush",
+        "count": 1
+    }
+}

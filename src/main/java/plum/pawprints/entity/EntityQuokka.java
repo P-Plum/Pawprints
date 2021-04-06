@@ -135,9 +135,9 @@ public class EntityQuokka extends EntityAnimal implements IAnimatable
 	{		
 		if(this.isBurning())
 		{
-			return LootTableHandler.LARGEMEAT_COOKED;
+			return LootTableHandler.FUR_LARGEMEAT_COOKED;
 		} else {
-			return LootTableHandler.LARGEMEAT;
+			return LootTableHandler.FUR_LARGEMEAT;
 		}
 	}
 	

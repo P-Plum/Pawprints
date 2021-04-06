@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "pawprints:mongooseplush"
+    },
+    "facing=north": {
+      "model": "pawprints:mongooseplush"
+    },
+    "facing=east": {
+      "model": "pawprints:mongooseplush",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "pawprints:mongooseplush",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pawprints:mongooseplush",
+      "y": 270
+    }
+  }
+}

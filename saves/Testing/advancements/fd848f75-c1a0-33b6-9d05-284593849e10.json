@@ -10,5 +10,11 @@
       "plains": "2021-04-05 11:16:44 +1000"
     },
     "done": false
+  },
+  "minecraft:story/root": {
+    "criteria": {
+      "crafting_table": "2021-04-06 10:47:14 +1000"
+    },
+    "done": true
   }
 }

@@ -1,5 +1,5 @@
 entity.bilby.name=Greater Bilby
-entity.pawprints.pinkfairy.name=Pink Fairy Armadillo
+entity.pinkfairy.name=Pink Fairy Armadillo
 entity.quokka.name=Quokka
 entity.nudibranchannae.name=Nudibranch - Chromodoris annae
 entity.nudibranchsinuata.name=Nudibranch - Ceratosoma sinuatum
@@ -95,7 +95,7 @@ tile.stinkhorn.name=Stinkhorn Fungus
 tile.bilbyplush.name=Bilby Plush
 tile.pinkfairyplush.name=Pink Fairy Armadillo Plush
 tile.quokkaplush.name=Quokka Plush
-tile.frilledplush.name=Frilled-neck Lizard Plush
+tile.lizardplush.name=Frilled-neck Lizard Plush
 tile.mongooseplush.name=Mongoose Plush
 
 

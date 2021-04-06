@@ -28,6 +28,17 @@
                             "count": 1
                         }
                     ]
+                },
+                {
+                    "type": "item",
+                    "weight": 50,
+                    "name": "pawprints:fur",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 1
+                        }
+                    ]
                 }
             ]
         }

@@ -21,6 +21,7 @@ public class ItemInit {
 	public static final Item ACACIA_BUDS = new ItemBase("acacia_buds");
 	public static final Item CATERPILLAR = new ItemBase("caterpillar");
 	public static final Item NECTAR = new ItemBase("nectar");
+	public static final Item FUR = new ItemBase("fur");
 	
 	//FOOD
 	public static final Item SMALL_WILD_MEAT = new ItemFoodBase("small_wild_meat", 1, true);
