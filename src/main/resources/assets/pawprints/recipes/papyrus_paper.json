@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+    "pattern": [
+        "YY"
+    ],
+    "key": {
+        "Y": {
+            "item": "pawprints:papyrus",
+            "data": 8
+        }
+    },
+    "result": {
+        "item": "minecraft:paper",
+        "count": 3
+    }
+}

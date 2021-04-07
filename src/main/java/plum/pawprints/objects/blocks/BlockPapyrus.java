@@ -3,21 +3,33 @@ package plum.pawprints.objects.blocks;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.Mirror;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import plum.pawprints.main;
 import plum.pawprints.init.BlockInit;
 
-public class BlockPapyrus extends BlockBase {
+public class BlockPapyrus extends BlockBase implements IPlantable {
+	
+	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	
 	public static final AxisAlignedBB PAPYRUS_AABB = new AxisAlignedBB(0, 0, 0, 1D, 2D, 1D);
 	public static final Block block = null;
@@ -27,6 +39,8 @@ public class BlockPapyrus extends BlockBase {
 		this.setSoundType(SoundType.PLANT);
 		
 		setCreativeTab(main.plantstab);
+		
+		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 	}
 	
 	@Override
@@ -68,4 +82,82 @@ public class BlockPapyrus extends BlockBase {
     {
         return NULL_AABB;
     }
+	
+	@Override
+	protected net.minecraft.block.state.BlockStateContainer createBlockState() {
+		return new net.minecraft.block.state.BlockStateContainer(this, new IProperty[]{FACING});
+	}
+
+	@Override
+	public IBlockState withRotation(IBlockState state, Rotation rot) {
+		return state.withProperty(FACING, rot.rotate((EnumFacing) state.getValue(FACING)));
+	}
+
+	@Override
+	public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
+		return state.withRotation(mirrorIn.toRotation((EnumFacing) state.getValue(FACING)));
+	}
+
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
+		return this.getDefaultState().withProperty(FACING, EnumFacing.getFront(meta));
+	}
+
+	@Override
+	public int getMetaFromState(IBlockState state) {
+		return ((EnumFacing) state.getValue(FACING)).getIndex();
+	}
+
+	@Override
+	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta,
+			EntityLivingBase placer) {
+		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+	}
+	
+	public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
+    {
+        IBlockState state = worldIn.getBlockState(pos.down());
+        Block block = state.getBlock();
+        if (block.canSustainPlant(state, worldIn, pos.down(), EnumFacing.UP, this)) return true;
+
+        if (block == this)
+        {
+            return true;
+        }
+        else if (block != Blocks.GRASS && block != Blocks.DIRT)
+        {
+            return false;
+        }
+        else
+        {
+            BlockPos blockpos = pos.down();
+
+            for (EnumFacing enumfacing : EnumFacing.Plane.HORIZONTAL)
+            {
+                IBlockState iblockstate = worldIn.getBlockState(blockpos.offset(enumfacing));
+
+                if (iblockstate.getMaterial() == Material.WATER || iblockstate.getBlock() == Blocks.FROSTED_ICE)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    }
+
+	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
+    {
+        return this.canPlaceBlockAt(worldIn, pos);
+    }
+
+	@Override
+	public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
+		return EnumPlantType.Beach;
+	}
+
+	@Override
+	public IBlockState getPlant(IBlockAccess world, BlockPos pos) {
+		return this.getDefaultState();
+	}
 }

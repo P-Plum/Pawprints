@@ -25,18 +25,6 @@ public class ClientProxy extends CommonProxy
     public static void registerRenders(final ModelRegistryEvent event) {
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	@Override
     public void preInit(FMLPreInitializationEvent e) {
         super.preInit(e);

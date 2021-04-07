@@ -1,9 +1,22 @@
 {
-    "variants":
-    {
-        "normal":
-        {
-            "model": "pawprints:papyrus"
-        }
+  "variants": {
+    "normal": {
+      "model": "pawprints:papyrus"
+    },
+    "facing=north": {
+      "model": "pawprints:papyrus"
+    },
+    "facing=east": {
+      "model": "pawprints:papyrus",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "pawprints:papyrus",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pawprints:papyrus",
+      "y": 270
     }
+  }
 }

@@ -9,7 +9,10 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import plum.pawprints.event.PawprintsEventHandler;
+import plum.pawprints.init.BlockInit;
+import plum.pawprints.objects.blocks.BlockPapyrus;
 import plum.pawprints.proxy.CommonProxy;
 import plum.pawprints.recipes.SmeltingRecipes;
 import plum.pawprints.tabs.EggsTab;
@@ -17,6 +20,7 @@ import plum.pawprints.tabs.ItemsBlocksTab;
 import plum.pawprints.tabs.PlantsTab;
 import plum.pawprints.util.Reference;
 import plum.pawprints.util.handlers.RegistryHandler;
+import plum.pawprints.world.gen.plant.PapyrusGenerator;
 import software.bernie.geckolib3.GeckoLib;
 
 @Mod(modid = Reference.MODID, name = Reference.MODNAME, version = Reference.VERSION)
@@ -44,6 +48,8 @@ public class main {
 		RegistryHandler.InitRegistries();
 	
 		SmeltingRecipes.init();
+		
+		GameRegistry.registerWorldGenerator(new PapyrusGenerator((BlockPapyrus) BlockInit.PAPYRUS), 1);
 	}
 	
 	@EventHandler
