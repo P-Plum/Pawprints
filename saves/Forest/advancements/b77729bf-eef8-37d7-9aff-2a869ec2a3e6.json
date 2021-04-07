@@ -1,0 +1,9 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "forest": "2021-04-07 19:49:58 +1000",
+      "river": "2021-04-07 19:50:06 +1000"
+    },
+    "done": false
+  }
+}

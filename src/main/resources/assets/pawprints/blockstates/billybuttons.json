@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "pawprints:billybuttons"
+    },
+    "facing=north": {
+      "model": "pawprints:billybuttons"
+    },
+    "facing=east": {
+      "model": "pawprints:billybuttons",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "pawprints:billybuttons",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pawprints:billybuttons",
+      "y": 270
+    }
+  }
+}

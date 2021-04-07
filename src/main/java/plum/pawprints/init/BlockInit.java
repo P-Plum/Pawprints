@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import plum.pawprints.objects.blocks.BlockAloeBulbillifera;
+import plum.pawprints.objects.blocks.BlockBillyButtons;
+import plum.pawprints.objects.blocks.BlockBush;
 import plum.pawprints.objects.blocks.BlockPapyrus;
 import plum.pawprints.objects.blocks.BlockPlush;
 
@@ -13,6 +16,9 @@ public class BlockInit
 	
 	//PLANTS
 	public static final Block PAPYRUS = new BlockPapyrus("papyrus");
+	public static final Block BUSH = new BlockBush("bush");
+	public static final Block ALOE_BULBILLIFERA = new BlockAloeBulbillifera("aloebulbillifera");
+	public static final Block BILLY_BUTTONS = new BlockBillyButtons("billybuttons");
 	
 	//PLUSHIES
 	public static final Block BILBYPLUSH = new BlockPlush("bilbyplush");

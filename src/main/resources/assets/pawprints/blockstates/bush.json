@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "pawprints:bush"
+    },
+    "facing=north": {
+      "model": "pawprints:bush"
+    },
+    "facing=east": {
+      "model": "pawprints:bush",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "pawprints:bush",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pawprints:bush",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "Bush",
+	"texture_size": [64, 64],
+	"textures": {
+		"1": "pawprints:block/bush"
+	},
+	"elements": [
+		{
+			"from": [-0.4, 0, 8],
+			"to": [14.6, 16, 8],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 3.75, 4], "texture": "#1"},
+				"east": {"uv": [0, 0, 0, 4], "texture": "#1"},
+				"south": {"uv": [3.75, 3.75, 7.5, 7.75], "texture": "#1"},
+				"west": {"uv": [0, 0, 0, 4], "texture": "#1"},
+				"up": {"uv": [3.75, 0, 0, 0], "texture": "#1"},
+				"down": {"uv": [3.75, 0, 0, 0], "texture": "#1"}
+			}
+		},
+		{
+			"from": [0.5, 0, 8],
+			"to": [15.5, 16, 8],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 4, 3.75, 8], "texture": "#1"},
+				"east": {"uv": [0, 0, 0, 4], "texture": "#1"},
+				"south": {"uv": [7.5, 7.5, 11.25, 11.5], "texture": "#1"},
+				"west": {"uv": [0, 0, 0, 4], "texture": "#1"},
+				"up": {"uv": [3.75, 0, 0, 0], "texture": "#1"},
+				"down": {"uv": [3.75, 0, 0, 0], "texture": "#1"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "plant",
+			"origin": [8, 8, 8],
+			"children": [0, 1]
+		}
+	]
+}

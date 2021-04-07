@@ -36,9 +36,15 @@ public class PapyrusGenerator implements IWorldGenerator {
             for (int i = 0; i < 64; ++i) {
                 blockpos = new BlockPos(x, i, z);
 
+                int j = 2 + random.nextInt(random.nextInt(3) + 1);
+                
                 if (world.isAirBlock(blockpos) && this.papyrus.canBlockStay(world, blockpos, this.state)) {
-                    EnumFacing face = EnumFacing.HORIZONTALS[random.nextInt(4)];
-                    world.setBlockState(blockpos, this.state.withProperty(BlockHorizontal.FACING, face));
+                	for (int k = 0; k < j; ++k)
+                    {
+                		EnumFacing face = EnumFacing.HORIZONTALS[random.nextInt(4)];
+                		world.setBlockState(blockpos, this.state.withProperty(BlockHorizontal.FACING, face));
+                		System.out.println("Spawned");
+                    }
                 }
             }
         }

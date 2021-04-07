@@ -12,6 +12,9 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import plum.pawprints.event.PawprintsEventHandler;
 import plum.pawprints.init.BlockInit;
+import plum.pawprints.objects.blocks.BlockAloeBulbillifera;
+import plum.pawprints.objects.blocks.BlockBillyButtons;
+import plum.pawprints.objects.blocks.BlockBush;
 import plum.pawprints.objects.blocks.BlockPapyrus;
 import plum.pawprints.proxy.CommonProxy;
 import plum.pawprints.recipes.SmeltingRecipes;
@@ -20,6 +23,9 @@ import plum.pawprints.tabs.ItemsBlocksTab;
 import plum.pawprints.tabs.PlantsTab;
 import plum.pawprints.util.Reference;
 import plum.pawprints.util.handlers.RegistryHandler;
+import plum.pawprints.world.gen.plant.AloeBulbilliferaGenerator;
+import plum.pawprints.world.gen.plant.BillyButtonsGenerator;
+import plum.pawprints.world.gen.plant.BushGenerator;
 import plum.pawprints.world.gen.plant.PapyrusGenerator;
 import software.bernie.geckolib3.GeckoLib;
 
@@ -50,6 +56,9 @@ public class main {
 		SmeltingRecipes.init();
 		
 		GameRegistry.registerWorldGenerator(new PapyrusGenerator((BlockPapyrus) BlockInit.PAPYRUS), 1);
+		GameRegistry.registerWorldGenerator(new AloeBulbilliferaGenerator((BlockAloeBulbillifera) BlockInit.ALOE_BULBILLIFERA), 1);
+		GameRegistry.registerWorldGenerator(new BushGenerator((BlockBush) BlockInit.BUSH), 1);
+		GameRegistry.registerWorldGenerator(new BillyButtonsGenerator((BlockBillyButtons) BlockInit.BILLY_BUTTONS), 1);
 	}
 	
 	@EventHandler
