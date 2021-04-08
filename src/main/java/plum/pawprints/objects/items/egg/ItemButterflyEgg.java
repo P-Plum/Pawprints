@@ -7,9 +7,13 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 import plum.pawprints.main;
-import plum.pawprints.entity.EntityBilby;
-import plum.pawprints.entity.EntityGoAwayBird;
+import plum.pawprints.entity.butterfly.EntityDaintyButterfly;
+import plum.pawprints.entity.butterfly.EntityDeathsMoth;
 import plum.pawprints.entity.butterfly.EntityLunaMoth;
+import plum.pawprints.entity.butterfly.EntityOldWorldButterfly;
+import plum.pawprints.entity.butterfly.EntityPaperKiteButterfly;
+import plum.pawprints.entity.butterfly.EntityPussMoth;
+import plum.pawprints.entity.butterfly.EntitySunsetMoth;
 import plum.pawprints.objects.items.ItemBase;
 
 public class ItemButterflyEgg extends ItemBase {
@@ -33,19 +37,27 @@ public class ItemButterflyEgg extends ItemBase {
     	
     	//Entity spawn list ... clean up later for sure
     	EntityLunaMoth entity = new EntityLunaMoth(worldIn);
-    	EntityBilby entitytwo = new EntityBilby(worldIn);
-    	EntityGoAwayBird entitythree = new EntityGoAwayBird(worldIn);
+    	EntityPussMoth entitytwo = new EntityPussMoth(worldIn);
+    	EntityDaintyButterfly entitythree = new EntityDaintyButterfly(worldIn);
+    	EntityDeathsMoth entityfour = new EntityDeathsMoth(worldIn);
+    	EntityOldWorldButterfly entityfive = new EntityOldWorldButterfly(worldIn);
+    	EntityPaperKiteButterfly entitysix = new EntityPaperKiteButterfly(worldIn);
+    	EntitySunsetMoth entityseven = new EntitySunsetMoth(worldIn);
     	
     	entity.setPosition(player.posX, player.posY, player.posZ);
     	entitytwo.setPosition(player.posX, player.posY, player.posZ);
     	entitythree.setPosition(player.posX, player.posY, player.posZ);
+    	entityfour.setPosition(player.posX, player.posY, player.posZ);
+    	entityfive.setPosition(player.posX, player.posY, player.posZ);
+    	entitysix.setPosition(player.posX, player.posY, player.posZ);
+    	entityseven.setPosition(player.posX, player.posY, player.posZ);
     	
     	if (!player.capabilities.isCreativeMode)
         {
     		item.shrink(1);
         }
     	
-    	switch(worldIn.rand.nextInt(3)) {
+    	switch(worldIn.rand.nextInt(7)) {
         default:
         case 0:
         	worldIn.spawnEntity(entity);
@@ -55,6 +67,18 @@ public class ItemButterflyEgg extends ItemBase {
         	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
         case 2:
         	worldIn.spawnEntity(entitythree);
+        	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
+        case 3:
+        	worldIn.spawnEntity(entityfour);
+        	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
+        case 4:
+        	worldIn.spawnEntity(entityfive);
+        	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
+        case 5:
+        	worldIn.spawnEntity(entitysix);
+        	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
+        case 6:
+        	worldIn.spawnEntity(entityseven);
         	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
     	}
      }

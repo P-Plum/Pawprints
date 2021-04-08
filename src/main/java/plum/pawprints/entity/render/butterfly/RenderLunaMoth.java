@@ -42,7 +42,7 @@ public class RenderLunaMoth extends RenderLiving<EntityLunaMoth>
 	@Override
     public float prepareScale(EntityLunaMoth entitylivingbaseIn, float partialTicks)
     {
-		GlStateManager.scale(0.5F, 0.5F, 0.5F);
+		GlStateManager.scale(0.35F, 0.35F, 0.35F);
         return super.prepareScale(entitylivingbaseIn, partialTicks);
     }
 }

@@ -26,7 +26,13 @@ import plum.pawprints.entity.EntityPinkfairy;
 import plum.pawprints.entity.EntityQuokka;
 import plum.pawprints.entity.EntityTenrec;
 import plum.pawprints.entity.EntityTermite;
+import plum.pawprints.entity.butterfly.EntityDaintyButterfly;
+import plum.pawprints.entity.butterfly.EntityDeathsMoth;
 import plum.pawprints.entity.butterfly.EntityLunaMoth;
+import plum.pawprints.entity.butterfly.EntityOldWorldButterfly;
+import plum.pawprints.entity.butterfly.EntityPaperKiteButterfly;
+import plum.pawprints.entity.butterfly.EntityPussMoth;
+import plum.pawprints.entity.butterfly.EntitySunsetMoth;
 import plum.pawprints.entity.nudibranch.EntityNudibranchAnnae;
 import plum.pawprints.entity.nudibranch.EntityNudibranchAnnulata;
 import plum.pawprints.entity.nudibranch.EntityNudibranchBullocki;
@@ -75,6 +81,12 @@ public class EntityInit {
 				
 				//Butterflies
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothluna"),EntityLunaMoth.class, "mothluna", id++, main.instance, 1024, 1, true, 10280346, 15790320);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothpuss"),EntityPussMoth.class, "mothpuss", id++, main.instance, 1024, 1, true, 13682623, 11114631);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothmadagascan"),EntitySunsetMoth.class, "mothmadagascan", id++, main.instance, 1024, 1, true, 2035200, 13037263);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothdeathshead"),EntityDeathsMoth.class, "mothdeathshead", id++, main.instance, 1024, 1, true, 16494417, 8018501);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "butterflypaperkite"),EntityPaperKiteButterfly.class, "butterflypaperkite", id++, main.instance, 1024, 1, true, 14606816, 3091491);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "butterflydainty"),EntityDaintyButterfly.class, "butterflydainty", id++, main.instance, 1024, 1, true, 3417632, 15262931);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "butterflyswallowtail"),EntityOldWorldButterfly.class, "butterflyswallowtail", id++, main.instance, 1024, 1, true, 15856060, 5066034);
 				
 				
 				//Spawns

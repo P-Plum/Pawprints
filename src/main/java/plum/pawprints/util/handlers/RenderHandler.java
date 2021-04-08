@@ -13,7 +13,13 @@ import plum.pawprints.entity.EntityPinkfairy;
 import plum.pawprints.entity.EntityQuokka;
 import plum.pawprints.entity.EntityTenrec;
 import plum.pawprints.entity.EntityTermite;
+import plum.pawprints.entity.butterfly.EntityDaintyButterfly;
+import plum.pawprints.entity.butterfly.EntityDeathsMoth;
 import plum.pawprints.entity.butterfly.EntityLunaMoth;
+import plum.pawprints.entity.butterfly.EntityOldWorldButterfly;
+import plum.pawprints.entity.butterfly.EntityPaperKiteButterfly;
+import plum.pawprints.entity.butterfly.EntityPussMoth;
+import plum.pawprints.entity.butterfly.EntitySunsetMoth;
 import plum.pawprints.entity.nudibranch.EntityNudibranchAnnae;
 import plum.pawprints.entity.nudibranch.EntityNudibranchAnnulata;
 import plum.pawprints.entity.nudibranch.EntityNudibranchBullocki;
@@ -36,7 +42,13 @@ import plum.pawprints.entity.render.RenderPinkfairy;
 import plum.pawprints.entity.render.RenderQuokka;
 import plum.pawprints.entity.render.RenderTenrec;
 import plum.pawprints.entity.render.RenderTermite;
+import plum.pawprints.entity.render.butterfly.RenderDaintyButterfly;
+import plum.pawprints.entity.render.butterfly.RenderDeathsMoth;
 import plum.pawprints.entity.render.butterfly.RenderLunaMoth;
+import plum.pawprints.entity.render.butterfly.RenderOldWorldButterfly;
+import plum.pawprints.entity.render.butterfly.RenderPaperKiteButterfly;
+import plum.pawprints.entity.render.butterfly.RenderPussMoth;
+import plum.pawprints.entity.render.butterfly.RenderSunsetMoth;
 import plum.pawprints.entity.render.nudibranch.RenderNudibranchAnnae;
 import plum.pawprints.entity.render.nudibranch.RenderNudibranchAnnulata;
 import plum.pawprints.entity.render.nudibranch.RenderNudibranchBullocki;
@@ -68,6 +80,12 @@ public class RenderHandler
 		
 		//Butterfly
 		RenderingRegistry.registerEntityRenderingHandler(EntityLunaMoth.class, RenderLunaMoth::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityPussMoth.class, RenderPussMoth::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityDeathsMoth.class, RenderDeathsMoth::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntitySunsetMoth.class, RenderSunsetMoth::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityDaintyButterfly.class, RenderDaintyButterfly::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityOldWorldButterfly.class, RenderOldWorldButterfly::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityPaperKiteButterfly.class, RenderPaperKiteButterfly::new);
 		
 		//Nudibranch
 		RenderingRegistry.registerEntityRenderingHandler(EntityNudibranchAnnae.class, RenderNudibranchAnnae::new);
