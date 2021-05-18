@@ -63,18 +63,19 @@ public class EntityBilby extends EntityAnimal implements IAnimatable
 	{
 		if(!this.isDaytime())
 		{
-			this.tasks.addTask(0, new EntityAISwimming(this));
-	        this.tasks.addTask(2, new EntityAIPanic(this, 2.0D));
-	        this.tasks.addTask(3, new EntityAIMate(this, 1.0D));
-			this.tasks.addTask(1, new EntityAILeapAtTarget(this, 0.2F));
-	        this.tasks.addTask(1, new EntityAIOcelotAttack(this));
-	        this.tasks.addTask(4, new EntityAIFollowParent(this, 1.25D));
-	        this.tasks.addTask(5, new EntityAITempt(this, 1.25D, false, TEMPTATION_ITEMS));
-	        this.tasks.addTask(6, new EntityAIWanderAvoidWater(this, 1.0D));
-	        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6F));
-	        this.tasks.addTask(8, new EntityAILookIdle(this));
-	        this.targetTasks.addTask(1, new EntityAINearestAttackableTarget<EntityTermite>(this, EntityTermite.class, true));
+			this.tasks.addTask(3, new EntityAISwimming(this));
+	        this.tasks.addTask(4, new EntityAIPanic(this, 2.0D));
+	        this.tasks.addTask(5, new EntityAIMate(this, 1.0D));
+			this.tasks.addTask(3, new EntityAILeapAtTarget(this, 0.2F));
+	        this.tasks.addTask(3, new EntityAIOcelotAttack(this));
+	        this.tasks.addTask(6, new EntityAIFollowParent(this, 1.25D));
+	        this.tasks.addTask(7, new EntityAITempt(this, 1.25D, false, TEMPTATION_ITEMS));
+	        this.tasks.addTask(8, new EntityAIWanderAvoidWater(this, 1.0D));
+	        this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6F));
+	        this.tasks.addTask(10, new EntityAILookIdle(this));
+	        this.targetTasks.addTask(11, new EntityAINearestAttackableTarget<EntityTermite>(this, EntityTermite.class, true));
 		} else if(this.isDaytime()) {
+			this.tasks.addTask(1, new EntityAISwimming(this));
 		}
 	}
 	
@@ -196,45 +197,4 @@ public class EntityBilby extends EntityAnimal implements IAnimatable
     {
         return this.factory;
     }
-	
-/*	@Override
-	public EntityAnimationManager getAnimationManager()
-	{
-		return manager;
-	}
-	
-	private EntityAnimationManager manager = new EntityAnimationManager();
-	private AnimationController controller = new EntityAnimationController(this, "moveController", 0, this::animationPredicate);
-	private <E extends EntityBilby> boolean animationPredicate(AnimationTestEvent<E> event)
-	{
-		if(this.isDaytime() == true)
-		{	
-			controller.setAnimation(new AnimationBuilder().addAnimation("sleep", true));
-			return true;
-			
-		} if(this.isDaytime() == false) {
-				
-			if(event.isWalking())
-				{
-					controller.setAnimation(new AnimationBuilder().addAnimation("walk").addAnimation("walk", true));
-					return true;
-				}
-			if(this.isInWater())
-				{
-					controller.setAnimation(new AnimationBuilder().addAnimation("walk").addAnimation("walk", true));
-					return true;
-				} else {
-					controller.setAnimation(new AnimationBuilder().addAnimation("idle", true));
-					return true;
-				}
-			} else {
-				controller.setAnimation(new AnimationBuilder().addAnimation("idle", true));
-				return true;
-			}
-		}
-	
-	private void registerAnimationControllers()
-	{
-		manager.addAnimationController(controller);
-	}*/
 }

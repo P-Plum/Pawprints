@@ -19,7 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import plum.pawprints.entity.move.EntityFlyHelper;
+import plum.pawprints.entity.move.EntityAIBirdFly;
 
 public abstract class EntityBird extends EntityAnimal implements EntityFlying {
 
@@ -58,7 +58,7 @@ public abstract class EntityBird extends EntityAnimal implements EntityFlying {
             this.tasks.addTask(3, Wander);
         }
         else{
-            this.moveHelper = new EntityFlyHelper(this);
+            this.moveHelper = new EntityAIBirdFly(this);
             this.tasks.removeTask(Wander);
             this.tasks.addTask(3, WanderFlying);
         }

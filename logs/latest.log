@@ -1,84 +1,84 @@
-[22:06:33] [main/INFO] [GradleStart]: Extra: []
-[22:06:33] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/admin/.gradle/caches/minecraft/assets, --assetIndex, 1.12, --accessToken{REDACTED}, --version, 1.12.2, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
-[22:06:33] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[22:06:33] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
-[22:06:33] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
-[22:06:33] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
-[22:06:33] [main/INFO] [FML]: Forge Mod Loader version 14.23.5.2846 for Minecraft 1.12.2 loading
-[22:06:33] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_251, running on Windows 7:amd64:6.1, installed at C:\Program Files\Java\jre1.8.0_251
-[22:06:33] [main/ERROR] [FML]: Apache Maven library folder was not in the format expected. Using default libraries directory.
-[22:06:33] [main/ERROR] [FML]: Full: C:\Users\admin\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.5.3\7dc72b6d6d8a6dced3d294ed54c2cc3515ade9f4\maven-artifact-3.5.3.jar
-[22:06:33] [main/ERROR] [FML]: Trimmed: c:/users/admin/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/
-[22:06:33] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
-[22:06:33] [main/INFO] [FML]: Detected deobfuscated environment, loading log configs for colored console logs.
-[22:06:34] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin), we are in deobf and it's a forge core plugin
-[22:06:34] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin), we are in deobf and it's a forge core plugin
-[22:06:34] [main/INFO] [FML]: Searching C:\Users\admin\eclipse-workspace\Pawprints\.\mods for mods
-[22:06:34] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
-[22:06:34] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
-[22:06:34] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
-[22:06:34] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[22:06:34] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[22:06:34] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[22:06:34] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[22:06:34] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
-[22:06:34] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[22:06:35] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
-[22:06:35] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
-[22:06:35] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
-[22:06:36] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
-[22:06:36] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
-[22:06:36] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
-[22:06:36] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
-[22:06:36] [Client thread/INFO] [net.minecraft.client.Minecraft]: Setting user: Player299
-[22:06:39] [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
-[22:06:39] [Client thread/INFO] [net.minecraft.client.Minecraft]: LWJGL Version: 2.9.4
-[22:06:39] [Client thread/INFO] [FML]: -- System Details --
+[18:54:09] [main/INFO] [GradleStart]: Extra: []
+[18:54:09] [main/INFO] [GradleStart]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/admin/.gradle/caches/minecraft/assets, --assetIndex, 1.12, --accessToken{REDACTED}, --version, 1.12.2, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[18:54:09] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[18:54:09] [main/INFO] [LaunchWrapper]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[18:54:09] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[18:54:09] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
+[18:54:09] [main/INFO] [FML]: Forge Mod Loader version 14.23.5.2846 for Minecraft 1.12.2 loading
+[18:54:09] [main/INFO] [FML]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_251, running on Windows 7:amd64:6.1, installed at C:\Program Files\Java\jre1.8.0_251
+[18:54:09] [main/ERROR] [FML]: Apache Maven library folder was not in the format expected. Using default libraries directory.
+[18:54:09] [main/ERROR] [FML]: Full: C:\Users\admin\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.5.3\7dc72b6d6d8a6dced3d294ed54c2cc3515ade9f4\maven-artifact-3.5.3.jar
+[18:54:09] [main/ERROR] [FML]: Trimmed: c:/users/admin/.gradle/caches/modules-2/files-2.1/org.apache.maven/maven-artifact/3.5.3/
+[18:54:09] [main/INFO] [FML]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[18:54:09] [main/INFO] [FML]: Detected deobfuscated environment, loading log configs for colored console logs.
+[18:54:10] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLCorePlugin (net.minecraftforge.fml.relauncher.FMLCorePlugin), we are in deobf and it's a forge core plugin
+[18:54:10] [main/INFO] [FML]: Ignoring missing certificate for coremod FMLForgePlugin (net.minecraftforge.classloading.FMLForgePlugin), we are in deobf and it's a forge core plugin
+[18:54:10] [main/INFO] [FML]: Searching C:\Users\admin\eclipse-workspace\Pawprints\.\mods for mods
+[18:54:10] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[18:54:10] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
+[18:54:10] [main/INFO] [GradleStart]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[18:54:10] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[18:54:10] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[18:54:10] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[18:54:10] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[18:54:10] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[18:54:10] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[18:54:11] [main/ERROR] [FML]: FML appears to be missing any signature data. This is not a good thing
+[18:54:11] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[18:54:11] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[18:54:12] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[18:54:12] [main/INFO] [LaunchWrapper]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[18:54:12] [main/INFO] [LaunchWrapper]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[18:54:12] [main/INFO] [LaunchWrapper]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[18:54:12] [Client thread/INFO] [net.minecraft.client.Minecraft]: Setting user: Player959
+[18:54:15] [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
+[18:54:15] [Client thread/INFO] [net.minecraft.client.Minecraft]: LWJGL Version: 2.9.4
+[18:54:15] [Client thread/INFO] [FML]: -- System Details --
 Details:
 	Minecraft Version: 1.12.2
 	Operating System: Windows 7 (amd64) version 6.1
 	Java Version: 1.8.0_251, Oracle Corporation
 	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
-	Memory: 291363608 bytes (277 MB) / 395313152 bytes (377 MB) up to 935854080 bytes (892 MB)
+	Memory: 242788248 bytes (231 MB) / 386400256 bytes (368 MB) up to 935854080 bytes (892 MB)
 	JVM Flags: 0 total; 
 	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
 	FML: 
 	Loaded coremods (and transformers): 
 	GL info: ' Vendor: 'Intel' Version: '3.1.0 - Build 9.17.10.3347' Renderer: 'Intel(R) HD Graphics 2000'
-[22:06:39] [Client thread/INFO] [FML]: MinecraftForge v14.23.5.2846 Initialized
-[22:06:39] [Client thread/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.
-[22:06:40] [Client thread/INFO] [FML]: Invalid recipe found with multiple oredict ingredients in the same ingredient...
-[22:06:40] [Client thread/INFO] [FML]: Replaced 1227 ore ingredients
-[22:06:40] [Client thread/INFO] [FML]: Searching C:\Users\admin\eclipse-workspace\Pawprints\.\mods for mods
-[22:06:40] [Client thread/WARN] [FML]: Mod geckolib3 is missing the required element 'version' and a version.properties file could not be found. Falling back to metadata version 3.0.0
-[22:06:41] [Client thread/INFO] [FML]: Forge Mod Loader has identified 6 mods to load
-[22:06:42] [Thread-3/INFO] [FML]: Using sync timing. 200 frames of Display.update took 114068293 nanos
-[22:06:42] [Client thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, pawprints, geckolib3] at CLIENT
-[22:06:42] [Client thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, pawprints, geckolib3] at SERVER
-[22:06:42] [Client thread/INFO] [net.minecraft.client.resources.SimpleReloadableResourceManager]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Pawprints, FMLFileResourcePack:GeckoLib
-[22:06:42] [Client thread/INFO] [FML]: Processing ObjectHolder annotations
-[22:06:42] [Client thread/INFO] [FML]: Found 1168 ObjectHolder annotations
-[22:06:42] [Client thread/INFO] [FML]: Identifying ItemStackHolder annotations
-[22:06:42] [Client thread/INFO] [FML]: Found 0 ItemStackHolder annotations
-[22:06:42] [Client thread/INFO] [FML]: Configured a dormant chunk cache size of 0
-[22:06:42] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
-[22:06:43] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: OUTDATED Target: 14.23.5.2854
-[22:06:47] [Client thread/INFO] [FML]: Applying holder lookups
-[22:06:47] [Client thread/INFO] [FML]: Holder lookups applied
-[22:06:47] [Client thread/INFO] [FML]: Applying holder lookups
-[22:06:47] [Client thread/INFO] [FML]: Holder lookups applied
-[22:06:47] [Client thread/INFO] [FML]: Applying holder lookups
-[22:06:47] [Client thread/INFO] [FML]: Holder lookups applied
-[22:06:47] [Client thread/INFO] [FML]: Applying holder lookups
-[22:06:47] [Client thread/INFO] [FML]: Holder lookups applied
-[22:06:47] [Client thread/INFO] [FML]: Injecting itemstacks
-[22:06:47] [Client thread/INFO] [FML]: Itemstack injection complete
-[22:06:49] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Starting up SoundSystem...
-[22:06:49] [Thread-5/INFO] [net.minecraft.client.audio.SoundManager]: Initializing LWJGL OpenAL
-[22:06:49] [Thread-5/INFO] [net.minecraft.client.audio.SoundManager]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[22:06:50] [Thread-5/INFO] [net.minecraft.client.audio.SoundManager]: OpenAL initialized.
-[22:06:50] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Sound engine started
-[22:06:51] [Client thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:aloebulbi' for 'net.minecraft.client.renderer.block.model.ModelBlock@42a1c3ba'
+[18:54:16] [Client thread/INFO] [FML]: MinecraftForge v14.23.5.2846 Initialized
+[18:54:16] [Client thread/INFO] [FML]: Starts to replace vanilla recipe ingredients with ore ingredients.
+[18:54:16] [Client thread/INFO] [FML]: Invalid recipe found with multiple oredict ingredients in the same ingredient...
+[18:54:16] [Client thread/INFO] [FML]: Replaced 1227 ore ingredients
+[18:54:16] [Client thread/INFO] [FML]: Searching C:\Users\admin\eclipse-workspace\Pawprints\.\mods for mods
+[18:54:16] [Client thread/WARN] [FML]: Mod geckolib3 is missing the required element 'version' and a version.properties file could not be found. Falling back to metadata version 3.0.0
+[18:54:17] [Client thread/INFO] [FML]: Forge Mod Loader has identified 6 mods to load
+[18:54:18] [Client thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, pawprints, geckolib3] at CLIENT
+[18:54:18] [Client thread/INFO] [FML]: Attempting connection with missing mods [minecraft, mcp, FML, forge, pawprints, geckolib3] at SERVER
+[18:54:18] [Thread-3/INFO] [FML]: Using sync timing. 200 frames of Display.update took 103648433 nanos
+[18:54:18] [Client thread/INFO] [net.minecraft.client.resources.SimpleReloadableResourceManager]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Pawprints, FMLFileResourcePack:GeckoLib
+[18:54:18] [Client thread/INFO] [FML]: Processing ObjectHolder annotations
+[18:54:18] [Client thread/INFO] [FML]: Found 1168 ObjectHolder annotations
+[18:54:18] [Client thread/INFO] [FML]: Identifying ItemStackHolder annotations
+[18:54:18] [Client thread/INFO] [FML]: Found 0 ItemStackHolder annotations
+[18:54:18] [Client thread/INFO] [FML]: Configured a dormant chunk cache size of 0
+[18:54:18] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[18:54:22] [Forge Version Check/INFO] [forge.VersionCheck]: [forge] Found status: OUTDATED Target: 14.23.5.2855
+[18:54:23] [Client thread/INFO] [FML]: Applying holder lookups
+[18:54:23] [Client thread/INFO] [FML]: Holder lookups applied
+[18:54:23] [Client thread/INFO] [FML]: Applying holder lookups
+[18:54:23] [Client thread/INFO] [FML]: Holder lookups applied
+[18:54:23] [Client thread/INFO] [FML]: Applying holder lookups
+[18:54:23] [Client thread/INFO] [FML]: Holder lookups applied
+[18:54:23] [Client thread/INFO] [FML]: Applying holder lookups
+[18:54:23] [Client thread/INFO] [FML]: Holder lookups applied
+[18:54:23] [Client thread/INFO] [FML]: Injecting itemstacks
+[18:54:23] [Client thread/INFO] [FML]: Itemstack injection complete
+[18:54:25] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Starting up SoundSystem...
+[18:54:25] [Thread-5/INFO] [net.minecraft.client.audio.SoundManager]: Initializing LWJGL OpenAL
+[18:54:25] [Thread-5/INFO] [net.minecraft.client.audio.SoundManager]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[18:54:25] [Thread-5/INFO] [net.minecraft.client.audio.SoundManager]: OpenAL initialized.
+[18:54:26] [Sound Library Loader/INFO] [net.minecraft.client.audio.SoundManager]: Sound engine started
+[18:54:27] [Client thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:aloebulbi' for 'net.minecraft.client.renderer.block.model.ModelBlock@4e41fbf5'
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model minecraft:aloebulbi with loader VanillaLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModelOrLogError(ModelLoaderRegistry.java:211) [ModelLoaderRegistry.class:?]
@@ -116,7 +116,7 @@ Caused by: java.io.FileNotFoundException: minecraft:models/aloebulbi.json
 	at net.minecraftforge.client.model.ModelLoader$VanillaLoader.loadModel(ModelLoader.java:861) ~[ModelLoader$VanillaLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 27 more
-[22:06:51] [Client thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:billybuttons' for 'net.minecraft.client.renderer.block.model.ModelBlock@7778822b'
+[18:54:27] [Client thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:billybuttons' for 'net.minecraft.client.renderer.block.model.ModelBlock@5a405b0f'
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model minecraft:billybuttons with loader VanillaLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModelOrLogError(ModelLoaderRegistry.java:211) [ModelLoaderRegistry.class:?]
@@ -154,7 +154,7 @@ Caused by: java.io.FileNotFoundException: minecraft:models/billybuttons.json
 	at net.minecraftforge.client.model.ModelLoader$VanillaLoader.loadModel(ModelLoader.java:861) ~[ModelLoader$VanillaLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 27 more
-[22:06:51] [Client thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:bush' for 'net.minecraft.client.renderer.block.model.ModelBlock@4e218fec'
+[18:54:27] [Client thread/ERROR] [FML]: Could not load vanilla model parent 'minecraft:bush' for 'net.minecraft.client.renderer.block.model.ModelBlock@6cfe48a4'
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model minecraft:bush with loader VanillaLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModelOrLogError(ModelLoaderRegistry.java:211) [ModelLoaderRegistry.class:?]
@@ -192,9 +192,9 @@ Caused by: java.io.FileNotFoundException: minecraft:models/bush.json
 	at net.minecraftforge.client.model.ModelLoader$VanillaLoader.loadModel(ModelLoader.java:861) ~[ModelLoader$VanillaLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 27 more
-[22:06:52] [Client thread/INFO] [FML]: Max texture size: 8192
-[22:06:53] [Client thread/INFO] [net.minecraft.client.renderer.texture.TextureMap]: Created: 1024x512 textures-atlas
-[22:06:54] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:bush#inventory for item "pawprints:bush", normal location exception: 
+[18:54:28] [Client thread/INFO] [FML]: Max texture size: 8192
+[18:54:29] [Client thread/INFO] [net.minecraft.client.renderer.texture.TextureMap]: Created: 1024x512 textures-atlas
+[18:54:30] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:bush#inventory for item "pawprints:bush", normal location exception: 
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model pawprints:item/bush with loader VanillaLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:302) ~[ModelLoader.class:?]
@@ -225,7 +225,7 @@ Caused by: java.io.FileNotFoundException: pawprints:models/item/bush.json
 	at net.minecraftforge.client.model.ModelLoader$VanillaLoader.loadModel(ModelLoader.java:861) ~[ModelLoader$VanillaLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:06:54] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:bush#inventory for item "pawprints:bush", blockstate location exception: 
+[18:54:30] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:bush#inventory for item "pawprints:bush", blockstate location exception: 
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model pawprints:bush#inventory with loader VariantLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:296) ~[ModelLoader.class:?]
@@ -253,7 +253,7 @@ Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$Missin
 	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1175) ~[ModelLoader$VariantLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:06:54] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:billybuttons#inventory for item "pawprints:billybuttons", normal location exception: 
+[18:54:30] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:billybuttons#inventory for item "pawprints:billybuttons", normal location exception: 
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model pawprints:item/billybuttons with loader VanillaLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:302) ~[ModelLoader.class:?]
@@ -284,7 +284,7 @@ Caused by: java.io.FileNotFoundException: pawprints:models/item/billybuttons.jso
 	at net.minecraftforge.client.model.ModelLoader$VanillaLoader.loadModel(ModelLoader.java:861) ~[ModelLoader$VanillaLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:06:54] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:billybuttons#inventory for item "pawprints:billybuttons", blockstate location exception: 
+[18:54:30] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:billybuttons#inventory for item "pawprints:billybuttons", blockstate location exception: 
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model pawprints:billybuttons#inventory with loader VariantLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:296) ~[ModelLoader.class:?]
@@ -312,7 +312,7 @@ Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$Missin
 	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1175) ~[ModelLoader$VariantLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:06:54] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:aloebulbillifera#inventory for item "pawprints:aloebulbillifera", normal location exception: 
+[18:54:30] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:aloebulbillifera#inventory for item "pawprints:aloebulbillifera", normal location exception: 
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model pawprints:item/aloebulbillifera with loader VanillaLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:302) ~[ModelLoader.class:?]
@@ -343,7 +343,7 @@ Caused by: java.io.FileNotFoundException: pawprints:models/item/aloebulbillifera
 	at net.minecraftforge.client.model.ModelLoader$VanillaLoader.loadModel(ModelLoader.java:861) ~[ModelLoader$VanillaLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:06:54] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:aloebulbillifera#inventory for item "pawprints:aloebulbillifera", blockstate location exception: 
+[18:54:30] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:aloebulbillifera#inventory for item "pawprints:aloebulbillifera", blockstate location exception: 
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model pawprints:aloebulbillifera#inventory with loader VariantLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:296) ~[ModelLoader.class:?]
@@ -371,7 +371,7 @@ Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$Missin
 	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1175) ~[ModelLoader$VariantLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:06:54] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:butterflyspawn#inventory for item "pawprints:butterflyspawn", normal location exception: 
+[18:54:30] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:butterflyspawn#inventory for item "pawprints:butterflyspawn", normal location exception: 
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model pawprints:item/butterflyspawn with loader VanillaLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:302) ~[ModelLoader.class:?]
@@ -402,7 +402,7 @@ Caused by: java.io.FileNotFoundException: pawprints:models/item/butterflyspawn.j
 	at net.minecraftforge.client.model.ModelLoader$VanillaLoader.loadModel(ModelLoader.java:861) ~[ModelLoader$VanillaLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:06:54] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:butterflyspawn#inventory for item "pawprints:butterflyspawn", blockstate location exception: 
+[18:54:30] [Client thread/ERROR] [FML]: Exception loading model for variant pawprints:butterflyspawn#inventory for item "pawprints:butterflyspawn", blockstate location exception: 
 net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model pawprints:butterflyspawn#inventory with loader VariantLoader.INSTANCE, skipping
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:161) ~[ModelLoaderRegistry.class:?]
 	at net.minecraftforge.client.model.ModelLoader.loadItemModels(ModelLoader.java:296) ~[ModelLoader.class:?]
@@ -430,114 +430,159 @@ Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$Missin
 	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1175) ~[ModelLoader$VariantLoader.class:?]
 	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:157) ~[ModelLoaderRegistry.class:?]
 	... 20 more
-[22:06:54] [Client thread/INFO] [FML]: Applying holder lookups
-[22:06:54] [Client thread/INFO] [FML]: Holder lookups applied
-[22:06:54] [Client thread/INFO] [FML]: Injecting itemstacks
-[22:06:54] [Client thread/INFO] [FML]: Itemstack injection complete
-[22:06:55] [Client thread/INFO] [FML]: Forge Mod Loader has successfully loaded 6 mods
-[22:06:55] [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
-[22:06:55] [Client thread/INFO] [com.mojang.text2speech.NarratorWindows]: Narrator library for x64 successfully loaded
-[22:06:56] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient]: Could not authorize you against Realms server: Invalid session id
-[22:07:01] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Starting integrated minecraft server version 1.12.2
-[22:07:01] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Generating keypair
-[22:07:02] [Server thread/INFO] [FML]: Injecting existing registry data into this server instance
-[22:07:02] [Server thread/INFO] [FML]: Registry Block: Found a missing id from the world pawprints:plush_bilby
-[22:07:02] [Server thread/INFO] [FML]: Applying holder lookups
-[22:07:02] [Server thread/INFO] [FML]: Holder lookups applied
-[22:07:02] [Server thread/INFO] [FML]: Loading dimension 0 (Testing) (net.minecraft.server.integrated.IntegratedServer@6f085f79)
-[22:07:03] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 488 advancements
-[22:07:03] [Server thread/INFO] [FML]: Loading dimension -1 (Testing) (net.minecraft.server.integrated.IntegratedServer@6f085f79)
-[22:07:03] [Server thread/INFO] [FML]: Loading dimension 1 (Testing) (net.minecraft.server.integrated.IntegratedServer@6f085f79)
-[22:07:03] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0
-[22:07:03] [Server thread/INFO] [FML]: Unloading dimension -1
-[22:07:03] [Server thread/INFO] [FML]: Unloading dimension 1
-[22:07:03] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Changing view distance to 4, from 10
-[22:07:06] [Netty Local Client IO #0/INFO] [FML]: Server protocol version 2
-[22:07:06] [Netty Server IO #1/INFO] [FML]: Client protocol version 2
-[22:07:06] [Netty Server IO #1/INFO] [FML]: Client attempting to join with 6 mods : minecraft@1.12.2,pawprints@1.0.0,FML@8.0.99.99,forge@14.23.5.2846,geckolib3@3.0.0,mcp@9.42
-[22:07:06] [Netty Local Client IO #0/INFO] [FML]: [Netty Local Client IO #0] Client side modded connection established
-[22:07:06] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
-[22:07:06] [Server thread/INFO] [net.minecraft.server.management.PlayerList]: Player299[local:E:3a3f6ed5] logged in with entity id 43 at (816.614254782363, 4.0, 1008.5829635658615)
-[22:07:06] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player299 joined the game
-[22:07:07] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[22:07:07] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'Testing'/overworld
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player299 fell out of the world
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed Player299]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed Moth - Chrysiridia rhipheus]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed Moth - Chrysiridia rhipheus]
-[22:07:22] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed entity.butterflydainty.name]
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Player299 fell out of the world
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed Player299
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed Moth - Chrysiridia rhipheus
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed Moth - Chrysiridia rhipheus
-[22:07:22] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed entity.butterflydainty.name
-[22:07:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player299 fell out of the world
-[22:07:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed Player299]
-[22:07:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed item.item.caterpillar]
-[22:07:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed item.item.caterpillar]
-[22:07:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed item.item.caterpillar]
-[22:07:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed item.item.caterpillar]
-[22:07:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed item.item.caterpillar]
-[22:07:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed item.item.caterpillar]
-[22:07:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed item.item.caterpillar]
-[22:07:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed item.item.caterpillar]
-[22:07:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed item.item.caterpillar]
-[22:07:25] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player299: Killed item.item.caterpillar]
-[22:07:25] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Player299 fell out of the world
-[22:07:25] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed Player299
-[22:07:25] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.caterpillar
-[22:07:25] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.caterpillar
-[22:07:25] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.caterpillar
-[22:07:25] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.caterpillar
-[22:07:25] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.caterpillar
-[22:07:25] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.caterpillar
-[22:07:25] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.caterpillar
-[22:07:25] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.caterpillar
-[22:07:25] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.caterpillar
-[22:07:25] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.caterpillar
-[22:09:09] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
-[22:09:09] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'Testing'/overworld
-[22:09:10] [Client thread/INFO] [net.minecraft.client.Minecraft]: Stopping!
-[22:09:11] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
-[22:09:11] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
-[22:09:11] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
-[22:09:11] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'Testing'/overworld
-[22:09:11] [Server thread/INFO] [FML]: Unloading dimension 0
-[22:09:11] [Server thread/INFO] [FML]: Applying holder lookups
-[22:09:11] [Server thread/INFO] [FML]: Holder lookups applied
-[22:09:11] [Client thread/INFO] [net.minecraft.client.audio.SoundManager]: SoundSystem shutting down...
-[22:09:11] [Client thread/WARN] [net.minecraft.client.audio.SoundManager]: Author: Paul Lamb, www.paulscode.com
+[18:54:30] [Client thread/INFO] [FML]: Applying holder lookups
+[18:54:30] [Client thread/INFO] [FML]: Holder lookups applied
+[18:54:30] [Client thread/INFO] [FML]: Injecting itemstacks
+[18:54:30] [Client thread/INFO] [FML]: Itemstack injection complete
+[18:54:31] [Client thread/INFO] [FML]: Forge Mod Loader has successfully loaded 6 mods
+[18:54:31] [Client thread/WARN] [net.minecraft.client.settings.GameSettings]: Skipping bad option: lastServer:
+[18:54:31] [Client thread/INFO] [com.mojang.text2speech.NarratorWindows]: Narrator library for x64 successfully loaded
+[18:54:32] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient]: Could not authorize you against Realms server: Invalid session id
+[18:54:40] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Starting integrated minecraft server version 1.12.2
+[18:54:40] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Generating keypair
+[18:54:40] [Server thread/INFO] [FML]: Injecting existing registry data into this server instance
+[18:54:40] [Server thread/INFO] [FML]: Registry Block: Found a missing id from the world pawprints:plush_bilby
+[18:54:41] [Server thread/INFO] [FML]: Applying holder lookups
+[18:54:41] [Server thread/INFO] [FML]: Holder lookups applied
+[18:54:41] [Server thread/INFO] [FML]: Loading dimension 0 (Testing) (net.minecraft.server.integrated.IntegratedServer@7d50b6f2)
+[18:54:41] [Server thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 488 advancements
+[18:54:41] [Server thread/INFO] [FML]: Loading dimension -1 (Testing) (net.minecraft.server.integrated.IntegratedServer@7d50b6f2)
+[18:54:41] [Server thread/INFO] [FML]: Loading dimension 1 (Testing) (net.minecraft.server.integrated.IntegratedServer@7d50b6f2)
+[18:54:41] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Preparing start region for level 0
+[18:54:42] [Server thread/INFO] [FML]: Unloading dimension -1
+[18:54:42] [Server thread/INFO] [FML]: Unloading dimension 1
+[18:54:42] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Changing view distance to 4, from 10
+[18:54:45] [Netty Local Client IO #0/INFO] [FML]: Server protocol version 2
+[18:54:45] [Netty Server IO #1/INFO] [FML]: Client protocol version 2
+[18:54:45] [Netty Server IO #1/INFO] [FML]: Client attempting to join with 6 mods : minecraft@1.12.2,pawprints@1.0.0,FML@8.0.99.99,forge@14.23.5.2846,geckolib3@3.0.0,mcp@9.42
+[18:54:45] [Netty Local Client IO #0/INFO] [FML]: [Netty Local Client IO #0] Client side modded connection established
+[18:54:45] [Server thread/INFO] [FML]: [Server thread] Server side modded connection established
+[18:54:45] [Server thread/INFO] [net.minecraft.server.management.PlayerList]: Player959[local:E:be2f7c6e] logged in with entity id 52 at (862.3322119074759, 4.0, 921.100230244935)
+[18:54:45] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player959 joined the game
+[18:54:45] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
+[18:54:46] [Client thread/INFO] [net.minecraft.advancements.AdvancementList]: Loaded 9 advancements
+[18:54:46] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'Testing'/overworld
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player959 fell out of the world
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed Player959]
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Player959 fell out of the world
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed Player959
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed White-bellied Go-away-bird]
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:53] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed White-bellied Go-away-bird
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player959 fell out of the world
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed Player959]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.feather]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.feather]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.feather]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.chickenRaw]
+[18:54:55] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: [Player959: Killed item.item.feather]
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Player959 fell out of the world
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed Player959
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.feather
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.feather
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.feather
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.chickenRaw
+[18:54:55] [Client thread/INFO] [net.minecraft.client.gui.GuiNewChat]: [CHAT] Killed item.item.feather
+[18:56:44] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
+[18:56:44] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'Testing'/overworld
+[18:56:45] [Client thread/INFO] [net.minecraft.client.Minecraft]: Stopping!
+[18:56:45] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
+[18:56:45] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
+[18:56:45] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
+[18:56:45] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'Testing'/overworld
+[18:56:45] [Server thread/INFO] [FML]: Unloading dimension 0
+[18:56:46] [Server thread/INFO] [FML]: Applying holder lookups
+[18:56:46] [Server thread/INFO] [FML]: Holder lookups applied
+[18:56:46] [Client thread/INFO] [net.minecraft.client.audio.SoundManager]: SoundSystem shutting down...
+[18:56:46] [Client thread/WARN] [net.minecraft.client.audio.SoundManager]: Author: Paul Lamb, www.paulscode.com

@@ -18,7 +18,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import plum.pawprints.entity.base.EntityBird;
-import plum.pawprints.entity.move.EntityFlyHelper;
+import plum.pawprints.entity.move.EntityAIBirdFly;
 import plum.pawprints.init.ItemInit;
 import plum.pawprints.util.handlers.LootTableHandler;
 import plum.pawprints.util.handlers.SoundHandler;
@@ -62,7 +62,7 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable
 	            this.tasks.addTask(3, Wander);
 	        }
 	        else{
-	            this.moveHelper = new EntityFlyHelper(this);
+	            this.moveHelper = new EntityAIBirdFly(this);
 	            this.tasks.removeTask(Wander);
 	            this.tasks.addTask(3, WanderFlying);
 	        }
