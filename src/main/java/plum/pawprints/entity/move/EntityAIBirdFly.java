@@ -52,7 +52,7 @@ public class EntityAIBirdFly extends EntityMoveHelper
                     float f2 = (float) -(MathHelper.atan2(d1, d4) * 30D);
                     
                     this.entity.rotationPitch = limitAngle(this.entity.rotationPitch, f2, 2.0F);
-                    this.entity.setMoveVertical((float) 0.5);
+                    this.entity.setMoveVertical((float) 0.4);
                     
                     if (d1 > (double) this.entity.stepHeight && d0 * d0 + d1 * d1 < (double) Math.max(1.0F, this.entity.width)) {
                         this.entity.getJumpHelper().setJumping();

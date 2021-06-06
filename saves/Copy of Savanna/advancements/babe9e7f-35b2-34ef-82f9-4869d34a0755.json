@@ -1,0 +1,9 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "savanna": "2021-05-18 19:39:30 +1000",
+      "river": "2021-05-18 19:39:21 +1000"
+    },
+    "done": false
+  }
+}
