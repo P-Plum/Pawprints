@@ -37,16 +37,9 @@ public class EntityQuokka extends EntityAnimal implements IAnimatable
         setSize(0.4F, 0.4F);
 	}
 	
-	public boolean isDaytime() {
-        long time = this.world.getWorldTime() % 24000L; // Time can go over values of 24000, so divide and take the
-                                                        // remainder
-        return !(time >= 13000L && time <= 23000L);
-    }
-	
 	@Override
 	protected void initEntityAI()
 	{
-		if(!this.isDaytime()) {
 			this.tasks.addTask(0, new EntityAISwimming(this));
         	this.tasks.addTask(1, new EntityAIPanic(this, 3.5D));
         	this.tasks.addTask(2, new EntityAILookIdle(this));
@@ -54,9 +47,6 @@ public class EntityQuokka extends EntityAnimal implements IAnimatable
         	this.tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 6F));
         	this.tasks.addTask(3, new EntityAIMate(this, 1.0D));
         	this.tasks.addTask(4, new EntityAIFollowParent(this, 1.25D));
-		} if(!this.isDaytime()) {
-			this.tasks.addTask(0, new EntityAISwimming(this));
-		}
 	}
 	
 	@Override
@@ -159,31 +149,18 @@ public class EntityQuokka extends EntityAnimal implements IAnimatable
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
-    	if(this.isDaytime())
-		{	
-    		event.getController().setAnimation(new AnimationBuilder().addAnimation("sleep", true));
+    	if(event.isMoving())
+    	{
+    		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
             return PlayState.CONTINUE;
-			
-		} if(!this.isDaytime()) {
-				
-			if(event.isMoving())
-				{
-					event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
-					return PlayState.CONTINUE;
-				}
-			if(this.isInWater())
-				{
-					event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
-					return PlayState.CONTINUE;
-				} else {
-					event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
-		            return PlayState.CONTINUE;
-				}
-			} else {
-				event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
-	            return PlayState.CONTINUE;
-			}
-		}
+    	} if(this.isInWater()) {
+    		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+            return PlayState.CONTINUE;
+    	} else {
+    		event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
+            return PlayState.CONTINUE;
+    	}
+    }
 
     @Override
     public void registerControllers(AnimationData data)

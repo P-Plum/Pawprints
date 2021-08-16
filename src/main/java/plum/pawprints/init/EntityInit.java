@@ -6,6 +6,7 @@ import java.util.Set;
 import com.google.common.collect.Lists;
 
 import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.biome.Biome;
@@ -30,8 +31,10 @@ import plum.pawprints.entity.butterfly.EntityDaintyButterfly;
 import plum.pawprints.entity.butterfly.EntityDeathsMoth;
 import plum.pawprints.entity.butterfly.EntityLunaMoth;
 import plum.pawprints.entity.butterfly.EntityOldWorldButterfly;
+import plum.pawprints.entity.butterfly.EntityOrangeOakleafButterfly;
 import plum.pawprints.entity.butterfly.EntityPaperKiteButterfly;
 import plum.pawprints.entity.butterfly.EntityPussMoth;
+import plum.pawprints.entity.butterfly.EntityRegalMoth;
 import plum.pawprints.entity.butterfly.EntitySunsetMoth;
 import plum.pawprints.entity.nudibranch.EntityNudibranchAnnae;
 import plum.pawprints.entity.nudibranch.EntityNudibranchAnnulata;
@@ -84,9 +87,11 @@ public class EntityInit {
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothpuss"),EntityPussMoth.class, "mothpuss", id++, main.instance, 1024, 1, true, 13682623, 11114631);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothmadagascan"),EntitySunsetMoth.class, "mothmadagascan", id++, main.instance, 1024, 1, true, 2035200, 13037263);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothdeathshead"),EntityDeathsMoth.class, "mothdeathshead", id++, main.instance, 1024, 1, true, 16494417, 8018501);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothregal"),EntityRegalMoth.class, "mothregal", id++, main.instance, 1024, 1, true, 13682623, 11114631);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "butterflypaperkite"),EntityPaperKiteButterfly.class, "butterflypaperkite", id++, main.instance, 1024, 1, true, 14606816, 3091491);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "butterflydainty"),EntityDaintyButterfly.class, "butterflydainty", id++, main.instance, 1024, 1, true, 3417632, 15262931);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "butterflyswallowtail"),EntityOldWorldButterfly.class, "butterflyswallowtail", id++, main.instance, 1024, 1, true, 15856060, 5066034);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "butterflyorangeoakleaf"),EntityOrangeOakleafButterfly.class, "butterflyorangeoakleaf", id++, main.instance, 1024, 1, true, 3417632, 15262931);
 				
 				
 				//Spawns
@@ -178,22 +183,21 @@ public class EntityInit {
 					}
 				}
 				
-				if (PawprintsSpawnConfig.nudiSpawns)
+				if (PawprintsSpawnConfig.mothSpawns)
 				{
-					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.nudiBiomes))
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.mothBiomes))
 					{
-						RegistryHelper.Entities.addSpawn(EntityNudibranchAnnae.class, PawprintsSpawnConfig.nudiRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityNudibranchAnnulata.class, PawprintsSpawnConfig.nudiRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityNudibranchBullocki.class, PawprintsSpawnConfig.nudiRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityNudibranchCristata.class, PawprintsSpawnConfig.nudiRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityNudibranchKuniei.class, PawprintsSpawnConfig.nudiRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityNudibranchKuroshimae.class, PawprintsSpawnConfig.nudiRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityNudibranchPacifica.class, PawprintsSpawnConfig.nudiRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityNudibranchParva.class, PawprintsSpawnConfig.nudiRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityNudibranchRuthae.class, PawprintsSpawnConfig.nudiRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityNudibranchSinuata.class, PawprintsSpawnConfig.nudiRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityDaintyButterfly.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityDeathsMoth.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityLunaMoth.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityOldWorldButterfly.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityPaperKiteButterfly.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityRegalMoth.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntitySunsetMoth.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
 					}
 				}
+				
+				RegistryHelper.Entities.addSpawn(EntityNudibranchAnnulata.class, 100, 1, 1, EnumCreatureType.CREATURE, Biomes.PLAINS);
 	}
 
 	private static Biome[] getBiomes(BiomeDictionary.Type type)

@@ -37,11 +37,13 @@ public class EntityPinkfairy extends EntityAnimal implements IAnimatable
 	private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(ItemInit.DEAD_TERMITE);
 	public AnimationFactory factory = new AnimationFactory(this);
 	
+	/*
 	public boolean isDaytime() {
         long time = this.world.getWorldTime() % 24000L; // Time can go over values of 24000, so divide and take the
                                                         // remainder
         return !(time >= 13000L && time <= 23000L);
     }
+	*/
 	
 	public EntityPinkfairy(World worldIn)
 	{
@@ -53,8 +55,6 @@ public class EntityPinkfairy extends EntityAnimal implements IAnimatable
 	@Override
 	protected void initEntityAI()
 	{
-		if(!this.isDaytime())
-		{
 			this.tasks.addTask(0, new EntityAISwimming(this));
 			this.tasks.addTask(1, new EntityAIPanic(this, 2.0D));
 			this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.0D));
@@ -63,11 +63,6 @@ public class EntityPinkfairy extends EntityAnimal implements IAnimatable
         	this.tasks.addTask(5, new EntityAITempt(this, 1.25D, false, TEMPTATION_ITEMS));
 			this.tasks.addTask(1, new EntityAIMate(this, 1.0D));
         	this.tasks.addTask(2, new EntityAIFollowParent(this, 1.25D));
-		} if(this.isDaytime()) {
-	        
-	        this.tasks.addTask(0, new EntityAISwimming(this));
-		
-		}
 	}
 	
 	@Override
@@ -144,33 +139,20 @@ public class EntityPinkfairy extends EntityAnimal implements IAnimatable
 	}
 	
 
-    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
+	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
-    	if(this.isDaytime())
-		{	
-    		event.getController().setAnimation(new AnimationBuilder().addAnimation("sleep", true));
+    	if(event.isMoving())
+    	{
+    		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
             return PlayState.CONTINUE;
-			
-		} if(!this.isDaytime()) {
-				
-			if(event.isMoving())
-				{
-					event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
-					return PlayState.CONTINUE;
-				}
-			if(this.isInWater())
-				{
-					event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
-					return PlayState.CONTINUE;
-				} else {
-					event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
-		            return PlayState.CONTINUE;
-				}
-			} else {
-				event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
-	            return PlayState.CONTINUE;
-			}
-		}
+    	} if(this.isInWater()) {
+    		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+            return PlayState.CONTINUE;
+    	} else {
+    		event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
+            return PlayState.CONTINUE;
+    	}
+    }
 
     @Override
     public void registerControllers(AnimationData data)

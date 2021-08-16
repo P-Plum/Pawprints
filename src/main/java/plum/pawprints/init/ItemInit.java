@@ -26,6 +26,8 @@ public class ItemInit {
 	//FOOD
 	public static final Item SMALL_WILD_MEAT = new ItemFoodBase("small_wild_meat", 1, true);
 	public static final Item LARGE_WILD_MEAT = new ItemFoodBase("large_wild_meat", 3, true);
+	public static final Item BIRD_MEAT = new ItemFoodBase("bird_meat", 2, true);
+	public static final Item BIRD_MEAT_COOKED = new ItemFoodBase("bird_meat_cooked", 4, true);
 	public static final Item SMALL_WILD_MEAT_COOKED = new ItemFoodBase("small_wild_meat_cooked", 4, true);
 	public static final Item LARGE_WILD_MEAT_COOKED = new ItemFoodBase("large_wild_meat_cooked", 8, true);
 	public static final Item PACA_THIGH = new ItemFoodBase("paca_thigh", 5, true);

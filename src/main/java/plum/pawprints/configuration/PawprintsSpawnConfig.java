@@ -175,7 +175,7 @@ public class PawprintsSpawnConfig {
 			
 		    @Config.Name("Butterfly and Moth generation probability")
 		    @Config.Comment("Probability for spawning Butterfly and Moth.")
-			public static int mothRate = 10;
+			public static int mothRate = 50;
 		    
 		  //NUDIBRANCH
 			@Config.Name("Nudibranch spawns")

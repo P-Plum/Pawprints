@@ -55,11 +55,11 @@ item.fur.name=Fur
 item.caterpillar.name=Caterpillar
 item.caterpillar_cooked.name=Crispy Caterpillar
 
-item.raw_bird_meat.name=Raw Bird Meat
+item.bird_meat.name=Raw Bird Meat
 item.small_wild_meat.name=Raw Small Wild Meat
 item.large_wild_meat.name=Raw Large Wild Meat
 item.raw_crab_claw.name=Raw Crab Claw
-item.roasted_bird_meat.name=Roasted Bird Meat
+item.bird_meat_cooked.name=Roasted Bird Meat
 item.small_wild_meat_cooked.name=Cooked Small Wild Meat
 item.large_wild_meat_cooked.name=Cooked Large Wild Meat
 item.cooked_crab_claw.name=Cooked Crab Claw

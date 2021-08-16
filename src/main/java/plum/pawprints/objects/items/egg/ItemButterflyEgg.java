@@ -43,6 +43,8 @@ public class ItemButterflyEgg extends ItemBase {
     	EntityOldWorldButterfly entityfive = new EntityOldWorldButterfly(worldIn);
     	EntityPaperKiteButterfly entitysix = new EntityPaperKiteButterfly(worldIn);
     	EntitySunsetMoth entityseven = new EntitySunsetMoth(worldIn);
+    	EntityPaperKiteButterfly entityeight = new EntityPaperKiteButterfly(worldIn);
+    	EntitySunsetMoth entitynine = new EntitySunsetMoth(worldIn);
     	
     	entity.setPosition(player.posX, player.posY, player.posZ);
     	entitytwo.setPosition(player.posX, player.posY, player.posZ);
@@ -51,13 +53,15 @@ public class ItemButterflyEgg extends ItemBase {
     	entityfive.setPosition(player.posX, player.posY, player.posZ);
     	entitysix.setPosition(player.posX, player.posY, player.posZ);
     	entityseven.setPosition(player.posX, player.posY, player.posZ);
+    	entityeight.setPosition(player.posX, player.posY, player.posZ);
+    	entitynine.setPosition(player.posX, player.posY, player.posZ);
     	
     	if (!player.capabilities.isCreativeMode)
         {
     		item.shrink(1);
         }
     	
-    	switch(worldIn.rand.nextInt(7)) {
+    	switch(worldIn.rand.nextInt(9)) {
         default:
         case 0:
         	worldIn.spawnEntity(entity);
@@ -79,6 +83,12 @@ public class ItemButterflyEgg extends ItemBase {
         	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
         case 6:
         	worldIn.spawnEntity(entityseven);
+        	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
+        case 7:
+        	worldIn.spawnEntity(entityeight);
+        	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
+        case 8:
+        	worldIn.spawnEntity(entitynine);
         	return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, item);
     	}
      }

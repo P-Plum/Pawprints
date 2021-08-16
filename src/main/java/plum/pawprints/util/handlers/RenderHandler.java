@@ -17,6 +17,7 @@ import plum.pawprints.entity.butterfly.EntityDaintyButterfly;
 import plum.pawprints.entity.butterfly.EntityDeathsMoth;
 import plum.pawprints.entity.butterfly.EntityLunaMoth;
 import plum.pawprints.entity.butterfly.EntityOldWorldButterfly;
+import plum.pawprints.entity.butterfly.EntityOrangeOakleafButterfly;
 import plum.pawprints.entity.butterfly.EntityPaperKiteButterfly;
 import plum.pawprints.entity.butterfly.EntityPussMoth;
 import plum.pawprints.entity.butterfly.EntitySunsetMoth;
@@ -46,6 +47,7 @@ import plum.pawprints.entity.render.butterfly.RenderDaintyButterfly;
 import plum.pawprints.entity.render.butterfly.RenderDeathsMoth;
 import plum.pawprints.entity.render.butterfly.RenderLunaMoth;
 import plum.pawprints.entity.render.butterfly.RenderOldWorldButterfly;
+import plum.pawprints.entity.render.butterfly.RenderOrangeOakleafButterfly;
 import plum.pawprints.entity.render.butterfly.RenderPaperKiteButterfly;
 import plum.pawprints.entity.render.butterfly.RenderPussMoth;
 import plum.pawprints.entity.render.butterfly.RenderSunsetMoth;
@@ -86,6 +88,7 @@ public class RenderHandler
 		RenderingRegistry.registerEntityRenderingHandler(EntityDaintyButterfly.class, RenderDaintyButterfly::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityOldWorldButterfly.class, RenderOldWorldButterfly::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityPaperKiteButterfly.class, RenderPaperKiteButterfly::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityOrangeOakleafButterfly.class, RenderOrangeOakleafButterfly::new);
 		
 		//Nudibranch
 		RenderingRegistry.registerEntityRenderingHandler(EntityNudibranchAnnae.class, RenderNudibranchAnnae::new);
