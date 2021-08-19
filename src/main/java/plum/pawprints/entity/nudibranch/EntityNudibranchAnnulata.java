@@ -1,16 +1,16 @@
 package plum.pawprints.entity.nudibranch;
 
-import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
+import plum.pawprints.entity.move.EntityAIWaterWander;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -19,7 +19,7 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class EntityNudibranchAnnulata extends EntityAnimal implements IAnimatable
+public class EntityNudibranchAnnulata extends EntityWaterMob implements IAnimatable
 {	
 	public AnimationFactory factory = new AnimationFactory(this);
 	public EntityNudibranchAnnulata(World worldIn)
@@ -33,7 +33,7 @@ public class EntityNudibranchAnnulata extends EntityAnimal implements IAnimatabl
 	protected void initEntityAI()
 	{
         this.tasks.addTask(0, new EntityAILookIdle(this));
-        this.tasks.addTask(1, new EntityAIWander(this, 2.0D, 70));
+        this.tasks.addTask(1, new EntityAIWaterWander(this, 2.0D, 70));
 	}
 	
 	@Override
@@ -102,12 +102,6 @@ public class EntityNudibranchAnnulata extends EntityAnimal implements IAnimatabl
     {
         return false;
 	}
-	
-	@Override
-	public EntityAnimal createChild(EntityAgeable ageable)
-    {
-		return null;
-    }
 	
 	@Override
 	protected SoundEvent getAmbientSound()

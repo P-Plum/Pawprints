@@ -1,6 +1,7 @@
 package plum.pawprints.entity.nudibranch;
 
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWander;

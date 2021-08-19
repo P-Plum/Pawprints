@@ -5,6 +5,9 @@ import java.util.Set;
 
 import com.google.common.collect.Lists;
 
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLiving.SpawnPlacementType;
+import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
@@ -95,6 +98,10 @@ public class EntityInit {
 				
 				
 				//Spawns
+				EntitySpawnPlacementRegistry.setPlacementType(EntityNudibranchAnnulata.class, SpawnPlacementType.IN_WATER);
+				
+				RegistryHelper.Entities.addSpawn(EntityNudibranchAnnulata.class, 1000, 1, 2, EnumCreatureType.WATER_CREATURE, Biomes.DEEP_OCEAN);
+				
 				if (PawprintsSpawnConfig.bilbySpawns)
 				{
 					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.bilbyBiomes))
@@ -196,8 +203,6 @@ public class EntityInit {
 						RegistryHelper.Entities.addSpawn(EntitySunsetMoth.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
 					}
 				}
-				
-				RegistryHelper.Entities.addSpawn(EntityNudibranchAnnulata.class, 100, 1, 1, EnumCreatureType.CREATURE, Biomes.PLAINS);
 	}
 
 	private static Biome[] getBiomes(BiomeDictionary.Type type)
