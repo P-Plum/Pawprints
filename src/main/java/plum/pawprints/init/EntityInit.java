@@ -98,9 +98,33 @@ public class EntityInit {
 				
 				
 				//Spawns
+				EntitySpawnPlacementRegistry.setPlacementType(EntityNudibranchAnnae.class, SpawnPlacementType.IN_WATER);
 				EntitySpawnPlacementRegistry.setPlacementType(EntityNudibranchAnnulata.class, SpawnPlacementType.IN_WATER);
+				EntitySpawnPlacementRegistry.setPlacementType(EntityNudibranchBullocki.class, SpawnPlacementType.IN_WATER);
+				EntitySpawnPlacementRegistry.setPlacementType(EntityNudibranchCristata.class, SpawnPlacementType.IN_WATER);
+				EntitySpawnPlacementRegistry.setPlacementType(EntityNudibranchKuniei.class, SpawnPlacementType.IN_WATER);
+				EntitySpawnPlacementRegistry.setPlacementType(EntityNudibranchKuroshimae.class, SpawnPlacementType.IN_WATER);
+				EntitySpawnPlacementRegistry.setPlacementType(EntityNudibranchPacifica.class, SpawnPlacementType.IN_WATER);
+				EntitySpawnPlacementRegistry.setPlacementType(EntityNudibranchParva.class, SpawnPlacementType.IN_WATER);
+				EntitySpawnPlacementRegistry.setPlacementType(EntityNudibranchRuthae.class, SpawnPlacementType.IN_WATER);
+				EntitySpawnPlacementRegistry.setPlacementType(EntityNudibranchSinuata.class, SpawnPlacementType.IN_WATER);
 				
-				RegistryHelper.Entities.addSpawn(EntityNudibranchAnnulata.class, 1000, 1, 2, EnumCreatureType.WATER_CREATURE, Biomes.DEEP_OCEAN);
+				if (PawprintsSpawnConfig.nudiSpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.nudiBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityNudibranchAnnae.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityNudibranchAnnulata.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityNudibranchBullocki.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityNudibranchCristata.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityNudibranchKuniei.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityNudibranchKuroshimae.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityNudibranchPacifica.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityNudibranchParva.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityNudibranchRuthae.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityNudibranchSinuata.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
+					}
+				}
 				
 				if (PawprintsSpawnConfig.bilbySpawns)
 				{
@@ -194,13 +218,13 @@ public class EntityInit {
 				{
 					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.mothBiomes))
 					{
-						RegistryHelper.Entities.addSpawn(EntityDaintyButterfly.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityDeathsMoth.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityLunaMoth.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityOldWorldButterfly.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityPaperKiteButterfly.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntityRegalMoth.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
-						RegistryHelper.Entities.addSpawn(EntitySunsetMoth.class, PawprintsSpawnConfig.mothRate, 1, 1, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityDaintyButterfly.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityDeathsMoth.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityLunaMoth.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityOldWorldButterfly.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityPaperKiteButterfly.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityRegalMoth.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntitySunsetMoth.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
 					}
 				}
 	}

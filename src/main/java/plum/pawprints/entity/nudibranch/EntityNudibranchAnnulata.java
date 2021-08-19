@@ -88,22 +88,6 @@ public class EntityNudibranchAnnulata extends EntityWaterMob implements IAnimata
 	}
 	
 	@Override
-	public boolean processInteract(EntityPlayer player, EnumHand hand)
-    {
-		return false;
-    }
-	
-	public boolean isBreedingItem(ItemStack stack)
-    {
-        return false;
-    }
-	
-	public boolean canMateWith(EntityAnimal otherAnimal)
-    {
-        return false;
-	}
-	
-	@Override
 	protected SoundEvent getAmbientSound()
 	{
 		return null;
