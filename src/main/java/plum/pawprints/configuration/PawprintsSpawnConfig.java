@@ -93,7 +93,7 @@ public class PawprintsSpawnConfig {
 			
 		    @Config.Name("American Pika biomes")
 		    @Config.Comment("BiomeDictionary types for spawning American Pika.")
-			public static String[] amerpikaBiomes = new String[] { "MOUNTAIN", "HILLS", };
+			public static String[] amerpikaBiomes = new String[] { "MOUNTAIN", };
 			
 		    @Config.Name("American Pika generation probability")
 		    @Config.Comment("Probability for spawning American Pika.")
@@ -106,7 +106,7 @@ public class PawprintsSpawnConfig {
 			
 		    @Config.Name("Ili Pika biomes")
 		    @Config.Comment("BiomeDictionary types for spawning Ili Pika.")
-			public static String[] ilipikaBiomes = new String[] { "MOUNTAIN", "HILLS", };
+			public static String[] ilipikaBiomes = new String[] { "MOUNTAIN", };
 			
 		    @Config.Name("Ili Pika generation probability")
 		    @Config.Comment("Probability for spawning Ili Pika.")
@@ -189,4 +189,17 @@ public class PawprintsSpawnConfig {
 		    @Config.Name("Nudibranch generation probability")
 		    @Config.Comment("Probability for spawning Nudibranch.")
 			public static int nudiRate = 10;
+		    
+		  //HERMIT CRAB
+			@Config.Name("Hermit Crab spawns")
+		    @Config.Comment("Enables natural spawning of Hermit Crab.")
+			public static boolean hermitSpawns = true;
+			
+		    @Config.Name("Hermit Crab biomes")
+		    @Config.Comment("BiomeDictionary types for spawning Hermit Crab.")
+			public static String[] hermitBiomes = new String[] { "BEACH", };
+			
+		    @Config.Name("Hermit Crab generation probability")
+		    @Config.Comment("Probability for spawning Hermit Crab.")
+			public static int hermitRate = 10;
 }

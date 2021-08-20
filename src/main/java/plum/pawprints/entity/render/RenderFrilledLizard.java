@@ -14,7 +14,7 @@ public class RenderFrilledLizard extends GeoEntityRenderer<EntityFrilledLizard>
 	public RenderFrilledLizard(RenderManager manager)
 	{
 		super(manager, new ModelFrilledLizard());
-		this.shadowSize = 0.075F; //change to the desired shadow size.
+		this.shadowSize = 0.175F; //change to the desired shadow size.
 	}
 	
 	@Override

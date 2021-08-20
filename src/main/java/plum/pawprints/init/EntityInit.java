@@ -5,11 +5,9 @@ import java.util.Set;
 
 import com.google.common.collect.Lists;
 
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLiving.SpawnPlacementType;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.biome.Biome;
@@ -23,6 +21,7 @@ import plum.pawprints.entity.EntityBilby;
 import plum.pawprints.entity.EntityFerretBadger;
 import plum.pawprints.entity.EntityFrilledLizard;
 import plum.pawprints.entity.EntityGoAwayBird;
+import plum.pawprints.entity.EntityHermitCrab;
 import plum.pawprints.entity.EntityIliPika;
 import plum.pawprints.entity.EntityLowlandPaca;
 import plum.pawprints.entity.EntityMongoose;
@@ -71,6 +70,7 @@ public class EntityInit {
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "frilledlizard"),EntityFrilledLizard.class, "frilledlizard", id++, main.instance, 1024, 1, true, 4468774, 14398058);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "tenrec"),EntityTenrec.class, "tenrec", id++, main.instance, 1024, 1, true, 2300701, 7227954);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mongoose"),EntityMongoose.class, "mongoose", id++, main.instance, 1024, 1, true, 11241075, 2499621);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "hermitcrab"),EntityHermitCrab.class, "hermitcrab", id++, main.instance, 1024, 1, true, 10618889, 16497580);
 				
 				//Nudis
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "nudibranchannae"),EntityNudibranchAnnae.class, "nudibranchannae", id++, main.instance, 1024, 1, true);
@@ -123,6 +123,14 @@ public class EntityInit {
 						RegistryHelper.Entities.addSpawn(EntityNudibranchParva.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
 						RegistryHelper.Entities.addSpawn(EntityNudibranchRuthae.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
 						RegistryHelper.Entities.addSpawn(EntityNudibranchSinuata.class, PawprintsSpawnConfig.nudiRate, 1, 2, EnumCreatureType.WATER_CREATURE, getBiomes(t));
+					}
+				}
+				
+				if (PawprintsSpawnConfig.hermitSpawns)
+				{
+					for (Type t : RegistryHelper.getBiomeTypes(PawprintsSpawnConfig.hermitBiomes))
+					{
+						RegistryHelper.Entities.addSpawn(EntityHermitCrab.class, PawprintsSpawnConfig.hermitRate, 1, 3, EnumCreatureType.CREATURE, getBiomes(t));
 					}
 				}
 				

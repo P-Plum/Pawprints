@@ -196,7 +196,7 @@ public class EntityTenrec extends EntityAnimal implements IAnimatable
 	@Nullable
     public IEntityLivingData onInitialSpawn(DifficultyInstance difficulty, @Nullable IEntityLivingData livingdata)
     {
-        this.setVariant(this.rand.nextInt(5));
+        this.setVariant(this.rand.nextInt(4));
         return super.onInitialSpawn(difficulty, livingdata);
     }
 	//Beyond this point -- Unrelated to variant code

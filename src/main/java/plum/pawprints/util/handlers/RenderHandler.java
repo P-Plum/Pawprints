@@ -6,6 +6,7 @@ import plum.pawprints.entity.EntityBilby;
 import plum.pawprints.entity.EntityFerretBadger;
 import plum.pawprints.entity.EntityFrilledLizard;
 import plum.pawprints.entity.EntityGoAwayBird;
+import plum.pawprints.entity.EntityHermitCrab;
 import plum.pawprints.entity.EntityIliPika;
 import plum.pawprints.entity.EntityLowlandPaca;
 import plum.pawprints.entity.EntityMongoose;
@@ -36,6 +37,7 @@ import plum.pawprints.entity.render.RenderBilby;
 import plum.pawprints.entity.render.RenderFerretBadger;
 import plum.pawprints.entity.render.RenderFrilledLizard;
 import plum.pawprints.entity.render.RenderGoAwayBird;
+import plum.pawprints.entity.render.RenderHermitCrab;
 import plum.pawprints.entity.render.RenderIliPika;
 import plum.pawprints.entity.render.RenderLowlandPaca;
 import plum.pawprints.entity.render.RenderMongoose;
@@ -79,6 +81,7 @@ public class RenderHandler
 		RenderingRegistry.registerEntityRenderingHandler(EntityFrilledLizard.class, RenderFrilledLizard::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityTenrec.class, RenderTenrec::new);
 		RenderingRegistry.registerEntityRenderingHandler(EntityMongoose.class, RenderMongoose::new);
+		RenderingRegistry.registerEntityRenderingHandler(EntityHermitCrab.class, RenderHermitCrab::new);
 		
 		//Butterfly
 		RenderingRegistry.registerEntityRenderingHandler(EntityLunaMoth.class, RenderLunaMoth::new);
