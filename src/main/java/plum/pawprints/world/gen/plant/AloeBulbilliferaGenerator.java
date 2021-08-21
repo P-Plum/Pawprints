@@ -29,8 +29,8 @@ public class AloeBulbilliferaGenerator implements IWorldGenerator {
 
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-        int x = (chunkX * 16) + 8 + random.nextInt(12);
-        int z = (chunkZ * 16) + 8 + random.nextInt(12);
+        int x = (chunkX * 16) + 8 + random.nextInt(8);
+        int z = (chunkZ * 16) + 8 + random.nextInt(8);
         BlockPos blockpos = new BlockPos(x, 66, z);
         if (BiomeDictionary.hasType(world.getBiome(blockpos), BiomeDictionary.Type.SAVANNA)) {
             for (int i = 0; i < 100; ++i) {
