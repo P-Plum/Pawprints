@@ -21,7 +21,7 @@ public class RenderTenrec extends GeoEntityRenderer<EntityTenrec>
     public RenderTenrec(RenderManager manager)
 	{
 		super(manager, new ModelTenrec());
-		this.shadowSize = 0.2F; //change to the desired shadow size.
+		this.shadowSize = 0.1F; //change to the desired shadow size.
 	}
 	
 	@Override
