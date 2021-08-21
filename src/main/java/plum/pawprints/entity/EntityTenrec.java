@@ -108,7 +108,7 @@ public class EntityTenrec extends EntityAnimal implements IAnimatable
 	@Override
 	public float getEyeHeight()
 	{
-		return 0.25F;
+		return 0.15F;
 	}
 	
 	@Override

@@ -2,12 +2,8 @@ package plum.pawprints.entity.nudibranch;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityWaterMob;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import plum.pawprints.entity.move.EntityAIWaterWander;
@@ -22,6 +18,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class EntityNudibranchAnnulata extends EntityWaterMob implements IAnimatable
 {	
 	public AnimationFactory factory = new AnimationFactory(this);
+	
 	public EntityNudibranchAnnulata(World worldIn)
 	{
 		super(worldIn);
