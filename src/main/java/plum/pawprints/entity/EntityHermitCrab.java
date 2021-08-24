@@ -91,7 +91,12 @@ public class EntityHermitCrab extends EntityAnimal implements IAnimatable
 	@Override
 	protected ResourceLocation getLootTable() 
 	{		
-		return null;
+		if(this.isBurning())
+		{
+			return LootTableHandler.CRAB_COOKED;
+		} else {
+			return LootTableHandler.CRAB_GENERIC;
+		}
 	}
 	
 	@Override

@@ -32,6 +32,8 @@ public class LootTableHandler {
 	
 	public static final ResourceLocation BIRD_GENERIC = LootTableList.register(new ResourceLocation(Reference.MODID, "bird_generic"));
 	public static final ResourceLocation BIRD_COOKED = LootTableList.register(new ResourceLocation(Reference.MODID, "bird_cooked"));
+	public static final ResourceLocation CRAB_GENERIC = LootTableList.register(new ResourceLocation(Reference.MODID, "crab_generic"));
+	public static final ResourceLocation CRAB_COOKED = LootTableList.register(new ResourceLocation(Reference.MODID, "crab_cooked"));
 	
 	//BUTTERFLIES
 	

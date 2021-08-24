@@ -59,11 +59,11 @@ item.caterpillar_cooked.name=Crispy Caterpillar
 item.bird_meat.name=Raw Bird Meat
 item.small_wild_meat.name=Raw Small Wild Meat
 item.large_wild_meat.name=Raw Large Wild Meat
-item.raw_crab_claw.name=Raw Crab Claw
+item.rawcrab.name=Raw Crab Claw
 item.bird_meat_cooked.name=Roasted Bird Meat
 item.small_wild_meat_cooked.name=Cooked Small Wild Meat
 item.large_wild_meat_cooked.name=Cooked Large Wild Meat
-item.cooked_crab_claw.name=Cooked Crab Claw
+item.cookedcrab.name=Cooked Crab Claw
 item.paca_thigh.name=Raw Paca Thigh
 item.paca_thigh_cooked.name=Cooked Paca Thigh
 

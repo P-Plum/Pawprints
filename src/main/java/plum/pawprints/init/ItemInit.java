@@ -32,6 +32,8 @@ public class ItemInit {
 	public static final Item LARGE_WILD_MEAT_COOKED = new ItemFoodBase("large_wild_meat_cooked", 8, true);
 	public static final Item PACA_THIGH = new ItemFoodBase("paca_thigh", 5, true);
 	public static final Item PACA_THIGH_COOKED = new ItemFoodBase("paca_thigh_cooked", 9, true);
+	public static final Item RAWCRAB = new ItemFoodBase("rawcrab", 2, true);
+	public static final Item COOKEDCRAB = new ItemFoodBase("cookedcrab", 5, true);
 	public static final Item CRISPY_CATERPILLAR = new ItemCrispyCaterpillar("caterpillar_cooked", 3, false);
 	
 	//SPECIAL

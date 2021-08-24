@@ -35,15 +35,12 @@ public class AloeBulbilliferaGenerator implements IWorldGenerator {
         if (BiomeDictionary.hasType(world.getBiome(blockpos), BiomeDictionary.Type.SAVANNA)) {
             for (int i = 0; i < 100; ++i) {
                 blockpos = new BlockPos(x, i, z);
-
-                int j = 2 + random.nextInt(random.nextInt(3) + 1);
                 
                 if (world.isAirBlock(blockpos) && this.aloebulbillifera.canBlockStay(world, blockpos, this.state)) {
-                	for (int k = 0; k < j; ++k)
+                	for (int k = 0; k < 5; ++k)
                     {
                 		EnumFacing face = EnumFacing.HORIZONTALS[random.nextInt(4)];
                 		world.setBlockState(blockpos, this.state.withProperty(BlockHorizontal.FACING, face));
-                		System.out.println("Spawned");
                     }
                 }
             }

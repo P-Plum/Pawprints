@@ -2,6 +2,6 @@
     "parent": "item/generated",
     "textures":
     {
-        "layer0": "pawprints:items/goawaybird_feather"
+        "layer0": "pawprints:items/cookedcrab"
     }
 }
