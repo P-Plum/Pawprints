@@ -90,11 +90,11 @@ public class EntityInit {
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothpuss"),EntityPussMoth.class, "mothpuss", id++, main.instance, 1024, 1, true, 13682623, 11114631);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothmadagascan"),EntitySunsetMoth.class, "mothmadagascan", id++, main.instance, 1024, 1, true, 2035200, 13037263);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothdeathshead"),EntityDeathsMoth.class, "mothdeathshead", id++, main.instance, 1024, 1, true, 16494417, 8018501);
-				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothregal"),EntityRegalMoth.class, "mothregal", id++, main.instance, 1024, 1, true, 13682623, 11114631);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mothregal"),EntityRegalMoth.class, "mothregal", id++, main.instance, 1024, 1, true, 7110014, 14115077);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "butterflypaperkite"),EntityPaperKiteButterfly.class, "butterflypaperkite", id++, main.instance, 1024, 1, true, 14606816, 3091491);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "butterflydainty"),EntityDaintyButterfly.class, "butterflydainty", id++, main.instance, 1024, 1, true, 3417632, 15262931);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "butterflyswallowtail"),EntityOldWorldButterfly.class, "butterflyswallowtail", id++, main.instance, 1024, 1, true, 15856060, 5066034);
-				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "butterflyorangeoakleaf"),EntityOrangeOakleafButterfly.class, "butterflyorangeoakleaf", id++, main.instance, 1024, 1, true, 3417632, 15262931);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "butterflyorangeoakleaf"),EntityOrangeOakleafButterfly.class, "butterflyorangeoakleaf", id++, main.instance, 1024, 1, true, 7267314, 16352512);
 				
 				
 				//Spawns

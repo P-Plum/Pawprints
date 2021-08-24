@@ -6,7 +6,6 @@ import java.util.List;
 import net.minecraft.item.Item;
 import plum.pawprints.objects.items.ItemBase;
 import plum.pawprints.objects.items.ItemSewingneedle;
-import plum.pawprints.objects.items.egg.ItemButterflyEgg;
 import plum.pawprints.objects.items.egg.ItemNudibranchEgg;
 import plum.pawprints.objects.items.food.ItemCrispyCaterpillar;
 import plum.pawprints.objects.items.food.ItemFoodBase;
@@ -42,6 +41,5 @@ public class ItemInit {
 	
 	public static final Item SEWINGNEEDLE = new ItemSewingneedle("sewingneedle");
 	
-	public static final Item BUTTERFLY_SPAWN = new ItemButterflyEgg("butterflyspawn");
 	public static final Item NUDIBRANCH_SPAWN = new ItemNudibranchEgg("nudibranchspawn");
 }

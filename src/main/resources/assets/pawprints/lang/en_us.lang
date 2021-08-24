@@ -23,6 +23,8 @@ entity.hermitcrab.name=Hermit Crab
 entity.frilledlizard.name=Frilled-neck Lizard
 
 entity.butterflyglasswing.name=Butterfly - Greta oto
+entity.butterflydainty.name=Butterfly - Papilio anactus
+entity.butterflyorangeoakleaf.name=Butterfly - Kallima inachus
 entity.butterflydeadleaf.name=Butterfly - Kallima inachus
 entity.butterflyrajah.name=Butterfly - Trogonoptera brookiana
 entity.butterflymonarch.name=Butterfly - Danaus plexippus
@@ -39,7 +41,7 @@ entity.mothwattle.name=Moth - Calcarifera ordinata
 entity.mothmadagascan.name=Moth - Chrysiridia rhipheus
 entity.mothdeathshead.name=Moth - Acherontia atropos
 entity.mothhornworm.name=Moth - Manduca quinquemaculata
-entity.mothhickory.name=Moth - Citheronia regalis
+entity.mothregal.name=Moth - Citheronia regalis
 entity.mothluna.name=Moth - Actias luna
 entity.mothhummingbird.name=Moth - Macroglossum stellatarum
 entity.mothpaletussock.name=Moth - Calliteara pudibunda

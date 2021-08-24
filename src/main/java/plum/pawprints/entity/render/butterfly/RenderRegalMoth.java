@@ -12,8 +12,8 @@ import plum.pawprints.entity.model.butterfly.ModelRegalMoth;
 @SideOnly(Side.CLIENT)
 public class RenderRegalMoth extends RenderLiving<EntityRegalMoth>
 {
-	public static final ResourceLocation BABY_TEXTURES = new ResourceLocation("pawprints", "textures/hickory_horned_devil.png");
-	public static final ResourceLocation ADULT_TEXTURES = new ResourceLocation("pawprints", "textures/regal_moth.png");
+	public static final ResourceLocation BABY_TEXTURES = new ResourceLocation("pawprints", "textures/regalmoth_caterpillar.png");
+	public static final ResourceLocation ADULT_TEXTURES = new ResourceLocation("pawprints", "textures/regalmoth_moth.png");
 	
 	public RenderRegalMoth(RenderManager manager)
 	{
