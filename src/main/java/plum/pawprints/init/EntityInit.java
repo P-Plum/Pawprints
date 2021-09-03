@@ -229,10 +229,12 @@ public class EntityInit {
 						RegistryHelper.Entities.addSpawn(EntityDaintyButterfly.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
 						RegistryHelper.Entities.addSpawn(EntityDeathsMoth.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
 						RegistryHelper.Entities.addSpawn(EntityLunaMoth.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityRegalMoth.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
 						RegistryHelper.Entities.addSpawn(EntityOldWorldButterfly.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
 						RegistryHelper.Entities.addSpawn(EntityPaperKiteButterfly.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
 						RegistryHelper.Entities.addSpawn(EntityRegalMoth.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
 						RegistryHelper.Entities.addSpawn(EntitySunsetMoth.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
+						RegistryHelper.Entities.addSpawn(EntityOrangeOakleafButterfly.class, PawprintsSpawnConfig.mothRate, 3, 5, EnumCreatureType.CREATURE, getBiomes(t));
 					}
 				}
 	}

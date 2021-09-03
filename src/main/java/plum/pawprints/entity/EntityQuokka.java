@@ -46,7 +46,7 @@ public class EntityQuokka extends EntityAnimal implements IAnimatable
         	this.tasks.addTask(3, new EntityAIWander(this, 2.5D));
         	this.tasks.addTask(4, new EntityAIWatchClosest(this, EntityPlayer.class, 6F));
         	this.tasks.addTask(3, new EntityAIMate(this, 1.0D));
-        	this.tasks.addTask(4, new EntityAIFollowParent(this, 1.25D));
+        	this.tasks.addTask(4, new EntityAIFollowParent(this, 1.5D));
 	}
 	
 	@Override
@@ -149,11 +149,17 @@ public class EntityQuokka extends EntityAnimal implements IAnimatable
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
-    	if(event.isMoving())
+    	if(event.isMoving() && this.isChild())
     	{
+    		event.getController().setAnimation(new AnimationBuilder().addAnimation("childwalk", true));
+            return PlayState.CONTINUE;
+    	} if(this.isInWater() && this.isChild()) {
+    		event.getController().setAnimation(new AnimationBuilder().addAnimation("childwalk", true));
+            return PlayState.CONTINUE;
+    	} if(event.isMoving() && !this.isChild()) {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
             return PlayState.CONTINUE;
-    	} if(this.isInWater()) {
+    	} if(this.isInWater() && !this.isChild()) {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
             return PlayState.CONTINUE;
     	} else {

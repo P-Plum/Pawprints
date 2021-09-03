@@ -52,7 +52,7 @@ public class EntityNudibranchKuniei extends EntityWaterMob implements IAnimatabl
 	
 	protected boolean canDespawn()
     {
-        return false;
+        return true;
     }
 	
 	public void onEntityUpdate()

@@ -35,6 +35,7 @@ public class ModelFerretBadger extends AnimatedGeoModel<EntityFerretBadger>
             root.setScaleX(0.7f);
             root.setScaleY(0.7f);
             root.setScaleZ(0.7f);
+            root.setPositionY(-2.4f);
         }
     }
 

@@ -41,6 +41,7 @@ public class ModelGoAwayBird extends AnimatedGeoModel<EntityGoAwayBird>
             root.setScaleX(0.5f);
             root.setScaleY(0.5f);
             root.setScaleZ(0.5f);
+            root.setPositionY(-4f);
         }
     }
 }

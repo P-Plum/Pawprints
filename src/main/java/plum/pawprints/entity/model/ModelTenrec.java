@@ -35,6 +35,7 @@ public class ModelTenrec extends AnimatedGeoModel<EntityTenrec>
             root.setScaleX(0.7f);
             root.setScaleY(0.7f);
             root.setScaleZ(0.7f);
+            root.setPositionY(-1f);
         }
     }
 

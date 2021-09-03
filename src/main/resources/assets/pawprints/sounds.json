@@ -41,6 +41,13 @@
 		"sounds": [{ "name": "pawprints:entity/lowlandpaca/ambient", "stream": true}]
 	},
 	
+	"entity.frilledlizard.hurt":
+	{
+		"category": "entity",
+		"subtitle": "Frilled-neck Lizard hisses",
+		"sounds": [{ "name": "pawprints:entity/frilledlizard/hurt", "stream": true}]
+	},
+	
 	"entity.lowlandpaca.hurt":
 	{
 		"category": "entity",
@@ -48,10 +55,24 @@
 		"sounds": [{ "name": "pawprints:entity/lowlandpaca/attacked", "stream": true}]
 	},
 	
+	"entity.finch.ambient":
+	{
+		"category": "entity",
+		"subtitle": "Finch beeps",
+		"sounds": [{ "name": "pawprints:entity/finch/ambient", "stream": true}]
+	},
+	
 	"entity.bilby.ambient":
 	{
 		"category": "entity",
 		"subtitle": "Bilby chuffs",
 		"sounds": [{ "name": "pawprints:entity/bilby/ambient", "stream": true}]
+	},
+	
+	"entity.termite.hurt":
+	{
+		"category": "entity",
+		"subtitle": "Termite dies",
+		"sounds": [{ "name": "pawprints:entity/termite/hit", "stream": true}]
 	}
 }

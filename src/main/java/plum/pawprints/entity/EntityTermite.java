@@ -14,6 +14,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import plum.pawprints.util.handlers.LootTableHandler;
+import plum.pawprints.util.handlers.SoundHandler;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -36,7 +37,7 @@ public class EntityTermite extends EntityAnimal implements IAnimatable
 	protected void initEntityAI()
 	{
         this.tasks.addTask(1, new EntityAIPanic(this, 1.0D));
-        this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 0.5D));
+        this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 0.8D));
         this.tasks.addTask(4, new EntityAILookIdle(this));
 	}
 	
@@ -66,12 +67,6 @@ public class EntityTermite extends EntityAnimal implements IAnimatable
 		return LootTableHandler.TERMITE;
 	}
 	
-	@Override
-	public boolean processInteract(EntityPlayer player, EnumHand hand)
-    {
-		return false;
-    }
-	
 	public boolean isBreedingItem(ItemStack stack)
     {
         return false;
@@ -91,12 +86,12 @@ public class EntityTermite extends EntityAnimal implements IAnimatable
 	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSource) 
 	{
-	    return null;
+		return null;
 	}
 	
 	protected SoundEvent getDeathSound() 
 	{
-	    return null;
+		return SoundHandler.ENTITY_TERMITE_HURT;
 	}
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)

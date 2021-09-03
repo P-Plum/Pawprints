@@ -47,7 +47,7 @@ public class EntityNudibranchKuroshimae extends EntityWaterMob implements IAnima
 	
 	protected boolean canDespawn()
     {
-        return false;
+        return true;
     }
 	
 	public void onEntityUpdate()

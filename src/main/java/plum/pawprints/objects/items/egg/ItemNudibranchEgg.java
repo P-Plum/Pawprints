@@ -50,16 +50,16 @@ public class ItemNudibranchEgg extends ItemBase {
     	EntityNudibranchRuthae entitynine = new EntityNudibranchRuthae(worldIn);
     	EntityNudibranchSinuata entityten = new EntityNudibranchSinuata(worldIn);
     	
-    	entity.setPosition(player.posX, player.posY, player.posZ);
-    	entitytwo.setPosition(player.posX, player.posY, player.posZ);
-    	entitythree.setPosition(player.posX, player.posY, player.posZ);
-    	entityfour.setPosition(player.posX, player.posY, player.posZ);
-    	entityfive.setPosition(player.posX, player.posY, player.posZ);
-    	entitysix.setPosition(player.posX, player.posY, player.posZ);
-    	entityseven.setPosition(player.posX, player.posY, player.posZ);
-    	entityeight.setPosition(player.posX, player.posY, player.posZ);
-    	entitynine.setPosition(player.posX, player.posY, player.posZ);
-    	entityten.setPosition(player.posX, player.posY, player.posZ);
+    	entity.setPosition(player.posX, player.posY + 1, player.posZ);
+    	entitytwo.setPosition(player.posX, player.posY + 1, player.posZ);
+    	entitythree.setPosition(player.posX, player.posY + 1, player.posZ);
+    	entityfour.setPosition(player.posX, player.posY + 1, player.posZ);
+    	entityfive.setPosition(player.posX, player.posY + 1, player.posZ);
+    	entitysix.setPosition(player.posX, player.posY + 1, player.posZ);
+    	entityseven.setPosition(player.posX, player.posY + 1, player.posZ);
+    	entityeight.setPosition(player.posX, player.posY + 1, player.posZ);
+    	entitynine.setPosition(player.posX, player.posY + 1, player.posZ);
+    	entityten.setPosition(player.posX, player.posY + 1, player.posZ);
     	//Entity spawn list end
     	
     	if (!player.capabilities.isCreativeMode)

@@ -5,20 +5,22 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAIMate;
 import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAIWander;
-import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWaterFlying;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.ai.EntityMoveHelper;
+import net.minecraft.entity.ai.EntityFlyHelper;
 import net.minecraft.entity.passive.EntityAnimal;
+import net.minecraft.entity.passive.EntityFlying;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.pathfinding.PathNavigate;
+import net.minecraft.pathfinding.PathNavigateFlying;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import plum.pawprints.entity.base.EntityBird;
-import plum.pawprints.entity.move.EntityAIBirdFly;
 import plum.pawprints.init.ItemInit;
 import plum.pawprints.util.handlers.LootTableHandler;
 import plum.pawprints.util.handlers.SoundHandler;
@@ -30,17 +32,20 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class EntityGoAwayBird extends EntityBird implements IAnimatable
+public class EntityGoAwayBird extends EntityBird implements IAnimatable, EntityFlying
 {
 	public AnimationFactory factory = new AnimationFactory(this);
-	
-	protected EntityAIWanderAvoidWaterFlying WanderFlying;
-    protected EntityAIWanderAvoidWater Wander;
+	public float flap;
+    public float flapSpeed;
+    public float oFlapSpeed;
+    public float oFlap;
+    public float flapping = 1.0F;
     
 	public EntityGoAwayBird(World worldIn)
 	{
 		super(worldIn);
 		setSize(0.4F, 0.4F);
+		this.moveHelper = new EntityFlyHelper(this);
         this.ignoreFrustumCheck = true;
 	}
 	
@@ -51,21 +56,7 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable
 			this.tasks.addTask(1, new EntityAIMate(this, 1.0D));
 	        this.tasks.addTask(2, new EntityAIFollowParent(this, 1.25D));
 	        this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-	        this.tasks.addTask(9, new EntityAIWander(this, 1.0D));
-	        
-	        this.Wander = new EntityAIWanderAvoidWater(this, 1.0D);
-		    this.WanderFlying = new EntityAIWanderAvoidWaterFlying(this, 1.0D);
-
-	        super.initEntityAI();
-	        if(this.isChild()){
-	            this.moveHelper = new EntityMoveHelper(this);
-	            this.tasks.addTask(3, Wander);
-	        }
-	        else{
-	            this.moveHelper = new EntityAIBirdFly(this);
-	            this.tasks.removeTask(Wander);
-	            this.tasks.addTask(3, WanderFlying);
-	        }
+	        this.tasks.addTask(9, new EntityAIWanderAvoidWaterFlying(this, 1.0D));
 	}
 	
 	@Override
@@ -73,8 +64,46 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable
 	{
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
-		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.2D);
+        this.getEntityAttribute(SharedMonsterAttributes.FLYING_SPEED).setBaseValue(0.4000000059604645D);
+        this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.20000000298023224D);
 	}
+	
+	protected PathNavigate createNavigator(World worldIn)
+    {
+        PathNavigateFlying pathnavigateflying = new PathNavigateFlying(this, worldIn);
+        pathnavigateflying.setCanOpenDoors(false);
+        pathnavigateflying.setCanFloat(true);
+        pathnavigateflying.setCanEnterDoors(true);
+        return pathnavigateflying;
+    }
+	
+	private void calculateFlapping()
+    {
+        this.oFlap = this.flap;
+        this.oFlapSpeed = this.flapSpeed;
+        this.flapSpeed = (float)((double)this.flapSpeed + (double)(this.onGround ? -1 : 4) * 0.3D);
+        this.flapSpeed = MathHelper.clamp(this.flapSpeed, 0.0F, 1.0F);
+
+        if (!this.onGround && this.flapping < 1.0F)
+        {
+            this.flapping = 1.0F;
+        }
+
+        this.flapping = (float)((double)this.flapping * 0.9D);
+
+        if (!this.onGround && this.motionY < 0.0D)
+        {
+            this.motionY *= 0.6D;
+        }
+
+        this.flap += this.flapping * 2.0F;
+    }
+	
+	public void onLivingUpdate()
+    {
+        super.onLivingUpdate();
+        this.calculateFlapping();
+    }
 	
 	@Override
 	public float getEyeHeight()
@@ -141,13 +170,24 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable
 	    return null;
 	}
 	
-	@Override
-    public boolean isAquatic() {
-        return false;
+	protected float playFlySound(float p_191954_1_)
+    {
+        this.playSound(SoundEvents.ENTITY_PARROT_FLY, 0.15F, 1.0F);
+        return p_191954_1_ + this.flapSpeed / 2.0F;
+    }
+	
+	public boolean isFlying()
+    {
+        return !this.onGround;
     }
 	
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
+    	if(event.isMoving() && this.onGround)
+		{
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+			return PlayState.CONTINUE;
+		}
     	if(this.onGround)
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
@@ -155,7 +195,7 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable
 		}
 		if(this.isInWater())
 		{
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("fly", true));
 			return PlayState.CONTINUE;
 		} else {
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("fly", true));
@@ -174,4 +214,9 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable
     {
         return this.factory;
     }
+
+	@Override
+	public boolean isAquatic() {
+		return false;
+	}
 }

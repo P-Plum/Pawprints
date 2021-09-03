@@ -41,6 +41,7 @@ public class ModelAmericanPika extends AnimatedGeoModel<EntityAmericanPika>
             root.setScaleX(0.7f);
             root.setScaleY(0.7f);
             root.setScaleZ(0.7f);
+            root.setPositionY(-2.4f);
         }
     }
 }

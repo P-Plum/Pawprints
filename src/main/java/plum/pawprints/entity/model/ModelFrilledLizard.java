@@ -41,31 +41,7 @@ public class ModelFrilledLizard extends AnimatedGeoModel<EntityFrilledLizard>
             root.setScaleX(0.5f);
             root.setScaleY(0.5f);
             root.setScaleZ(0.5f);
-            
-            IBone tailbase = this.getAnimationProcessor().getBone("tailbase");
-            tailbase.setScaleX(0.5f);
-            tailbase.setScaleY(0.5f);
-            tailbase.setScaleZ(0.5f);
-            
-            IBone frontthighleft = this.getAnimationProcessor().getBone("frontthighleft");
-            frontthighleft.setScaleX(0.5f);
-            frontthighleft.setScaleY(0.5f);
-            frontthighleft.setScaleZ(0.5f);
-            
-            IBone frontthighright = this.getAnimationProcessor().getBone("frontthighright");
-            frontthighright.setScaleX(0.5f);
-            frontthighright.setScaleY(0.5f);
-            frontthighright.setScaleZ(0.5f);
-            
-            IBone backthighright = this.getAnimationProcessor().getBone("backthighright");
-            backthighright.setScaleX(0.5f);
-            backthighright.setScaleY(0.5f);
-            backthighright.setScaleZ(0.5f);
-            
-            IBone backthighleft = this.getAnimationProcessor().getBone("backthighleft");
-            backthighleft.setScaleX(0.5f);
-            backthighleft.setScaleY(0.5f);
-            backthighleft.setScaleZ(0.5f);
+            root.setPositionY(-2.4f);
         }
     }
 }

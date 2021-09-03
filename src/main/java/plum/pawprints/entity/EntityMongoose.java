@@ -66,17 +66,16 @@ public class EntityMongoose extends EntityAnimal implements IAnimatable
 	protected void initEntityAI()
 	{
 		//Neutrality
-        this.tasks.addTask(1, new EntityAIAttackMelee(this, 1.0D, true));
+        this.tasks.addTask(1, new EntityAIAttackMelee(this, 0.75D, true));
         this.targetTasks.addTask(0, new EntityAIHurtByTarget(this, true, new Class[0]));
 		
 		this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.0D));
+        this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 1.5D));
         this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6F));
         this.tasks.addTask(4, new EntityAILookIdle(this));
         this.tasks.addTask(3, new EntityAIMate(this, 1.0D));
         this.tasks.addTask(4, new EntityAIFollowParent(this, 1.25D));
         this.tasks.addTask(5, new EntityAITempt(this, 1.25D, false, TEMPTATION_ITEMS));
-        this.tasks.addTask(5, new EntityAIAttackMelee(this, 1.0D, true));
 		this.tasks.addTask(1, new EntityAILeapAtTarget(this, 0.2F));
         this.tasks.addTask(1, new EntityAIOcelotAttack(this));
         

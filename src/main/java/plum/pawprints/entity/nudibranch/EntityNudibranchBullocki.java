@@ -51,7 +51,7 @@ public class EntityNudibranchBullocki extends EntityWaterMob implements IAnimata
 	
 	protected boolean canDespawn()
     {
-        return false;
+        return true;
     }
 	
 	public void onEntityUpdate()

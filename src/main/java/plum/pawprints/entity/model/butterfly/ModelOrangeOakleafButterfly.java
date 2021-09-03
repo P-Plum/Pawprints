@@ -93,7 +93,8 @@ public class ModelOrangeOakleafButterfly extends ModelBase {
 		wingright.cubeList.add(new ModelBox(wingright, 0, 0, -16.0F, -0.5F, -15.7F, 16, 0, 34, 0.0F, false));
 
 		caterpillar = new ModelRenderer(this);
-		caterpillar.setRotationPoint(0.0F, 21.7F, 1.1F);
+		caterpillar.setRotationPoint(0.0F, 0.4F, 1.7F);
+		body.addChild(caterpillar);
 		caterpillar.cubeList.add(new ModelBox(caterpillar, 11, 26, -1.5F, -1.5F, -2.5F, 3, 3, 5, -0.1F, false));
 
 		butt = new ModelRenderer(this);

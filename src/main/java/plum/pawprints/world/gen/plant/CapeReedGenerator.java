@@ -11,41 +11,43 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.IWorldGenerator;
-import plum.pawprints.objects.blocks.BlockBush;
+import plum.pawprints.objects.blocks.BlockCapeReed;
 
-public class BushGenerator implements IWorldGenerator {
+public class CapeReedGenerator implements IWorldGenerator {
 
-    private BlockBush bush;
+    private BlockCapeReed capereed;
     private IBlockState state;
 
-    public BushGenerator(BlockBush bushIn) {
-        this.setGeneratedBlock(bushIn);
+    public CapeReedGenerator(BlockCapeReed capereedIn) {
+        this.setGeneratedBlock(capereedIn);
     }
 
-    public void setGeneratedBlock(BlockBush bushIn) {
-        this.bush = bushIn;
-        this.state = bushIn.getDefaultState();
+    public void setGeneratedBlock(BlockCapeReed capereedIn) {
+        this.capereed = capereedIn;
+        this.state = capereedIn.getDefaultState();
     }
 
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
         int x = (chunkX * 16) + 8 + random.nextInt(12);
         int z = (chunkZ * 16) + 8 + random.nextInt(12);
-        BlockPos blockpos = new BlockPos(x, 80, z);
-        if (BiomeDictionary.hasType(world.getBiome(blockpos), BiomeDictionary.Type.FOREST)) {
-            for (int i = 0; i < 100; ++i) {
+        BlockPos blockpos = new BlockPos(x, 63, z);
+        if (BiomeDictionary.hasType(world.getBiome(blockpos), BiomeDictionary.Type.BEACH)) {
+            for (int i = 0; i < 64; ++i) {
                 blockpos = new BlockPos(x, i, z);
 
                 int j = 2 + random.nextInt(random.nextInt(3) + 1);
                 
-                if (world.isAirBlock(blockpos) && this.bush.canBlockStay(world, blockpos, this.state)) {
+                if (world.isAirBlock(blockpos) && this.capereed.canBlockStay(world, blockpos, this.state)) {
                 	for (int k = 0; k < j; ++k)
                     {
                 		EnumFacing face = EnumFacing.HORIZONTALS[random.nextInt(4)];
                 		world.setBlockState(blockpos, this.state.withProperty(BlockHorizontal.FACING, face));
+                		//System.out.println("Spawned");
                     }
                 }
             }
         }
     }
+
 }

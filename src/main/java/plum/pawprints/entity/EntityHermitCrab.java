@@ -6,17 +6,13 @@ import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.IEntityLivingData;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIPanic;
 import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 import net.minecraft.entity.passive.EntityAnimal;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.MathHelper;
@@ -34,7 +30,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class EntityHermitCrab extends EntityAnimal implements IAnimatable
 {	
 	public AnimationFactory factory = new AnimationFactory(this);
-	private static final DataParameter<Integer> CRAB_VARIANT = EntityDataManager.<Integer>createKey(EntityTenrec.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> CRAB_VARIANT = EntityDataManager.<Integer>createKey(EntityHermitCrab.class, DataSerializers.VARINT);
 	public EntityHermitCrab(World worldIn)
 	{
 		super(worldIn);
@@ -45,7 +41,7 @@ public class EntityHermitCrab extends EntityAnimal implements IAnimatable
 	@Override
 	protected void initEntityAI()
 	{
-        this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 0.5D));
+        this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 0.35D));
         this.tasks.addTask(4, new EntityAILookIdle(this));
 	}
 	
@@ -146,9 +142,6 @@ public class EntityHermitCrab extends EntityAnimal implements IAnimatable
     {
     	if(event.isMoving())
     	{
-    		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
-            return PlayState.CONTINUE;
-    	} if(this.isInWater()) {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
             return PlayState.CONTINUE;
     	} else {

@@ -2,6 +2,7 @@ package plum.pawprints.entity.nudibranch;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -47,7 +48,7 @@ public class EntityNudibranchAnnae extends EntityWaterMob implements IAnimatable
 	
 	protected boolean canDespawn()
     {
-        return false;
+        return true;
     }
 	
 	public void onEntityUpdate()

@@ -47,7 +47,7 @@ public class EntityNudibranchParva extends EntityWaterMob implements IAnimatable
 	
 	protected boolean canDespawn()
     {
-        return false;
+        return true;
     }
 	
 	public void onEntityUpdate()

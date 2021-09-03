@@ -43,7 +43,6 @@ public class PapyrusGenerator implements IWorldGenerator {
                     {
                 		EnumFacing face = EnumFacing.HORIZONTALS[random.nextInt(4)];
                 		world.setBlockState(blockpos, this.state.withProperty(BlockHorizontal.FACING, face));
-                		System.out.println("Spawned");
                     }
                 }
             }

@@ -59,8 +59,8 @@ public class EntityTenrec extends EntityAnimal implements IAnimatable
 	protected void initEntityAI()
 	{
 		this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIPanic(this, 2.0D));
-        this.tasks.addTask(2, new EntityAIWander(this, 1.0D));
+        this.tasks.addTask(1, new EntityAIPanic(this, 1.0D));
+        this.tasks.addTask(2, new EntityAIWander(this, 0.7D));
         this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6F));
         this.tasks.addTask(4, new EntityAILookIdle(this));
         this.tasks.addTask(3, new EntityAIMate(this, 1.0D));

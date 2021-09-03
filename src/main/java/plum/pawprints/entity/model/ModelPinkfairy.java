@@ -41,6 +41,7 @@ public class ModelPinkfairy extends AnimatedGeoModel<EntityPinkfairy>
             root.setScaleX(0.5f);
             root.setScaleY(0.5f);
             root.setScaleZ(0.5f);
+            root.setPositionY(-2.4f);
         }
     }
 }

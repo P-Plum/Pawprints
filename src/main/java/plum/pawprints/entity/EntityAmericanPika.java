@@ -42,12 +42,12 @@ public class EntityAmericanPika extends EntityAnimal implements IAnimatable
 	protected void initEntityAI()
 	{
 		this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIPanic(this, 0.8D));
-        this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 0.5D));
+        this.tasks.addTask(1, new EntityAIPanic(this, 0.4D));
+        this.tasks.addTask(2, new EntityAIWanderAvoidWater(this, 0.3D));
         this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 6F));
         this.tasks.addTask(4, new EntityAILookIdle(this));
         this.tasks.addTask(1, new EntityAIMate(this, 1.0D));
-        this.tasks.addTask(2, new EntityAIFollowParent(this, 1.25D));
+        this.tasks.addTask(2, new EntityAIFollowParent(this, 0.4D));
 	}
 	
 	@Override

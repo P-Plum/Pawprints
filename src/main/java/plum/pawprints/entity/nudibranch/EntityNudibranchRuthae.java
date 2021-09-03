@@ -47,7 +47,7 @@ public class EntityNudibranchRuthae extends EntityWaterMob implements IAnimatabl
 	
 	protected boolean canDespawn()
     {
-        return false;
+        return true;
     }
 	
 	public void onEntityUpdate()

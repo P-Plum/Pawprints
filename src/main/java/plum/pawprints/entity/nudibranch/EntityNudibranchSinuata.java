@@ -47,7 +47,7 @@ public class EntityNudibranchSinuata extends EntityWaterMob implements IAnimatab
 	
 	protected boolean canDespawn()
     {
-        return false;
+        return true;
     }
 	
 	public void onEntityUpdate()

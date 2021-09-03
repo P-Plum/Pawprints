@@ -32,24 +32,6 @@ public class ClientProxy extends CommonProxy
         OBJLoader.INSTANCE.addDomain("pawprints");
     }
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
     public static void initModel(Item item) {
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
     }

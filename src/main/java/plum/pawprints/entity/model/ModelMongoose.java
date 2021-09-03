@@ -35,6 +35,7 @@ public class ModelMongoose extends AnimatedGeoModel<EntityMongoose>
             root.setScaleX(0.5f);
             root.setScaleY(0.5f);
             root.setScaleZ(0.5f);
+            root.setPositionY(-4.5f);
         }
     }
 

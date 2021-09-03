@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "pawprints:capereed"
+    },
+    "facing=north": {
+      "model": "pawprints:capereed"
+    },
+    "facing=east": {
+      "model": "pawprints:capereed",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "pawprints:capereed",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pawprints:capereed",
+      "y": 270
+    }
+  }
+}

@@ -24,9 +24,9 @@ public class PawprintsGenConfig {
     @Comment("Enables natural generation of Aloe bulbillifera.")
     public static boolean enableAloe = true;
 	
-	@Config.Name("Red Natal Grass world generation")
-    @Comment("Enables natural generation of Red Natal Grass.")
-    public static boolean enableRedNatal = true;
+	@Config.Name("Cape Thatching Reed world generation")
+    @Comment("Enables natural generation of Cape Thatching Reed.")
+    public static boolean enableCapeReed = true;
 	
 	@Config.Name("Farmer's Friends world generation")
     @Comment("Enables natural generation of Farmer's Friends.")

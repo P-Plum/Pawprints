@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "pawprints:capereed"
+        }
+    ],
+    "result": {
+        "item": "minecraft:string",
+    	"count": 2
+    }
+}

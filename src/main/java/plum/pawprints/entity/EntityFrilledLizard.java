@@ -27,6 +27,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import plum.pawprints.init.ItemInit;
 import plum.pawprints.util.handlers.LootTableHandler;
+import plum.pawprints.util.handlers.SoundHandler;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -197,7 +198,7 @@ public class EntityFrilledLizard extends EntityAnimal implements IAnimatable
 	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSource) 
 	{
-	    return null;
+		return SoundHandler.ENTITY_FRILLEDLIZARD_HURT;
 	}
 	
 	protected SoundEvent getDeathSound() 
