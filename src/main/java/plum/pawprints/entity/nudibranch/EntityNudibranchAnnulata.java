@@ -30,7 +30,7 @@ public class EntityNudibranchAnnulata extends EntityWaterMob implements IAnimata
 	protected void initEntityAI()
 	{
         this.tasks.addTask(0, new EntityAILookIdle(this));
-        this.tasks.addTask(1, new EntityAIWaterWander(this, 2.0D, 70));
+        this.tasks.addTask(1, new EntityAIWaterWander(this, 2.0D, 40));
 	}
 	
 	@Override

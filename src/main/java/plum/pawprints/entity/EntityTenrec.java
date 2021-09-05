@@ -114,7 +114,8 @@ public class EntityTenrec extends EntityAnimal implements IAnimatable
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {
 		EntityTenrec child = new EntityTenrec(this.world);
-		return child;
+		child.setVariant(this.getVariant());
+	    return child;
 	}
 	
 	@Override

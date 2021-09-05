@@ -21,6 +21,8 @@ entity.tenrec.name=Tenrec
 entity.mongoose.name=Mongoose
 entity.hermitcrab.name=Hermit Crab
 entity.frilledlizard.name=Frilled-neck Lizard
+entity.jumpingspider.name=Jumping Spider
+entity.harvestman.name=Harvestman
 
 entity.butterflyglasswing.name=Butterfly - Greta oto
 entity.butterflydainty.name=Butterfly - Papilio anactus

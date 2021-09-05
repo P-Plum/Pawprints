@@ -8,6 +8,7 @@ public class LootTableHandler {
 	
 	public static final ResourceLocation TERMITE = LootTableList.register(new ResourceLocation(Reference.MODID, "termite"));
 	public static final ResourceLocation BUTTERFLY = LootTableList.register(new ResourceLocation(Reference.MODID, "caterpillar_loot"));
+	public static final ResourceLocation SPIDER = LootTableList.register(new ResourceLocation(Reference.MODID, "spider_loot"));
 	
 	//ANIMALS
 	public static final ResourceLocation BILBY_GENERIC = LootTableList.register(new ResourceLocation(Reference.MODID, "bilby_generic"));

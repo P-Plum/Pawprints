@@ -21,8 +21,10 @@ import plum.pawprints.entity.EntityBilby;
 import plum.pawprints.entity.EntityFerretBadger;
 import plum.pawprints.entity.EntityFrilledLizard;
 import plum.pawprints.entity.EntityGoAwayBird;
+import plum.pawprints.entity.EntityHarvestman;
 import plum.pawprints.entity.EntityHermitCrab;
 import plum.pawprints.entity.EntityIliPika;
+import plum.pawprints.entity.EntityJumpingSpider;
 import plum.pawprints.entity.EntityLowlandPaca;
 import plum.pawprints.entity.EntityMongoose;
 import plum.pawprints.entity.EntityPinkfairy;
@@ -71,6 +73,8 @@ public class EntityInit {
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "tenrec"),EntityTenrec.class, "tenrec", id++, main.instance, 1024, 1, true, 2300701, 7227954);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "mongoose"),EntityMongoose.class, "mongoose", id++, main.instance, 1024, 1, true, 11241075, 2499621);
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "hermitcrab"),EntityHermitCrab.class, "hermitcrab", id++, main.instance, 1024, 1, true, 10618889, 16497580);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "jumpingspider"),EntityJumpingSpider.class, "jumpingspider", id++, main.instance, 1024, 1, true, 6307364, 2870001);
+				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "harvestman"),EntityHarvestman.class, "harvestman", id++, main.instance, 1024, 1, true, 12218156, 2693126);
 				
 				//Nudis
 				EntityRegistry.registerModEntity(new ResourceLocation(Reference.MODID, "nudibranchannae"),EntityNudibranchAnnae.class, "nudibranchannae", id++, main.instance, 1024, 1, true);

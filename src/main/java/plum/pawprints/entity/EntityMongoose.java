@@ -127,7 +127,8 @@ public class EntityMongoose extends EntityAnimal implements IAnimatable
 	@Override
 	public EntityAgeable createChild(EntityAgeable ageable) {
 		EntityMongoose child = new EntityMongoose(this.world);
-		return child;
+		child.setVariant(this.getVariant());
+	    return child;
 	}
 	
 	@Override

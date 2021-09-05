@@ -1,0 +1,21 @@
+{
+    "pools": [
+        {
+        	"name": "SpiderDeath",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 60,
+                    "name": "minecraft:string",
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

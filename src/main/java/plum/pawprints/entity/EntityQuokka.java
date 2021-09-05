@@ -151,10 +151,10 @@ public class EntityQuokka extends EntityAnimal implements IAnimatable
     {
     	if(event.isMoving() && this.isChild())
     	{
-    		event.getController().setAnimation(new AnimationBuilder().addAnimation("childwalk", true));
+    		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
             return PlayState.CONTINUE;
     	} if(this.isInWater() && this.isChild()) {
-    		event.getController().setAnimation(new AnimationBuilder().addAnimation("childwalk", true));
+    		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
             return PlayState.CONTINUE;
     	} if(event.isMoving() && !this.isChild()) {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
