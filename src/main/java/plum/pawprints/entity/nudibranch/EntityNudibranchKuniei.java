@@ -1,14 +1,9 @@
 package plum.pawprints.entity.nudibranch;
 
-import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.passive.EntityWaterMob;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import plum.pawprints.entity.move.EntityAIWaterWander;
@@ -123,7 +118,7 @@ public class EntityNudibranchKuniei extends EntityWaterMob implements IAnimatabl
     @Override
     public void registerControllers(AnimationData data)
     {
-        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+        data.addAnimationController(new AnimationController<EntityNudibranchKuniei>(this, "controller", 0, this::predicate));
     }
 
     @Override

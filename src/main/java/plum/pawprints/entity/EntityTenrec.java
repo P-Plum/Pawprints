@@ -220,7 +220,7 @@ public class EntityTenrec extends EntityAnimal implements IAnimatable
     @Override
     public void registerControllers(AnimationData data)
     {
-        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+        data.addAnimationController(new AnimationController<EntityTenrec>(this, "controller", 0, this::predicate));
     }
 
     @Override

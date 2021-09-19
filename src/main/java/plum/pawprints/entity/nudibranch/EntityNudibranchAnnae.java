@@ -2,7 +2,6 @@ package plum.pawprints.entity.nudibranch;
 
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -124,7 +123,7 @@ public class EntityNudibranchAnnae extends EntityWaterMob implements IAnimatable
     @Override
     public void registerControllers(AnimationData data)
     {
-        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+        data.addAnimationController(new AnimationController<EntityNudibranchAnnae>(this, "controller", 0, this::predicate));
     }
 
     @Override

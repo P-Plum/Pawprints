@@ -118,7 +118,7 @@ public class EntityNudibranchRuthae extends EntityWaterMob implements IAnimatabl
     @Override
     public void registerControllers(AnimationData data)
     {
-        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+        data.addAnimationController(new AnimationController<EntityNudibranchRuthae>(this, "controller", 0, this::predicate));
     }
 
     @Override

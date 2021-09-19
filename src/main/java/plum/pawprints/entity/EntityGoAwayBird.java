@@ -206,7 +206,7 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable, EntityF
     @Override
     public void registerControllers(AnimationData data)
     {
-        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+        data.addAnimationController(new AnimationController<EntityGoAwayBird>(this, "controller", 0, this::predicate));
     }
 
     @Override

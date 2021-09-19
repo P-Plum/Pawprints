@@ -46,7 +46,6 @@ public class WorldGenCustomStructure implements IWorldGenerator
 		}
 	}
 	
-	@SuppressWarnings("unchecked")
 	private void generateStructure(WorldGenerator generator, World world, Random random, int chunkX, int chunkZ, int chance, Block topBlock, Class<?>... classes)
 	{
 		ArrayList<Class<?>> classesList = new ArrayList<Class<?>>(Arrays.asList(classes));

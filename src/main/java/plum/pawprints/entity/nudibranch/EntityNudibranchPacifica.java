@@ -118,7 +118,7 @@ public class EntityNudibranchPacifica extends EntityWaterMob implements IAnimata
     @Override
     public void registerControllers(AnimationData data)
     {
-        data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+        data.addAnimationController(new AnimationController<EntityNudibranchPacifica>(this, "controller", 0, this::predicate));
     }
 
     @Override

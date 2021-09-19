@@ -14,7 +14,6 @@ public class SoundHandler {
 	public static SoundEvent ENTITY_PIKA_AMBIENT;
 	public static SoundEvent ENTITY_TENREC_AMBIENT;
 	public static SoundEvent ENTITY_PACA_AMBIENT;
-	public static SoundEvent ENTITY_FINCH_AMBIENT;
 	public static SoundEvent ENTITY_FRILLEDLIZARD_HURT;
 	public static SoundEvent ENTITY_PACA_HURT;
 	public static SoundEvent ENTITY_TERMITE_HURT;
@@ -28,7 +27,6 @@ public class SoundHandler {
 		ENTITY_PIKA_AMBIENT = registerSound("entity.pika.ambient");
 		ENTITY_TENREC_AMBIENT = registerSound("entity.tenrec.ambient");
 		ENTITY_PACA_AMBIENT = registerSound("entity.lowlandpaca.ambient");
-		ENTITY_FINCH_AMBIENT = registerSound("entity.finch.ambient");
 		ENTITY_FRILLEDLIZARD_HURT = registerSound("entity.frilledlizard.hurt");
 		ENTITY_PACA_HURT = registerSound("entity.lowlandpaca.hurt");
 		ENTITY_TERMITE_HURT = registerSound("entity.termite.hurt");
