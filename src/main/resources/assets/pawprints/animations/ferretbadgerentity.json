@@ -518,6 +518,106 @@
 					}
 				}
 			}
+		},
+		"sleep": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": {
+						"vector": [0, 0, -51]
+					},
+					"position": {
+						"vector": [-1.7, -4, 0]
+					}
+				},
+				"neckupper": {
+					"rotation": {
+						"vector": [0, 0, 17]
+					}
+				},
+				"head": {
+					"rotation": {
+						"vector": [8, 0, 14]
+					}
+				},
+				"tailbase": {
+					"rotation": {
+						"vector": [0, 0, -15]
+					}
+				},
+				"tailone": {
+					"rotation": {
+						"vector": [-13, 2, 0]
+					}
+				},
+				"tailtwo": {
+					"rotation": {
+						"vector": [-32, 14, -4]
+					},
+					"position": {
+						"vector": [0, 0, -0.4]
+					}
+				},
+				"tailthree": {
+					"rotation": {
+						"vector": [-32, 0, -19]
+					}
+				},
+				"tailfour": {
+					"rotation": {
+						"vector": [-41, 0, 0]
+					},
+					"position": {
+						"vector": [0, 0.4, -0.3]
+					}
+				},
+				"thighleftfront": {
+					"rotation": {
+						"vector": [25, 0, -11]
+					}
+				},
+				"footleftfront": {
+					"rotation": {
+						"vector": [-3, 0, 0]
+					}
+				},
+				"thighleftback": {
+					"rotation": {
+						"vector": [42, 0, -6]
+					}
+				},
+				"footleftback": {
+					"rotation": {
+						"vector": [6, 0, 0]
+					}
+				},
+				"thighrightfront": {
+					"rotation": {
+						"vector": [-18, 0, -44]
+					},
+					"position": {
+						"vector": [1.5, 0.9, 0]
+					}
+				},
+				"thighrightback": {
+					"rotation": {
+						"vector": [0, 0, -44]
+					},
+					"position": {
+						"vector": [2.4, 0.4, 0]
+					}
+				},
+				"legrightback": {
+					"rotation": {
+						"vector": [-7, 0, 0]
+					}
+				},
+				"footrightback": {
+					"rotation": {
+						"vector": [23, 0, 0]
+					}
+				}
+			}
 		}
 	},
 	"geckolib_format_version": 2

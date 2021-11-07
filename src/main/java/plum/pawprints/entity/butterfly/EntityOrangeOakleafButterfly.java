@@ -16,16 +16,23 @@ import net.minecraft.world.World;
 import plum.pawprints.entity.base.EntityButterfly;
 import plum.pawprints.init.ItemInit;
 import plum.pawprints.util.handlers.LootTableHandler;
+import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
+import software.bernie.geckolib3.core.manager.AnimationData;
+import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class EntityOrangeOakleafButterfly extends EntityButterfly
+public class EntityOrangeOakleafButterfly extends EntityButterfly implements IAnimatable
 {	
-	
+	public AnimationFactory factory = new AnimationFactory(this);
 	private BlockPos spawnPosition;
-	
 	
 	public EntityOrangeOakleafButterfly(World worldIn)
 	{
 		super(worldIn);
+        this.ignoreFrustumCheck = true;
 		setSize(0.4F, 0.4F);
 	}
 	
@@ -33,7 +40,7 @@ public class EntityOrangeOakleafButterfly extends EntityButterfly
     {
 		if(this.isChild())
 		{
-			this.tasks.addTask(1, new EntityAIWanderAvoidWater(this, 0.5D));
+			this.tasks.addTask(1, new EntityAIWanderAvoidWater(this, 0.7D));
 			
 		} else {
         super.updateAITasks();
@@ -50,9 +57,9 @@ public class EntityOrangeOakleafButterfly extends EntityButterfly
             double d0 = (double)this.spawnPosition.getX() + 0.5D - this.posX;
             double d1 = (double)this.spawnPosition.getY() + 0.1D - this.posY;
             double d2 = (double)this.spawnPosition.getZ() + 0.5D - this.posZ;
-            this.motionX += (Math.signum(d0) * 0.5D - this.motionX) * 0.10000000149011612D;
+            this.motionX += (Math.signum(d0) * 0.5D - this.motionX) * 0.030000000149011612D;
             this.motionY += (Math.signum(d1) * 0.699999988079071D - this.motionY) * 0.10000000149011612D;
-            this.motionZ += (Math.signum(d2) * 0.5D - this.motionZ) * 0.10000000149011612D;
+            this.motionZ += (Math.signum(d2) * 0.5D - this.motionZ) * 0.030000000149011612D;
             float f = (float)(MathHelper.atan2(this.motionZ, this.motionX) * (180D / Math.PI)) - 90.0F;
             float f1 = MathHelper.wrapDegrees(f - this.rotationYaw);
             this.moveForward = 0.5F;
@@ -77,7 +84,7 @@ public class EntityOrangeOakleafButterfly extends EntityButterfly
 	@Override
 	public float getEyeHeight()
 	{
-		return 0.25F;
+		return 0.1F;
 	}
 	
 	public void fall(float distance, float damageMultiplier)
@@ -166,5 +173,36 @@ public class EntityOrangeOakleafButterfly extends EntityButterfly
     protected void collideWithNearbyEntities()
     {
     	
+    }
+
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
+    {
+    	if(this.isChild()) {
+    		if(event.isMoving()) {
+        		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+                return PlayState.CONTINUE;
+        	} if(this.isInWater()) {
+        		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+                return PlayState.CONTINUE;
+        	} else {
+        		event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
+                return PlayState.CONTINUE;
+        	}
+    	} else {
+        		event.getController().setAnimation(new AnimationBuilder().addAnimation("fly", true));
+                return PlayState.CONTINUE;
+    	}
+    }
+
+	@Override
+    public void registerControllers(AnimationData data)
+    {
+        data.addAnimationController(new AnimationController<EntityOrangeOakleafButterfly>(this, "controller", 0, this::predicate));
+    }
+
+    @Override
+    public AnimationFactory getFactory()
+    {
+        return this.factory;
     }
 }

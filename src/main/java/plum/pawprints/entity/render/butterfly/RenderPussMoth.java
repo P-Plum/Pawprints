@@ -1,36 +1,20 @@
 package plum.pawprints.entity.render.butterfly;
 
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import plum.pawprints.entity.butterfly.EntityPussMoth;
 import plum.pawprints.entity.model.butterfly.ModelPussMoth;
+import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 @SideOnly(Side.CLIENT)
-public class RenderPussMoth extends RenderLiving<EntityPussMoth>
+public class RenderPussMoth extends GeoEntityRenderer<EntityPussMoth>
 {
-	public static final ResourceLocation BABY_TEXTURES = new ResourceLocation("pawprints", "textures/pussmoth_caterpillar.png");
-	public static final ResourceLocation ADULT_TEXTURES = new ResourceLocation("pawprints", "textures/pussmoth_moth.png");
-	
 	public RenderPussMoth(RenderManager manager)
 	{
-		super(manager, new ModelPussMoth(), 0.075F);
-	}
-	
-	@Override
-	protected ResourceLocation getEntityTexture(EntityPussMoth entity)
-	{
-		if(entity.isChild())
-		{
-			return BABY_TEXTURES;
-		}
-		else
-		{
-			return ADULT_TEXTURES;
-		}
+		super(manager, new ModelPussMoth());
+		this.shadowSize = 0.2F;
 	}
 	
 	@Override
@@ -40,9 +24,12 @@ public class RenderPussMoth extends RenderLiving<EntityPussMoth>
 	}
 	
 	@Override
-    public float prepareScale(EntityPussMoth entitylivingbaseIn, float partialTicks)
-    {
+	public void renderEarly(EntityPussMoth animatable, float ticks, float red, float green, float blue, float partialTicks)
+	{
+		if(animatable.isChild()) {
+			GlStateManager.scale(0.35F, 0.35F, 0.35F);
+		} else {
 		GlStateManager.scale(0.35F, 0.35F, 0.35F);
-        return super.prepareScale(entitylivingbaseIn, partialTicks);
-    }
+		}
+	}
 }

@@ -13,6 +13,10 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -30,6 +34,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class EntityAmericanPika extends EntityAnimal implements IAnimatable
 {
 	public AnimationFactory factory = new AnimationFactory(this);
+    protected static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityBilby.class, DataSerializers.BOOLEAN);
 	
 	public EntityAmericanPika(World worldIn)
 	{
@@ -37,6 +42,51 @@ public class EntityAmericanPika extends EntityAnimal implements IAnimatable
         this.ignoreFrustumCheck = true;
 		setSize(0.2F, 0.2F);
 	}
+	
+	public void onLivingUpdate()
+    {
+        if (this.onGround) {
+            setSleeping(world.getWorldTime() >= 13000 && world.getWorldTime() <= 23000);
+        }
+        if (this.inWater || this.isInWater() || this.isBurning()) {
+            setSleeping(false);
+        }
+        super.onLivingUpdate();
+    }
+	
+	protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(SLEEPING, Boolean.valueOf(false));
+    }
+
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+        super.writeEntityToNBT(compound);
+        compound.setBoolean("Sleeping", this.isSleeping());
+    }
+
+    public void readEntityFromNBT(NBTTagCompound compound) {
+        super.readEntityFromNBT(compound);
+        this.setSleeping(compound.getBoolean("Sleeping"));
+    }
+
+    public void setSleeping(boolean value) {
+        this.dataManager.set(SLEEPING, Boolean.valueOf(value));
+    }
+
+    public boolean isSleeping() {
+        return this.dataManager.get(SLEEPING);
+    }
+
+    @Override
+    public boolean isMovementBlocked() {
+        if (this.onGround) {
+            return super.isMovementBlocked() || isSleeping();
+        } else {
+            return super.isMovementBlocked();
+        }
+    }
 	
 	@Override
 	protected void initEntityAI()
@@ -137,18 +187,22 @@ public class EntityAmericanPika extends EntityAnimal implements IAnimatable
 	@Override
 	protected SoundEvent getAmbientSound()
 	{
-		return SoundHandler.ENTITY_PIKA_AMBIENT;
+		if (!this.isSleeping()) {
+            return SoundHandler.ENTITY_PIKA_AMBIENT;
+        } else {
+            return null;
+        }
 	}
 	
 	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSource) 
 	{
-	    return null;
+		return SoundHandler.ENTITY_TERMITE_HURT;
 	}
 	
 	protected SoundEvent getDeathSound() 
 	{
-	    return null;
+		return SoundHandler.ENTITY_TERMITE_HURT;
 	}
 	
 
@@ -160,8 +214,11 @@ public class EntityAmericanPika extends EntityAnimal implements IAnimatable
             return PlayState.CONTINUE;
     	} if(this.isInWater()) {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+    		return PlayState.CONTINUE;
+    	} if (this.isSleeping() && !this.isDead) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("sleep", true));
             return PlayState.CONTINUE;
-    	} else {
+        } else {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
             return PlayState.CONTINUE;
     	}

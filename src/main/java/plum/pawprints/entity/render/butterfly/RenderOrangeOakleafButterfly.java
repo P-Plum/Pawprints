@@ -1,36 +1,20 @@
 package plum.pawprints.entity.render.butterfly;
 
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import plum.pawprints.entity.butterfly.EntityOrangeOakleafButterfly;
 import plum.pawprints.entity.model.butterfly.ModelOrangeOakleafButterfly;
+import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 @SideOnly(Side.CLIENT)
-public class RenderOrangeOakleafButterfly extends RenderLiving<EntityOrangeOakleafButterfly>
+public class RenderOrangeOakleafButterfly extends GeoEntityRenderer<EntityOrangeOakleafButterfly>
 {
-	public static final ResourceLocation BABY_TEXTURES = new ResourceLocation("pawprints", "textures/orangeoakleaf_caterpillar.png");
-	public static final ResourceLocation ADULT_TEXTURES = new ResourceLocation("pawprints", "textures/orangeoakleaf_butterfly.png");
-	
 	public RenderOrangeOakleafButterfly(RenderManager manager)
 	{
-		super(manager, new ModelOrangeOakleafButterfly(), 0.075F);
-	}
-	
-	@Override
-	protected ResourceLocation getEntityTexture(EntityOrangeOakleafButterfly entity)
-	{
-		if(entity.isChild())
-		{
-			return BABY_TEXTURES;
-		}
-		else
-		{
-			return ADULT_TEXTURES;
-		}
+		super(manager, new ModelOrangeOakleafButterfly());
+		this.shadowSize = 0.2F;
 	}
 	
 	@Override
@@ -40,9 +24,12 @@ public class RenderOrangeOakleafButterfly extends RenderLiving<EntityOrangeOakle
 	}
 	
 	@Override
-    public float prepareScale(EntityOrangeOakleafButterfly entitylivingbaseIn, float partialTicks)
-    {
+	public void renderEarly(EntityOrangeOakleafButterfly animatable, float ticks, float red, float green, float blue, float partialTicks)
+	{
+		if(animatable.isChild()) {
+			GlStateManager.scale(0.35F, 0.35F, 0.35F);
+		} else {
 		GlStateManager.scale(0.35F, 0.35F, 0.35F);
-        return super.prepareScale(entitylivingbaseIn, partialTicks);
-    }
+		}
+	}
 }

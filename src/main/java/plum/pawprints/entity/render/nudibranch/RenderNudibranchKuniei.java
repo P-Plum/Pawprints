@@ -24,8 +24,13 @@ public class RenderNudibranchKuniei extends GeoEntityRenderer<EntityNudibranchKu
 	}
 	
 	@Override
-	public void renderEarly(EntityNudibranchKuniei animatable, float ticks, float red, float green, float blue, float partialTicks)
+	public void renderEarly(EntityNudibranchKuniei entity, float ticks, float red, float green, float blue, float partialTicks)
 	{
 		GlStateManager.scale(0.25F, 0.25F, 0.25F);
+		
+		if (entity.isBesideClimbableBlock()) {
+			GlStateManager.rotate(90, 1, 0, 0);
+			GlStateManager.translate(0F, -0.4F, -0.5F);
+		}
 	}
 }

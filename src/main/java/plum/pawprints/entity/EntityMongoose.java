@@ -54,6 +54,7 @@ public class EntityMongoose extends EntityAnimal implements IAnimatable
 	public AnimationFactory factory = new AnimationFactory(this);
 	private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(ItemInit.CATERPILLAR);
 	private static final DataParameter<Integer> MONGOOSE_VARIANT = EntityDataManager.<Integer>createKey(EntityMongoose.class, DataSerializers.VARINT);
+    protected static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityBilby.class, DataSerializers.BOOLEAN);
 	
 	public EntityMongoose(World worldIn)
 	{
@@ -61,6 +62,34 @@ public class EntityMongoose extends EntityAnimal implements IAnimatable
 		setSize(0.4F, 0.4F);
 		this.ignoreFrustumCheck = true;
 	}
+	
+	public void onLivingUpdate()
+    {
+        if (this.onGround) {
+            setSleeping(world.getWorldTime() >= 13000 && world.getWorldTime() <= 23000);
+        }
+        if (this.inWater || this.isInWater() || this.isBurning()) {
+            setSleeping(false);
+        }
+        super.onLivingUpdate();
+    }
+
+    public void setSleeping(boolean value) {
+        this.dataManager.set(SLEEPING, Boolean.valueOf(value));
+    }
+
+    public boolean isSleeping() {
+        return this.dataManager.get(SLEEPING);
+    }
+
+    @Override
+    public boolean isMovementBlocked() {
+        if (this.onGround) {
+            return super.isMovementBlocked() || isSleeping();
+        } else {
+            return super.isMovementBlocked();
+        }
+    }
 	
 	@Override
 	protected void initEntityAI()
@@ -89,12 +118,14 @@ public class EntityMongoose extends EntityAnimal implements IAnimatable
     {
         super.writeEntityToNBT(compound);
         compound.setInteger("MongooseType", this.getSkin());
+        compound.setBoolean("Sleeping", this.isSleeping());
     }
 	
 	public void readEntityFromNBT(NBTTagCompound compound)
     {
         super.readEntityFromNBT(compound);
         this.setSkin(compound.getInteger("MongooseType"));
+        this.setSleeping(compound.getBoolean("Sleeping"));
     }
 	
 	public int getSkin()
@@ -217,7 +248,11 @@ public class EntityMongoose extends EntityAnimal implements IAnimatable
 	@Override
     protected SoundEvent getAmbientSound() 
 	{
-		return SoundHandler.ENTITY_MONGOOSE_AMBIENT;
+		if (!this.isSleeping()) {
+            return SoundHandler.ENTITY_MONGOOSE_AMBIENT;
+        } else {
+            return null;
+        }
     }
 	
 	@Override
@@ -247,6 +282,7 @@ public class EntityMongoose extends EntityAnimal implements IAnimatable
     {
         super.entityInit();
         this.dataManager.register(MONGOOSE_VARIANT, Integer.valueOf(0));
+        this.dataManager.register(SLEEPING, Boolean.valueOf(false));
     }
 	
 	@Nullable
@@ -265,8 +301,11 @@ public class EntityMongoose extends EntityAnimal implements IAnimatable
             return PlayState.CONTINUE;
     	} if(this.isInWater()) {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+    		return PlayState.CONTINUE;
+    	} if (this.isSleeping() && !this.isDead) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("sleep", true));
             return PlayState.CONTINUE;
-    	} else {
+        } else {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
             return PlayState.CONTINUE;
     	}

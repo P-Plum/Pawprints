@@ -1,36 +1,20 @@
 package plum.pawprints.entity.render.butterfly;
 
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import plum.pawprints.entity.butterfly.EntityDaintyButterfly;
 import plum.pawprints.entity.model.butterfly.ModelDaintyButterfly;
+import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 @SideOnly(Side.CLIENT)
-public class RenderDaintyButterfly extends RenderLiving<EntityDaintyButterfly>
+public class RenderDaintyButterfly extends GeoEntityRenderer<EntityDaintyButterfly>
 {
-	public static final ResourceLocation BABY_TEXTURES = new ResourceLocation("pawprints", "textures/dainty_caterpillar.png");
-	public static final ResourceLocation ADULT_TEXTURES = new ResourceLocation("pawprints", "textures/dainty_butterfly.png");
-	
 	public RenderDaintyButterfly(RenderManager manager)
 	{
-		super(manager, new ModelDaintyButterfly(), 0.075F);
-	}
-	
-	@Override
-	protected ResourceLocation getEntityTexture(EntityDaintyButterfly entity)
-	{
-		if(entity.isChild())
-		{
-			return BABY_TEXTURES;
-		}
-		else
-		{
-			return ADULT_TEXTURES;
-		}
+		super(manager, new ModelDaintyButterfly());
+		this.shadowSize = 0.2F;
 	}
 	
 	@Override
@@ -40,9 +24,12 @@ public class RenderDaintyButterfly extends RenderLiving<EntityDaintyButterfly>
 	}
 	
 	@Override
-    public float prepareScale(EntityDaintyButterfly entitylivingbaseIn, float partialTicks)
-    {
+	public void renderEarly(EntityDaintyButterfly animatable, float ticks, float red, float green, float blue, float partialTicks)
+	{
+		if(animatable.isChild()) {
+			GlStateManager.scale(0.35F, 0.35F, 0.35F);
+		} else {
 		GlStateManager.scale(0.35F, 0.35F, 0.35F);
-        return super.prepareScale(entitylivingbaseIn, partialTicks);
-    }
+		}
+	}
 }

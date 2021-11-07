@@ -1,7 +1,3 @@
-// Made with Blockbench 3.6.6
-// Exported for Minecraft version 1.12.2 or 1.15.2 (same format for both) for entity models animated with GeckoLib
-// Paste this class into your mod and follow the documentation for GeckoLib to use animations. You can find the documentation here: https://github.com/bernie-g/geckolib
-// Blockbench plugin created by Gecko
 package plum.pawprints.entity.model;
 
 import javax.annotation.Nullable;
@@ -13,23 +9,32 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.processor.IBone;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
-public class ModelGoAwayBird extends AnimatedGeoModel<EntityGoAwayBird>
-{
-    @Override
+public class ModelGoAwayBird extends AnimatedGeoModel<EntityGoAwayBird> {
+	
+	@Override
     public ResourceLocation getModelLocation(EntityGoAwayBird object)
     {
+        if (object.isFlying() || !object.onGround) {
+            return new ResourceLocation(Reference.MODID, "geo/goawaybirdfly.geo.json");
+        }
         return new ResourceLocation(Reference.MODID, "geo/goawaybird.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureLocation(EntityGoAwayBird object)
     {
-        return new ResourceLocation(Reference.MODID, "textures/goawaybird.png");
+        if (object.isFlying() || !object.onGround) {
+            return new ResourceLocation(Reference.MODID, "textures/goawaybirdfly.png");
+        } else {
+            return new ResourceLocation(Reference.MODID, "textures/goawaybird.png");}
     }
 
     @Override
     public ResourceLocation getAnimationFileLocation(EntityGoAwayBird object)
     {
+        if (object.isFlying() || !object.onGround) {
+            return new ResourceLocation(Reference.MODID, "animations/goawaybirdflyentity.json");
+        }
         return new ResourceLocation(Reference.MODID, "animations/goawaybirdentity.json");
     }
     

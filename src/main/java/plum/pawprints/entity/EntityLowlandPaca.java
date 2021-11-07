@@ -14,6 +14,10 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -31,12 +35,59 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class EntityLowlandPaca extends EntityAnimal implements IAnimatable
 {
 	public AnimationFactory factory = new AnimationFactory(this);
+    protected static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityBilby.class, DataSerializers.BOOLEAN);
+    
 	public EntityLowlandPaca(World worldIn)
 	{
 		super(worldIn);
 		setSize(0.4F, 0.4F);
 		this.ignoreFrustumCheck = true;
 	}
+	
+	public void onLivingUpdate()
+    {
+        if (this.onGround) {
+            setSleeping(world.getWorldTime() >= 1000 && world.getWorldTime() <= 12000);
+        }
+        if (this.inWater || this.isInWater() || this.isBurning()) {
+            setSleeping(false);
+        }
+        super.onLivingUpdate();
+    }
+	
+	protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(SLEEPING, Boolean.valueOf(false));
+    }
+
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+        super.writeEntityToNBT(compound);
+        compound.setBoolean("Sleeping", this.isSleeping());
+    }
+
+    public void readEntityFromNBT(NBTTagCompound compound) {
+        super.readEntityFromNBT(compound);
+        this.setSleeping(compound.getBoolean("Sleeping"));
+    }
+
+    public void setSleeping(boolean value) {
+        this.dataManager.set(SLEEPING, Boolean.valueOf(value));
+    }
+
+    public boolean isSleeping() {
+        return this.dataManager.get(SLEEPING);
+    }
+
+    @Override
+    public boolean isMovementBlocked() {
+        if (this.onGround) {
+            return super.isMovementBlocked() || isSleeping();
+        } else {
+            return super.isMovementBlocked();
+        }
+    }
 	
 	@Override
 	protected void initEntityAI()
@@ -127,7 +178,11 @@ public class EntityLowlandPaca extends EntityAnimal implements IAnimatable
 	@Override
 	protected SoundEvent getAmbientSound()
 	{
-		return SoundHandler.ENTITY_PACA_AMBIENT;
+		if (!this.isSleeping()) {
+            return SoundHandler.ENTITY_PACA_AMBIENT;
+        } else {
+            return null;
+        }
 	}
 	
 	@Override
@@ -160,8 +215,11 @@ public class EntityLowlandPaca extends EntityAnimal implements IAnimatable
             return PlayState.CONTINUE;
     	} if(this.isInWater()) {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+    		return PlayState.CONTINUE;
+    	} if (this.isSleeping() && !this.isDead) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("sleep", true));
             return PlayState.CONTINUE;
-    	} else {
+        } else {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
             return PlayState.CONTINUE;
     	}

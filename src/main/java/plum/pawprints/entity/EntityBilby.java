@@ -22,6 +22,10 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -41,6 +45,7 @@ public class EntityBilby extends EntityAnimal implements IAnimatable
 {	
 	public AnimationFactory factory = new AnimationFactory(this);
 	private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(ItemInit.DEAD_TERMITE);
+    protected static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityBilby.class, DataSerializers.BOOLEAN);
 	
 	public EntityBilby(World worldIn)
 	{
@@ -49,7 +54,50 @@ public class EntityBilby extends EntityAnimal implements IAnimatable
         this.ignoreFrustumCheck = true;
 	}
 	
+	public void onLivingUpdate()
+    {
+        if (this.onGround) {
+            setSleeping(world.getWorldTime() >= 1000 && world.getWorldTime() <= 12000);
+        }
+        if (this.inWater || this.isInWater() || this.isBurning()) {
+            setSleeping(false);
+        }
+        super.onLivingUpdate();
+    }
 	
+	protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(SLEEPING, Boolean.valueOf(false));
+    }
+
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+        super.writeEntityToNBT(compound);
+        compound.setBoolean("Sleeping", this.isSleeping());
+    }
+
+    public void readEntityFromNBT(NBTTagCompound compound) {
+        super.readEntityFromNBT(compound);
+        this.setSleeping(compound.getBoolean("Sleeping"));
+    }
+
+    public void setSleeping(boolean value) {
+        this.dataManager.set(SLEEPING, Boolean.valueOf(value));
+    }
+
+    public boolean isSleeping() {
+        return this.dataManager.get(SLEEPING);
+    }
+
+    @Override
+    public boolean isMovementBlocked() {
+        if (this.onGround) {
+            return super.isMovementBlocked() || isSleeping();
+        } else {
+            return super.isMovementBlocked();
+        }
+    }
 	
 	@Override
 	protected void initEntityAI()
@@ -61,7 +109,7 @@ public class EntityBilby extends EntityAnimal implements IAnimatable
 	        this.tasks.addTask(3, new EntityAIOcelotAttack(this));
 	        this.tasks.addTask(6, new EntityAIFollowParent(this, 1.25D));
 	        this.tasks.addTask(7, new EntityAITempt(this, 1.25D, false, TEMPTATION_ITEMS));
-	        this.tasks.addTask(8, new EntityAIWanderAvoidWater(this, 1.0D));
+	        this.tasks.addTask(8, new EntityAIWanderAvoidWater(this, 0.7D));
 	        this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 6F));
 	        this.tasks.addTask(10, new EntityAILookIdle(this));
 	        this.targetTasks.addTask(11, new EntityAINearestAttackableTarget<EntityTermite>(this, EntityTermite.class, true));
@@ -121,7 +169,11 @@ public class EntityBilby extends EntityAnimal implements IAnimatable
 	@Override
     protected SoundEvent getAmbientSound() 
 	{
-		return SoundHandler.ENTITY_BILBY_AMBIENT;
+		if (!this.isSleeping()) {
+            return SoundHandler.ENTITY_BILBY_AMBIENT;
+        } else {
+            return null;
+        }
     }
 	
 	@Override
@@ -155,7 +207,10 @@ public class EntityBilby extends EntityAnimal implements IAnimatable
     	} if(this.isInWater()) {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
             return PlayState.CONTINUE;
-    	} else {
+    	} if (this.isSleeping() && !this.isDead) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("sleep", true));
+            return PlayState.CONTINUE;
+        } else {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
             return PlayState.CONTINUE;
     	}

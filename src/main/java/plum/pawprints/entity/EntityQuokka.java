@@ -13,6 +13,10 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -29,6 +33,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class EntityQuokka extends EntityAnimal implements IAnimatable
 {
 	public AnimationFactory factory = new AnimationFactory(this);
+    protected static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityBilby.class, DataSerializers.BOOLEAN);
 	
 	public EntityQuokka(World worldIn)
 	{
@@ -36,6 +41,51 @@ public class EntityQuokka extends EntityAnimal implements IAnimatable
         this.ignoreFrustumCheck = true;
         setSize(0.4F, 0.4F);
 	}
+	
+	public void onLivingUpdate()
+    {
+        if (this.onGround) {
+            setSleeping(world.getWorldTime() >= 1000 && world.getWorldTime() <= 12000);
+        }
+        if (this.inWater || this.isInWater() || this.isBurning()) {
+            setSleeping(false);
+        }
+        super.onLivingUpdate();
+    }
+	
+	protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(SLEEPING, Boolean.valueOf(false));
+    }
+
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+        super.writeEntityToNBT(compound);
+        compound.setBoolean("Sleeping", this.isSleeping());
+    }
+
+    public void readEntityFromNBT(NBTTagCompound compound) {
+        super.readEntityFromNBT(compound);
+        this.setSleeping(compound.getBoolean("Sleeping"));
+    }
+
+    public void setSleeping(boolean value) {
+        this.dataManager.set(SLEEPING, Boolean.valueOf(value));
+    }
+
+    public boolean isSleeping() {
+        return this.dataManager.get(SLEEPING);
+    }
+
+    @Override
+    public boolean isMovementBlocked() {
+        if (this.onGround) {
+            return super.isMovementBlocked() || isSleeping();
+        } else {
+            return super.isMovementBlocked();
+        }
+    }
 	
 	@Override
 	protected void initEntityAI()
@@ -149,21 +199,20 @@ public class EntityQuokka extends EntityAnimal implements IAnimatable
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
-    	if(event.isMoving() && this.isChild())
-    	{
+		if(this.isInLove()) {
+    		event.getController().setAnimation(new AnimationBuilder().addAnimation("eat", true));
+            return PlayState.CONTINUE;
+		} if(event.isMoving()) {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
             return PlayState.CONTINUE;
-    	} if(this.isInWater() && this.isChild()) {
+    	} if(this.isInWater()) {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+    		return PlayState.CONTINUE;
+    	} if (this.isSleeping() && !this.isDead) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("sleep", true));
             return PlayState.CONTINUE;
-    	} if(event.isMoving() && !this.isChild()) {
-    		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
-            return PlayState.CONTINUE;
-    	} if(this.isInWater() && !this.isChild()) {
-    		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
-            return PlayState.CONTINUE;
-    	} else {
-    		event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
+        } else {
+        	event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
             return PlayState.CONTINUE;
     	}
     }

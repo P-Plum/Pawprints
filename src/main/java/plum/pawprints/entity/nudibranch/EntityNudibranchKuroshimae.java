@@ -1,10 +1,17 @@
 package plum.pawprints.entity.nudibranch;
 
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.passive.EntityWaterMob;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.pathfinding.PathNavigate;
+import net.minecraft.pathfinding.PathNavigateClimber;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.datafix.DataFixer;
 import net.minecraft.world.World;
 import plum.pawprints.entity.move.EntityAIWaterWander;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -18,12 +25,65 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class EntityNudibranchKuroshimae extends EntityWaterMob implements IAnimatable
 {	
 	public AnimationFactory factory = new AnimationFactory(this);
+	private static final DataParameter<Byte> CLIMBING = EntityDataManager.<Byte>createKey(EntityNudibranchKuroshimae.class, DataSerializers.BYTE);
 	public EntityNudibranchKuroshimae(World worldIn)
 	{
 		super(worldIn);
 		setSize(0.2F, 0.2F);
         this.ignoreFrustumCheck = true;
 	}
+	
+	public static void registerFixes(DataFixer fixer)
+    {
+        EntityLiving.registerFixesMob(fixer, EntityNudibranchKuroshimae.class);
+    }
+	
+	protected PathNavigate createNavigator(World worldIn)
+    {
+        return new PathNavigateClimber(this, worldIn);
+    }
+	
+	protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(CLIMBING, Byte.valueOf((byte)0));
+    }
+
+    public void onUpdate()
+    {
+        super.onUpdate();
+
+        if (!this.world.isRemote)
+        {
+            this.setBesideClimbableBlock(this.collidedHorizontally);
+        }
+    }
+    
+    public boolean isOnLadder()
+    {
+        return this.isBesideClimbableBlock();
+    }
+    
+    public boolean isBesideClimbableBlock()
+    {
+        return (((Byte)this.dataManager.get(CLIMBING)).byteValue() & 1) != 0;
+    }
+
+    public void setBesideClimbableBlock(boolean climbing)
+    {
+        byte b0 = ((Byte)this.dataManager.get(CLIMBING)).byteValue();
+
+        if (climbing)
+        {
+            b0 = (byte)(b0 | 1);
+        }
+        else
+        {
+            b0 = (byte)(b0 & -2);
+        }
+
+        this.dataManager.set(CLIMBING, Byte.valueOf(b0));
+    }
 	
 	@Override
 	protected void initEntityAI()

@@ -1,36 +1,20 @@
 package plum.pawprints.entity.render.butterfly;
 
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import plum.pawprints.entity.butterfly.EntityLunaMoth;
 import plum.pawprints.entity.model.butterfly.ModelLunaMoth;
+import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 @SideOnly(Side.CLIENT)
-public class RenderLunaMoth extends RenderLiving<EntityLunaMoth>
+public class RenderLunaMoth extends GeoEntityRenderer<EntityLunaMoth>
 {
-	public static final ResourceLocation BABY_TEXTURES = new ResourceLocation("pawprints", "textures/combinedcaterpillar.png");
-	public static final ResourceLocation ADULT_TEXTURES = new ResourceLocation("pawprints", "textures/combinedmoth.png");
-	
 	public RenderLunaMoth(RenderManager manager)
 	{
-		super(manager, new ModelLunaMoth(), 0.075F);
-	}
-	
-	@Override
-	protected ResourceLocation getEntityTexture(EntityLunaMoth entity)
-	{
-		if(entity.isChild())
-		{
-			return BABY_TEXTURES;
-		}
-		else
-		{
-			return ADULT_TEXTURES;
-		}
+		super(manager, new ModelLunaMoth());
+		this.shadowSize = 0.2F;
 	}
 	
 	@Override
@@ -40,9 +24,12 @@ public class RenderLunaMoth extends RenderLiving<EntityLunaMoth>
 	}
 	
 	@Override
-    public float prepareScale(EntityLunaMoth entitylivingbaseIn, float partialTicks)
-    {
+	public void renderEarly(EntityLunaMoth animatable, float ticks, float red, float green, float blue, float partialTicks)
+	{
+		if(animatable.isChild()) {
+			GlStateManager.scale(0.35F, 0.35F, 0.35F);
+		} else {
 		GlStateManager.scale(0.35F, 0.35F, 0.35F);
-        return super.prepareScale(entitylivingbaseIn, partialTicks);
-    }
+		}
+	}
 }

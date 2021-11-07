@@ -472,6 +472,7 @@
 		},
 		"sleep": {
 			"loop": true,
+			"animation_length": 0.16,
 			"bones": {
 				"bodyneck": {
 					"rotation": {
@@ -486,7 +487,7 @@
 						"vector": [-8, 0, 0]
 					},
 					"position": {
-						"vector": [0, 0, 0]
+						"vector": [0, 0, -0.7]
 					}
 				},
 				"rear": {

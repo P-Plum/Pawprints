@@ -16,16 +16,23 @@ import net.minecraft.world.World;
 import plum.pawprints.entity.base.EntityButterfly;
 import plum.pawprints.init.ItemInit;
 import plum.pawprints.util.handlers.LootTableHandler;
+import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
+import software.bernie.geckolib3.core.manager.AnimationData;
+import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class EntityPaperKiteButterfly extends EntityButterfly
+public class EntityPaperKiteButterfly extends EntityButterfly implements IAnimatable
 {	
-	
+	public AnimationFactory factory = new AnimationFactory(this);
 	private BlockPos spawnPosition;
-	
 	
 	public EntityPaperKiteButterfly(World worldIn)
 	{
 		super(worldIn);
+        this.ignoreFrustumCheck = true;
 		setSize(0.4F, 0.4F);
 	}
 	
@@ -33,7 +40,7 @@ public class EntityPaperKiteButterfly extends EntityButterfly
     {
 		if(this.isChild())
 		{
-			this.tasks.addTask(1, new EntityAIWanderAvoidWater(this, 0.5D));
+			this.tasks.addTask(1, new EntityAIWanderAvoidWater(this, 0.7D));
 			
 		} else {
         super.updateAITasks();
@@ -77,7 +84,7 @@ public class EntityPaperKiteButterfly extends EntityButterfly
 	@Override
 	public float getEyeHeight()
 	{
-		return 0.25F;
+		return 0.1F;
 	}
 	
 	public void fall(float distance, float damageMultiplier)
@@ -166,5 +173,36 @@ public class EntityPaperKiteButterfly extends EntityButterfly
     protected void collideWithNearbyEntities()
     {
     	
+    }
+
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
+    {
+    	if(this.isChild()) {
+    		if(event.isMoving()) {
+        		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+                return PlayState.CONTINUE;
+        	} if(this.isInWater()) {
+        		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+                return PlayState.CONTINUE;
+        	} else {
+        		event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
+                return PlayState.CONTINUE;
+        	}
+    	} else {
+        		event.getController().setAnimation(new AnimationBuilder().addAnimation("fly", true));
+                return PlayState.CONTINUE;
+    	}
+    }
+
+	@Override
+    public void registerControllers(AnimationData data)
+    {
+        data.addAnimationController(new AnimationController<EntityPaperKiteButterfly>(this, "controller", 0, this::predicate));
+    }
+
+    @Override
+    public AnimationFactory getFactory()
+    {
+        return this.factory;
     }
 }

@@ -20,6 +20,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 import plum.pawprints.util.handlers.LootTableHandler;
+import plum.pawprints.util.handlers.SoundHandler;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -107,12 +108,12 @@ public class EntityHarvestman extends EntityAnimal implements IAnimatable
 	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSource) 
 	{
-	    return null;
+		return SoundHandler.ENTITY_TERMITE_HURT;
 	}
 	
 	protected SoundEvent getDeathSound() 
 	{
-	    return null;
+		return SoundHandler.ENTITY_TERMITE_HURT;
 	}
 	
 	//Related to variant code

@@ -13,6 +13,10 @@ import net.minecraft.entity.passive.EntityFlying;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.pathfinding.PathNavigate;
 import net.minecraft.pathfinding.PathNavigateFlying;
 import net.minecraft.util.DamageSource;
@@ -35,6 +39,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 public class EntityGoAwayBird extends EntityBird implements IAnimatable, EntityFlying
 {
 	public AnimationFactory factory = new AnimationFactory(this);
+    protected static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityBilby.class, DataSerializers.BOOLEAN);
 	public float flap;
     public float flapSpeed;
     public float oFlapSpeed;
@@ -48,6 +53,52 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable, EntityF
 		this.moveHelper = new EntityFlyHelper(this);
         this.ignoreFrustumCheck = true;
 	}
+	
+	public void onLivingUpdate()
+    {
+        if (this.onGround) {
+            setSleeping(world.getWorldTime() >= 13000 && world.getWorldTime() <= 23000);
+        }
+        if (this.inWater || this.isInWater() || this.isBurning()) {
+            setSleeping(false);
+        }
+        super.onLivingUpdate();
+        this.calculateFlapping();
+    }
+	
+	protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(SLEEPING, Boolean.valueOf(false));
+    }
+
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+        super.writeEntityToNBT(compound);
+        compound.setBoolean("Sleeping", this.isSleeping());
+    }
+
+    public void readEntityFromNBT(NBTTagCompound compound) {
+        super.readEntityFromNBT(compound);
+        this.setSleeping(compound.getBoolean("Sleeping"));
+    }
+
+    public void setSleeping(boolean value) {
+        this.dataManager.set(SLEEPING, Boolean.valueOf(value));
+    }
+
+    public boolean isSleeping() {
+        return this.dataManager.get(SLEEPING);
+    }
+
+    @Override
+    public boolean isMovementBlocked() {
+        if (this.onGround) {
+            return super.isMovementBlocked() || isSleeping();
+        } else {
+            return super.isMovementBlocked();
+        }
+    }
 	
 	@Override
 	protected void initEntityAI()
@@ -97,12 +148,6 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable, EntityF
         }
 
         this.flap += this.flapping * 2.0F;
-    }
-	
-	public void onLivingUpdate()
-    {
-        super.onLivingUpdate();
-        this.calculateFlapping();
     }
 	
 	@Override
@@ -156,7 +201,11 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable, EntityF
 	@Override
     protected SoundEvent getAmbientSound() 
 	{
-		return SoundHandler.ENTITY_GOAWAYBIRD_AMBIENT;
+		if (!this.isSleeping()) {
+            return SoundHandler.ENTITY_GOAWAYBIRD_AMBIENT;
+        } else {
+            return null;
+        }
     }
 	
 	@Override
@@ -181,8 +230,12 @@ public class EntityGoAwayBird extends EntityBird implements IAnimatable, EntityF
         return !this.onGround;
     }
 	
-    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
+	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
     {
+		if (this.isSleeping() && !this.isDead && this.onGround) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("sleep", true));
+            return PlayState.CONTINUE;
+        }
     	if(event.isMoving() && this.onGround)
 		{
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));

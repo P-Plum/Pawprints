@@ -18,6 +18,10 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -36,14 +40,7 @@ public class EntityPinkfairy extends EntityAnimal implements IAnimatable
 {
 	private static final Set<Item> TEMPTATION_ITEMS = Sets.newHashSet(ItemInit.DEAD_TERMITE);
 	public AnimationFactory factory = new AnimationFactory(this);
-	
-	/*
-	public boolean isDaytime() {
-        long time = this.world.getWorldTime() % 24000L; // Time can go over values of 24000, so divide and take the
-                                                        // remainder
-        return !(time >= 13000L && time <= 23000L);
-    }
-	*/
+    protected static final DataParameter<Boolean> SLEEPING = EntityDataManager.createKey(EntityBilby.class, DataSerializers.BOOLEAN);
 	
 	public EntityPinkfairy(World worldIn)
 	{
@@ -51,6 +48,51 @@ public class EntityPinkfairy extends EntityAnimal implements IAnimatable
         this.ignoreFrustumCheck = true;
 		setSize(0.2F, 0.2F);
 	}
+	
+	public void onLivingUpdate()
+    {
+        if (this.onGround) {
+            setSleeping(world.getWorldTime() >= 1000 && world.getWorldTime() <= 12000);
+        }
+        if (this.inWater || this.isInWater() || this.isBurning()) {
+            setSleeping(false);
+        }
+        super.onLivingUpdate();
+    }
+	
+	protected void entityInit()
+    {
+        super.entityInit();
+        this.dataManager.register(SLEEPING, Boolean.valueOf(false));
+    }
+
+    public void writeEntityToNBT(NBTTagCompound compound)
+    {
+        super.writeEntityToNBT(compound);
+        compound.setBoolean("Sleeping", this.isSleeping());
+    }
+
+    public void readEntityFromNBT(NBTTagCompound compound) {
+        super.readEntityFromNBT(compound);
+        this.setSleeping(compound.getBoolean("Sleeping"));
+    }
+
+    public void setSleeping(boolean value) {
+        this.dataManager.set(SLEEPING, Boolean.valueOf(value));
+    }
+
+    public boolean isSleeping() {
+        return this.dataManager.get(SLEEPING);
+    }
+
+    @Override
+    public boolean isMovementBlocked() {
+        if (this.onGround) {
+            return super.isMovementBlocked() || isSleeping();
+        } else {
+            return super.isMovementBlocked();
+        }
+    }
 	
 	@Override
 	protected void initEntityAI()
@@ -147,8 +189,11 @@ public class EntityPinkfairy extends EntityAnimal implements IAnimatable
             return PlayState.CONTINUE;
     	} if(this.isInWater()) {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
+    		return PlayState.CONTINUE;
+    	} if (this.isSleeping() && !this.isDead) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("sleep", true));
             return PlayState.CONTINUE;
-    	} else {
+        } else {
     		event.getController().setAnimation(new AnimationBuilder().addAnimation("idle", true));
             return PlayState.CONTINUE;
     	}

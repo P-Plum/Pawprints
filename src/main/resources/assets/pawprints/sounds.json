@@ -69,6 +69,13 @@
 		"sounds": [{ "name": "pawprints:entity/bilby/ambient", "stream": true}]
 	},
 	
+	"entity.seriema.ambient":
+	{
+		"category": "entity",
+		"subtitle": "Seriema calls",
+		"sounds": [{ "name": "pawprints:entity/seriema/ambient", "stream": true}]
+	},
+	
 	"entity.termite.hurt":
 	{
 		"category": "entity",

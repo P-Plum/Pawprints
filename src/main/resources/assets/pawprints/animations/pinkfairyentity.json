@@ -167,6 +167,19 @@
 							"vector": [0, 0, 0],
 							"easing": "easeInOutSine"
 						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0.3, 0]
+						},
+						"0.28": {
+							"vector": [0, 0, 0],
+							"easing": "easeInOutSine"
+						},
+						"0.6": {
+							"vector": [0, 0.3, 0],
+							"easing": "easeInOutSine"
+						}
 					}
 				},
 				"planetop": {
@@ -662,10 +675,52 @@
 				},
 				"head": {
 					"rotation": {
-						"vector": [15, 0, 0]
+						"vector": [21, 0, 0]
 					},
 					"position": {
 						"vector": [0, 0, 0.3]
+					}
+				},
+				"leftpawfront2": {
+					"rotation": {
+						"vector": [0, -8, 50]
+					},
+					"position": {
+						"vector": [0.8, -0.5, 0]
+					}
+				},
+				"thighrightback": {
+					"rotation": {
+						"vector": [0, 0, 47]
+					}
+				},
+				"rightpawfback3": {
+					"rotation": {
+						"vector": [0, 8, -50]
+					},
+					"position": {
+						"vector": [-0.8, -0.5, 0]
+					}
+				},
+				"thighrightfront": {
+					"rotation": {
+						"vector": [0, 0, 40]
+					}
+				},
+				"legrightfront": {
+					"rotation": {
+						"vector": [0, 0, 7]
+					},
+					"position": {
+						"vector": [-0.2, 0.2, 0]
+					}
+				},
+				"rightpawfront3": {
+					"rotation": {
+						"vector": [0, 8, -50]
+					},
+					"position": {
+						"vector": [-0.8, -0.5, 0]
 					}
 				}
 			}

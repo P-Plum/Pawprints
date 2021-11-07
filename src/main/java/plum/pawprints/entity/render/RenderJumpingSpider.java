@@ -83,6 +83,6 @@ public class RenderJumpingSpider extends GeoEntityRenderer<EntityJumpingSpider>
 	@Override
 	public void renderEarly(EntityJumpingSpider animatable, float ticks, float red, float green, float blue, float partialTicks)
 	{
-		GlStateManager.scale(0.2F, 0.2F, 0.2F);
+		GlStateManager.scale(0.15F, 0.15F, 0.15F);
 	}
 }

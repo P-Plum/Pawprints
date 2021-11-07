@@ -202,4 +202,56 @@ public class PawprintsSpawnConfig {
 		    @Config.Name("Hermit Crab generation probability")
 		    @Config.Comment("Probability for spawning Hermit Crab.")
 			public static int hermitRate = 10;
+		    
+		  //JUMPING SPIDER
+			@Config.Name("Jumping Spider spawns")
+		    @Config.Comment("Enables natural spawning of Jumping Spider.")
+			public static boolean spiderSpawns = true;
+			
+		    @Config.Name("Jumping Spider biomes")
+		    @Config.Comment("BiomeDictionary types for spawning Jumping Spider.")
+			public static String[] spiderBiomes = new String[] { "JUNGLE", "FOREST", "LUSH", };
+			
+		    @Config.Name("Jumping Spider generation probability")
+		    @Config.Comment("Probability for spawning Jumping Spider.")
+			public static int spiderRate = 5;
+		    
+		  //HARVESTMEN
+			@Config.Name("Harvestman spawns")
+		    @Config.Comment("Enables natural spawning of Harvestman.")
+			public static boolean harvestmanSpawns = true;
+			
+		    @Config.Name("Harvestman biomes")
+		    @Config.Comment("BiomeDictionary types for spawning Harvestman.")
+			public static String[] harvestmanBiomes = new String[] { "JUNGLE", "FOREST", "LUSH", };
+			
+		    @Config.Name("Harvestman generation probability")
+		    @Config.Comment("Probability for spawning Harvestman.")
+			public static int harvestmanRate = 5;
+		    
+		  //GIANT VINEGAROON
+			@Config.Name("Giant Vinegaroon spawns")
+		    @Config.Comment("Enables natural spawning of Giant Vinegaroon.")
+			public static boolean vinegaroonSpawns = true;
+			
+		    @Config.Name("Giant Vinegaroon biomes")
+		    @Config.Comment("BiomeDictionary types for spawning Giant Vinegaroon.")
+			public static String[] vinegaroonBiomes = new String[] { "SAVANNA", "DESERT", };
+			
+		    @Config.Name("Giant Vinegaroon generation probability")
+		    @Config.Comment("Probability for spawning Giant Vinegaroon.")
+			public static int vinegaroonRate = 10;
+		    
+		  //SERIEMA
+			@Config.Name("Seriema spawns")
+		    @Config.Comment("Enables natural spawning of Seriema.")
+			public static boolean seriemaSpawns = true;
+			
+		    @Config.Name("Seriema biomes")
+		    @Config.Comment("BiomeDictionary types for spawning Seriema.")
+			public static String[] seriemaBiomes = new String[] { "SAVANNA", };
+			
+		    @Config.Name("Seriema generation probability")
+		    @Config.Comment("Probability for spawning Seriema.")
+			public static int seriemaRate = 30;
 }
